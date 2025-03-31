@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+// import Slider from 'react-slick';
 import { BsLaptop, BsHeadset, BsGraphUp, BsPeople, BsCalculator, BsMegaphone, BsHeartPulse, BsGear, BsPersonLinesFill, BsBriefcase, BsTools, BsFillPatchQuestionFill } from "react-icons/bs";
 
 // Job categories with corresponding icons
@@ -23,7 +24,21 @@ const JobCategories = () => {
         <Container className="py-5">
             <h2 className="mb-4 text-center fw-bold">Browse by Category</h2>
             <Row className="g-4">
-                {jobCategories.map((category) => (
+                {/* <Slider {...settings}>
+                    <div>
+                        <img src="http://placekitten.com/g/400/200" />
+                    </div>
+                    <div>
+                        <img src="http://placekitten.com/g/400/200" />
+                    </div>
+                    <div>
+                        <img src="http://placekitten.com/g/400/200" />
+                    </div>
+                    <div>
+                        <img src="http://placekitten.com/g/400/200" />
+                    </div>
+                </Slider> */}
+                {/* {jobCategories.map((category) => (
                     <Col key={category.id} xs={12} sm={6} md={4} lg={3}>
                         <Card className="shadow-sm text-center p-3 rounded-4 border-0">
                             <div className="mb-3 text-primary">{category.icon}</div>
@@ -38,7 +53,7 @@ const JobCategories = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                ))}
+                ))} */}
             </Row>
         </Container>
     );
