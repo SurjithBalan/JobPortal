@@ -29,7 +29,7 @@ function UserNavbar() {
   return (
     <>
     <nav
-      className="navbar navbar-expand-lg "
+      className="navbar navbar-expand-lg fixed-top "
       style={{ backgroundColor: "#003366" }}
     >
       <div className="container-fluid">
