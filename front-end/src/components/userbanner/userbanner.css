@@ -1,30 +1,94 @@
 .containner_style {
-    min-height: "100vh";
-    width: "100vw";
-    background-image: url("../../assets/image/banner3.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
-    background-attachment: "scroll"
+  min-height: "100vh";
+  width: "100vw";
+  background-image: url("../../assets/image/banner3.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  background-attachment: "scroll"
 }
+
+/* Ensure the row and column align left */
+.text-left-align {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+/* Ensure text and content align left */
+.text-start {
+  text-align: left !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+/* Make sure input and button align correctly */
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+.search-input {
+  flex-grow: 1;
+}
+
+.dropdown-btn, .search-btn {
+  white-space: nowrap;
+}
+
+/* Improve search bar alignment */
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100;
+}
+
+/* Make input controls and dropdown stretch naturally */
+.search-input {
+  flex-grow: 1;
+}
+.custom-col {
+  max-width: 600px; /* Adjust as needed */
+  width: 100%;
+  margin-left: 15px
+
+}
+
+
+.dropdown-btn {
+  white-space: nowrap;
+}
+
+.search-btn {
+  white-space: nowrap;
+}
+
+
 @media (max-width: 768px) {
-    .responsive-bg {
-      background-size: cover !important;
-      background-position: center !important;
-      min-height: 100vh !important;
-    }
+  .responsive-bg {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 100vh !important;
   }
-  @media (max-width: 768px) {
-    .responsive-bg {
-      justify-content: center; /* Center content on smaller screens */
-      padding-left: 0;
-    }
-    .search-container {
-      align-items: center; /* Centers content on mobile */
-    }
-    .search-bar {
-      width: 90%; /* Reduces width on smaller screens */
-    }
+}
+
+@media (max-width: 768px) {
+  .responsive-bg {
+    justify-content: center;
+    /* Center content on smaller screens */
+    padding-left: 0;
   }
+
+  .search-container {
+    align-items: center;
+    /* Centers content on mobile */
+  }
+
+  .search-bar {
+    width: 100%;
+    /* Reduces width on smaller screens */
+  }
+}
