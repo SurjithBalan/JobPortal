@@ -17,7 +17,7 @@ function UserBanner() {
           <Row className="py-5 px-4 position-relative text-center justify-content-start">
             <Col xs={12} md={10} lg={8} className="d-flex flex-column align-items-center text-light">
               <p className="fs-2 fw-semibold tracking-wider">Welcome to Skylark Jobs</p>
-              <h1 className="fw-bold display-3 text-light">
+              <h1 className="fw-bold display-4 text-light">
                 Find Your <span className="text-success">Dream Job</span>
               </h1>
               <p className="fs-5 text-light text-opacity-75">
