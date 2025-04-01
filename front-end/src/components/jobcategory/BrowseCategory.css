@@ -1,0 +1,160 @@
+/* Job Card Hover Effect */
+.custom-arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    /* Arrow color */
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.custom-arrow:hover {
+    color: #007bff;
+    /* Color change on hover */
+}
+
+.custom-arrow.next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-arrow.prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-slider {
+    position: relative;
+}
+
+.custom-arrow {
+    z-index: 10;
+}
+
+.custom-arrow:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.custom-arrow.next:before {
+    border-width: 8px 12px 8px 12px;
+    border-color: transparent transparent transparent #007bff;
+}
+
+.custom-arrow.prev:before {
+    border-width: 8px 12px 8px 12px;
+    border-color: transparent #007bff transparent transparent;
+}
+
+.job-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Slider Arrows */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.custom-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.next {
+    right: -40px;
+}
+
+.prev {
+    left: -40px;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Position arrows */
+.next-arrow {
+    right: -50px;
+}
+
+.prev-arrow {
+    left: -50px;
+}
+
+.custom-arrow:hover {
+    background: #218838;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .custom-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .next-arrow {
+        right: -30px;
+    }
+
+    .prev-arrow {
+        left: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .custom-arrow {
+        display: none;
+    }
+
+    /* Hide arrows on very small screens */
+}
