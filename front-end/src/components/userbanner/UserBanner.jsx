@@ -26,31 +26,31 @@ function UserBanner() {
             {/* Search Bar */}
             <div className="fs-4 search-container mt-4 w-100">
               <InputGroup className="shadow-lg rounded-pill overflow-hidden search-bar">
-              <Form.Control
-  type="text"
-  placeholder="Search Keywords..."
-  className="search-input px-3 py-2 border-0"
-  style={{ fontSize: '1rem' }} // Adjusted size
-/>
-<Form.Control
-  type="text"
-  placeholder="Enter Location..."
-  className="search-input px-3 py-2 border-0"
-  style={{ fontSize: '1rem' }}
-/>
-<Dropdown>
-  <Dropdown.Toggle variant="light" className="fs-6 fw-bold px-3 py-2 border-0 text-dark fw-semibold">
-    Category
-  </Dropdown.Toggle>
-  <Dropdown.Menu>
-    <Dropdown.Item>Software</Dropdown.Item>
-    <Dropdown.Item>Marketing</Dropdown.Item>
-    <Dropdown.Item>Design</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-<Button variant="success" className="fs-6 fw-bold px-4 py-2 fw-semibold">
-  Search
-</Button>
+                <Form.Control
+                  type="text"
+                  placeholder="Search Keywords..."
+                  className="search-input px-3 py-2 border-0"
+                  style={{ fontSize: '1rem' }} // Adjusted size
+                />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Location..."
+                  className="search-input px-3 py-2 border-0"
+                  style={{ fontSize: '1rem' }}
+                />
+                <Dropdown>
+                  <Dropdown.Toggle variant="light" className="fs-6 fw-bold px-3 py-2 border-0 text-dark fw-semibold">
+                    Category
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Software</Dropdown.Item>
+                    <Dropdown.Item>Marketing</Dropdown.Item>
+                    <Dropdown.Item>Design</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                <Button variant="success" className="fs-6 fw-bold px-4 py-2 fw-semibold">
+                  Search
+                </Button>
               </InputGroup>
             </div>
           </Col>
