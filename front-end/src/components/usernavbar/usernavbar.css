@@ -15,10 +15,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
-  padding-right: 30px;
+  padding-right: 20px;
   text-align: center;
   padding-left: 5px;
-  font-size: small;
+  font-size:medium;
 }
 
 #nav-link {
@@ -30,6 +30,7 @@
 .btn-login a{
  text-decoration: inherit;
  font-weight: 600;
+ font-size:medium;
 
 
 }

@@ -9,9 +9,9 @@ export default function CompanyLogin() {
         <div className="container ">
           <form className="from">
             {/* <!-- Email input --> */}
-            <div className="form-outline  mx-5 ">
+            <div className="form-outline mb-4 mx-5 ">
               <label
-                className="form-label text-dark m-2 d-flex justify-content-start"
+                className="form-label text-dark m d-flex justify-content-start"
                 placeholder="Email "
               >
                 Username
