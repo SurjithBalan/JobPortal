@@ -1,62 +1,50 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-// import Slider from 'react-slick';
+import { Card } from "react-bootstrap";
+import Slider from "react-slick";
 import { BsLaptop, BsHeadset, BsGraphUp, BsPeople, BsCalculator, BsMegaphone, BsHeartPulse, BsGear, BsPersonLinesFill, BsBriefcase, BsTools, BsFillPatchQuestionFill } from "react-icons/bs";
 
-// Job categories with corresponding icons
 const jobCategories = [
-    { id: 1, name: "IT", openings: 81, icon: <BsLaptop size={50} /> },
-    { id: 2, name: "BPO", openings: 8, icon: <BsHeadset size={50} /> },
-    { id: 3, name: "Sales & Marketing", openings: 14, icon: <BsGraphUp size={50} /> },
-    { id: 4, name: "Customer Service", openings: 1, icon: <BsPeople size={50} /> },
-    { id: 5, name: "Accounts", openings: 5, icon: <BsCalculator size={50} /> },
-    { id: 6, name: "Digital Marketing", openings: 7, icon: <BsMegaphone size={50} /> },
-    { id: 7, name: "Health Care", openings: 1, icon: <BsHeartPulse size={50} /> },
-    { id: 8, name: "Manufacturing", openings: 6, icon: <BsGear size={50} /> },
-    { id: 9, name: "Skin Clinic", openings: 4, icon: <BsPersonLinesFill size={50} /> },
-    { id: 10, name: "Human Resources", openings: 11, icon: <BsBriefcase size={50} /> },
-    { id: 11, name: "Operations", openings: 10, icon: <BsTools size={50} /> },
-    { id: 12, name: "Miscellaneous", openings: 5, icon: <BsFillPatchQuestionFill size={50} /> },
+    { id: 1, name: "IT", openings: 81, logo: <BsLaptop size={50} /> },
+    { id: 2, name: "BPO", openings: 8, logo: <BsHeadset size={50} /> },
+    { id: 3, name: "Sales & Marketing", openings: 14, logo: <BsGraphUp size={50} /> },
+    { id: 4, name: "Customer Service", openings: 1, logo: <BsPeople size={50} /> },
+    { id: 5, name: "Accounts", openings: 5, logo: <BsCalculator size={50} /> },
+    { id: 6, name: "Digital Marketing", openings: 7, logo: <BsMegaphone size={50} /> },
+    { id: 7, name: "Health Care", openings: 1, logo: <BsHeartPulse size={50} /> },
+    { id: 8, name: "Manufacturing", openings: 6, logo: <BsGear size={50} /> },
+    { id: 9, name: "Skin Clinic", openings: 4, logo: <BsPersonLinesFill size={50} /> },
+    { id: 10, name: "Human Resources", openings: 11, logo: <BsBriefcase size={50} /> },
+    { id: 11, name: "Operations", openings: 10, logo: <BsTools size={50} /> },
+    { id: 12, name: "Miscellaneous", openings: 5, logo: <BsFillPatchQuestionFill size={50} /> },
 ];
 
-const JobCategories = () => {
+const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <button className="slick-next">&#8250;</button>,
+    prevArrow: <button className="slick-prev">&#8249;</button>,
+};
+
+const JobCategoriesCarousel = () => {
     return (
-        <Container className="py-5">
-            <h2 className="mb-4 text-center fw-bold">Browse by Category</h2>
-            <Row className="g-4">
-                {/* <Slider {...settings}>
-                    <div>
-                        <img src="http://placekitten.com/g/400/200" />
-                    </div>
-                    <div>
-                        <img src="http://placekitten.com/g/400/200" />
-                    </div>
-                    <div>
-                        <img src="http://placekitten.com/g/400/200" />
-                    </div>
-                    <div>
-                        <img src="http://placekitten.com/g/400/200" />
-                    </div>
-                </Slider> */}
-                {/* {jobCategories.map((category) => (
-                    <Col key={category.id} xs={12} sm={6} md={4} lg={3}>
-                        <Card className="shadow-sm text-center p-3 rounded-4 border-0">
-                            <div className="mb-3 text-primary">{category.icon}</div>
-                            <Card.Body>
-                                <Card.Title className="fw-bold">{category.name}</Card.Title>
-                                <div className="text-white bg-primary rounded-pill py-1 px-3 mb-3">
-                                    No of Openings: {category.openings}
-                                </div>
-                                <Button variant="outline-dark" className="rounded-pill">
-                                    View Jobs
-                                </Button>
-                            </Card.Body>
+        <div className="container py-5">
+            <h2 className="mb-4 text-center fw-bold">Top companies hiring now</h2>
+            <Slider {...settings}>
+                {jobCategories.map((category) => (
+                    <div key={category.id} className="px-2">
+                        <Card className="shadow-sm p-3 rounded-4 border-0 text-center">
+                            <div className="mb-3 text-primary">{category.logo}</div>
+                            <h5 className="fw-bold">{category.name} &gt;</h5>
+                            <p>{category.openings} are actively hiring</p>
                         </Card>
-                    </Col>
-                ))} */}
-            </Row>
-        </Container>
+                    </div>
+                ))}
+            </Slider>
+        </div>
     );
 };
 
-export default JobCategories;
+export default JobCategoriesCarousel;
