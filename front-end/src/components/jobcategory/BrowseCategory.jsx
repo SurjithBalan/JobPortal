@@ -58,13 +58,13 @@ const settings = {
 const JobCategoriesCarousel = () => {
     return (
         <div className="container py-5">
-            <h2 className="mb-4 text-center fw-bold">Top Companies Hiring Now</h2>
+            <h2 className="mb-4 text-center fw-bold">Browse by Category</h2>
             <Slider {...settings}>
                 {jobCategories.map(({ id, name, openings, logo }) => (
                     <div key={id} className="px-2">
                         <Card className="shadow-sm p-3 rounded-4 border-0 text-center job-card">
                             <div className="mb-3 text-primary">{logo}</div>
-                            <h5 className="fw-bold">{name} &gt;</h5>
+                            <h5 className="fw-bold">{name}</h5>
                             <p>{openings} are actively hiring</p>
                         </Card>
                     </div>

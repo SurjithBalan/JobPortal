@@ -1,160 +1,126 @@
-/* Job Card Hover Effect */
-.custom-arrow {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    color: #333;
-    /* Arrow color */
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
-.custom-arrow:hover {
-    color: #007bff;
-    /* Color change on hover */
-}
+/* body {
+    background: linear-gradient(135deg, #013280, #c7e9ff); 
+   
+    min-height: 100vh;
+    padding: 30px 0;
+} */
 
-.custom-arrow.next {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.custom-arrow.prev {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.slick-slider {
-    position: relative;
-}
-
-.custom-arrow {
-    z-index: 10;
-}
-
-.custom-arrow:before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-.custom-arrow.next:before {
-    border-width: 8px 12px 8px 12px;
-    border-color: transparent transparent transparent #007bff;
-}
-
-.custom-arrow.prev:before {
-    border-width: 8px 12px 8px 12px;
-    border-color: transparent #007bff transparent transparent;
-}
+/* Card Styling */
 
 .job-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* background: linear-gradient(135deg, #a0c4ff, #c7e9ff); */
+    /* Light blue gradient */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    /* Adds space around each card */
+}
+
+/* Space Between Cards */
+.slick-track {
+    display: flex;
+    gap: 20px;    
+    padding: 10px;
 }
 
 .job-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Custom Slider Arrows */
+/* Custom Arrow Buttons */
 .custom-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: #198754;
+    color: #fff;
     border: none;
-    padding: 10px 15px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 100;
     border-radius: 50%;
-    transition: background 0.3s ease;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 100;
 }
 
 .custom-arrow:hover {
-    background: rgba(0, 0, 0, 0.9);
+    background-color: rgba(35, 52, 148, 0.8);
+    transform: scale(1.8);
+
+    .custom-arrow {
+        padding-right: 50px;
+    }
 }
 
+/* Adjusting Arrow Positions */
 .next {
     right: -40px;
+    /* Moves right button further to the right */
 }
 
 .prev {
-    left: -40px;
+    left: -25px;
 }
 
-.container {
-    max-width: 100%;
-    padding: 0 15px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .custom-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .next {
+        right: -30px;
+        /* Adjusts for smaller screens */
+    }
+
+    .prev {
+        left: -20px;
+    }
 }
 
-.slick-slide {
-    display: flex;
-    justify-content: center;
-}
-
-.custom-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #28a745;
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* Position arrows */
-.next-arrow {
-    right: -50px;
-}
-
-.prev-arrow {
-    left: -50px;
-}
-
-.custom-arrow:hover {
-    background: #218838;
-}
-
-/* Mobile Styles */
 @media (max-width: 768px) {
     .custom-arrow {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         font-size: 18px;
     }
 
-    .next-arrow {
-        right: -30px;
+    .next {
+        right: -20px;
     }
 
-    .prev-arrow {
-        left: -30px;
+    .prev {
+        left: -15px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-    }
-
     .custom-arrow {
-        display: none;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 
-    /* Hide arrows on very small screens */
+    .next {
+        right: -10px;
+    }
+
+    .prev {
+        left: -10px;
+    }
 }
