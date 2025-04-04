@@ -22,7 +22,10 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: white;
-    color: rgb(223, 225, 230);
+    color: #1573fd;
+    font-size: larger;
+    font-style: initial;
+    font-weight: bold;
     border: none;
     /* Increase padding */
     font-size: 28px;

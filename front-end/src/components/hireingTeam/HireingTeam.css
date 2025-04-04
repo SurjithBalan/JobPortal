@@ -1,0 +1,23 @@
+.hireing-team-section .slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.image-wrapper img {
+  border-radius: 10px;
+}
+/* Optional: style slick dots */
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #28a745; /* green */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff; /* blue */
+}
