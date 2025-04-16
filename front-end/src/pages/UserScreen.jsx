@@ -10,13 +10,15 @@ import Latestjob from '../components/latestjobs/Latestjob'
 import Counter from '../components/hrcompanies/Counter'
 import About from '../components/about/About'
 import Testimonials from '../components/testimonial/Testimonials'
-// import Tophiring from '../components/tophiring/Tophiring'
+import HrCompanies from '../components/hrcompanies/HrCompanies'
+
 function UserScreen() {
   return (
     <div>
       <UserNavbar/>
       <UserbannerAutoSlider />
       <Counter/>
+      <HrCompanies/>
       <UrgentFeaturedJobs />
       <RecommendedJobs />
       <Latestjob/>

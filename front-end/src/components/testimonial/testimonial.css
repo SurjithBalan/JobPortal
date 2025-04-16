@@ -7,9 +7,10 @@
     
      
 }
-.testimmonial-top{
-    display: flex;
-    justify-items: center;
+.testimonial-top{
+ display: flex;
+ justify-items: center; 
+ 
 }
 .testimonial{
     width: 650px;
