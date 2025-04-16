@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* .urgent-jobs-section h4 {
+    color: #6a1b9a; /* Purple like in image */
+.urgent-jobs-section {
+  position: relative;
+  margin-top: -90px;
+}
+
+.Heading_purple {
+  color: #7B1FA2;
+  font-size: 36px;
+}
+
+.filter-btns .btn.active {
+  background-color: #1E88E5;
+  color: #fff;
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.company_name {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1 6px;
+}
+
+.job-logo {
+  width: 64px;
+  height: auto;
+  object-fit: contain;  
+}
+.custom-badge1 {
+  background-color: rgb(237,231,246, 0.8)!important; /* custom color */
+  color: #424242;            /* custom text color */
+  padding: 0.4em 0.85em;     /* optional */
+  border-radius: 0.5rem;     /* optional */
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
+.custom-badge2 {
+  background-color: #dbefdc!important; /* custom color */
+  color: #424242;            /* custom text color */
+  padding: 0.4em 0.85em;     /* optional */
+  border-radius: 0.5rem;     /* optional */
+  font-weight:bold;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
+.custom-badge3 {
+  background-color: #f9d7d7!important; /* custom color */
+  color: #424242;            /* custom text color */
+  padding: 0.4em 0.855em;     /* optional */
+  border-radius: 0.5rem;     /* optional */
+  font-weight:bold;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
+.badge-sub-datas{
+  background-color:transparent !important;
+  color: #424242;            /* custom text color */
+  padding: 0.4em 0.855em;     /* optional */
+  border-radius: 0.5rem;     /* optional */
+  font-weight:bold;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
+.bookmark_icon{
+  display: flex;
+  align-items: start;
+  font-size: 16px!important;
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(144, 238, 144, 0.3)  
+}
+.icon_posistion{
+  position: relative;
+  right: 8px;
+}
+.icon_color{
+  color: #43A047;
+}

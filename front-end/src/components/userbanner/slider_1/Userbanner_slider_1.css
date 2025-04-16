@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner-section {
+  padding: 100px 0;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(120deg, #154f81 0%, #d0d8e2 43%);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.banner-section .position-img {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 75%;
+  object-fit: cover;
+  height: auto;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  padding-right: 8px;
+}
+
+.hero-content .inner-content .hero-heading .H1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  /* Semi-bold */
+  font-size: 36px;
+  background: #fff;
+  color: #424242;
+}
+
+.secondH1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  background: #fff;
+  color: #1E88E5;
+}
+.inner-content{
+  position: relative;
+  top: -160px; /* moves it upward */
+}
+
+.hero-content .inner-content .hero-heading .H2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  /* Semi-bold */
+  font-size: 24px;
+  color: #424242;
+}
+
+.secondH2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  color: #424242;
+}
+
+.hero-content .inner-content .hero-heading span {
+  display: inline-block;
+  font-size: 28px;
+  border-radius: 5px;
+  font-weight: 900;
+  padding: 0 5px 5px;
+}
+
+.hero-content .inner-content .hero-sub-heading span {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px;
+  line-height: 1;
+}
+
+.banner-section hr {
+  stroke-width: 3;
+  border: none;
+  border-top: 3px solid white;
+  width: 100%;
+  margin: auto;
+}
+
+.hero-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  /* Semi-bold */
+  font-size: 16px;
+  color: #424242;
+  margin: auto;
+}
+
+.banner-section .input-field {
+  padding: 20px;
+  border-top: 0.1px solid rgba(255, 255, 255, 0.15);
+  background-color: #42424226;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.input-field .form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.input-field .form-wrapper .input-group {
+  position: relative;
+  border-radius: 4px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 20px 10px 40px;
+  border: none;
+  border-radius: 12px !important;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+}
+
+.input-field .form-wrapper .submit-btn {
+  display: block;
+  border: none;
+  background: #1e88e5;
+  color: #fff;
+  padding: 9px 35px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #777;
+  pointer-events: none;
+}
+@media screen and (min-width: 1500px) {
+  .banner-section .position-img {
+    width: 50%;
+  }
+  .hero-content{
+    padding-right: 8px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .banner-section .position-img {
+    width: 48%;
+  }
+  .hero-content{
+    padding-right: 8px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .banner-section .position-img {
+    width: 46%;
+  }
+  .hero-content{
+    padding-right: 15px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .banner-section .position-img {
+    width: 44%;
+  }
+  .hero-content{
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,61 @@
+import React from "react";
+import { Form, Button, InputGroup } from "react-bootstrap";
+
+const SearchBar = () => {
+  return (
+    <div className="search-bar-container p-3 bg-white shadow rounded">
+      <InputGroup>
+        <Form.Control type="text" placeholder="Search for jobs..." />
+        <Button variant="primary">Search</Button>
+      </InputGroup>
+    </div>
+  );
+};
+
+export default SearchBar;
+
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import UserBanner_1 from "./slider_1/Userbanner_slider_1";
+import UserBanner_2 from "./slider_2/Userbanner_slider_2";
+import UserBanner_3 from "./slider_3/Userbanner_slider_3";
+import SearchBar from "./SearchBar"; // Import the constant input
+import "./UserbannerCarousel.css";
+
+const UserbannerAutoSlider = () => {
+  const responsive = {
+    superLargeDesktop: { breakpoint: { max: 4000, min: 1920 }, items: 1 },
+    desktop: { breakpoint: { max: 1920, min: 1024 }, items: 1 },
+    tablet: { breakpoint: { max: 1024, min: 768 }, items: 1 },
+    mobile: { breakpoint: { max: 768, min: 0 }, items: 1 },
+  };
+
+  return (
+    <div className="position-relative">
+      {/* Constant Input Area */}
+      <div className="position-absolute top-0 start-50 translate-middle-x z-3" style={{ width: "80%", marginTop: "30px" }}>
+        <SearchBar />
+      </div>
+
+      {/* Carousel that slides behind input */}
+      <Carousel
+        className="carousel-container"
+        responsive={responsive}
+        autoPlay
+        autoPlaySpeed={3000}
+        infinite
+        arrows={false}
+        showDots={true}
+        swipeable={true}
+        draggable={true}
+      >
+        <UserBanner_1 />
+        <UserBanner_2 />
+        <UserBanner_3 />
+      </Carousel>
+    </div>
+  );
+};
+
+export default UserbannerAutoSlider;

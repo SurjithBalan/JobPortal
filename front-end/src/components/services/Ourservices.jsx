@@ -46,8 +46,8 @@ export default function OurServices() {
         ))}
       </Slider>
       <div className="slider-controls text-center mb-3">
-        <button className="btn btn-outline-primary me-2" onClick={() => sliderRef.current.slickPrev()}>‹ Prev</button>
-        <button className="btn btn-outline-primary" onClick={() => sliderRef.current.slickNext()}>Next ›</button>
+        <button className="btn btn-outline-info me-2" onClick={() => sliderRef.current.slickPrev()}>‹ Prev</button>
+        <button className="btn btn-outline-info me-2" onClick={() => sliderRef.current.slickNext()}>Next ›</button>
       </div>
     </div>
   );

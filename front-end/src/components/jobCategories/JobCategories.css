@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+.category-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(75, 96, 236, 0.1);
+    cursor: pointer;
+    /* transform: translate3d(-2px); */
+  
+}
+h3{
+    font-weight: 700;
+    font-size: 36px;
+    color: #1E88E5;
+}
+.jobCatogery-button{
+    background-color: #1E88E5;
+}
+.category-icon{
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+}
