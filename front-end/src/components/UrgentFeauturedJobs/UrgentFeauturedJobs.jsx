@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col,  Button, Badge } from "react-bootstrap";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiDocumentText } from "react-icons/hi";
 import WiproLogo from "../../assets/logo/Wipro.png";
@@ -100,7 +100,7 @@ const UrgentFeaturedJobs = () => {
       <Row className="gy-3 gx-3">
         {jobs.map((job) => (
           <Col xs={12} key={job.id}>
-            <Card className="shadow-sm rounded-4 px-2 py-3 border-0">
+            <div className="shadow-sm rounded-4 px-2 py-3 border-0">
               <Row className="align-items-center gx-3 gy-3">
 
                 {/* Logo */}
@@ -167,7 +167,7 @@ const UrgentFeaturedJobs = () => {
                   </div>
                 </Col>
               </Row>
-            </Card>
+            </div>
           </Col>
         ))}
       </Row>

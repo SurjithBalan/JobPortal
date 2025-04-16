@@ -5,9 +5,11 @@ import UrgentFeaturedJobs from '../components/UrgentFeauturedJobs/UrgentFeauture
 import RecommendedJobs from '../components/recommend jobs/Recommended_Jobs'
 import FeedbackForm from '../components/FeedbackForm/FeedbackForm'
 import FeaturedCandidates from '../components/FeaturedCandidates/FeaturedCandidates'
+import UserNavbar from '../components/usernavbar/UserNavbar'
 function UserScreen() {
   return (
     <div>
+      <UserNavbar/>
       <UserbannerAutoSlider />
       <UrgentFeaturedJobs />
       <RecommendedJobs />

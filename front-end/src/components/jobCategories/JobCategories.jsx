@@ -21,11 +21,11 @@ const JobCategories = () => {
             <Row className="g-4">
                 {categories.map((cat, index) => (
                     <Col key={index} xs={6} md={3}>
-                        <Card className="shadow-sm p-3 category-card text-center d-flex flex-column align-items-center justify-content-center"
+                        <div className="shadow-sm p-3 category-card text-center d-flex flex-column align-items-center justify-content-center"
   style={{ minWidth: '140px', height: '160px', flex: '1 1 0', borderRadius: '16px' }}>
                             <div className="mb-3 category-icon ">{cat.icon}</div>
                             <Card.Text className="fw-semibold">{cat.title}</Card.Text>
-                        </Card>
+                        </div>
                     </Col>
                 ))}
             </Row>

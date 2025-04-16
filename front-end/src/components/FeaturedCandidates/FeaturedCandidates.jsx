@@ -87,7 +87,7 @@ const FeaturedCandidates = () => {
                 itemClass="px-3"
             >
                 {candidates.map((candidate, index) => (
-                    <Card key={index} className="shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div key={index} className="shadow-sm h-100 d-flex flex-column justify-content-between">
                         <div className={`bg-${candidate.statusColor} text-white py-3 rounded-top extra-rounded-bottom fw-bold`}>
                             {candidate.status}
                             {candidate.noticePeriod && (
@@ -117,7 +117,7 @@ const FeaturedCandidates = () => {
                                 View Profile
                             </Button>
                         </Card.Body>
-                    </Card>
+                    </div>
                 ))}
             </Carousel>
 

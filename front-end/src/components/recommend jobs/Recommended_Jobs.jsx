@@ -93,7 +93,7 @@ const RecommendedJobs = () => {
                     <p className="subtitle">You're journey begins here. Let's find the job that brings out your best.</p>
                 </div>
                 {jobList.map((job) => (
-                    <Card
+                    <div
                         key={job.id}
                         className="mb-4 rounded-4 p-3 border-1 hover-zoom-card"
                         style={{ backgroundColor: job.bgColor }}
@@ -148,7 +148,7 @@ const RecommendedJobs = () => {
                                 </div>
                             </Col>
                         </Row>
-                    </Card>
+                    </div>
                 ))}
 
                 <div className="text-center mb-4">
