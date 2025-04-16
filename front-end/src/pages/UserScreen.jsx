@@ -11,6 +11,8 @@ import Counter from '../components/hrcompanies/Counter'
 import About from '../components/about/About'
 import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
+import Recruiters from '../components/realrecruiters/Recruiters'
+import Footer from '../components/Footer/Footer'
 
 function UserScreen() {
   return (
@@ -24,9 +26,11 @@ function UserScreen() {
       <Latestjob/>
       <JobCategories />
       <FeaturedCandidates />
+      <Recruiters/>
       <About/>
       <Testimonials/>
       <FeedbackForm />
+      <Footer/>
      
       {/* <Tophiring/> */}
     </div>
