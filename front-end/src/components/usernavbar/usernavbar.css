@@ -12,25 +12,35 @@
 }
 
 .nav-item {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-weight: 500;
   font-style: normal;
-  padding-right: 20px;
+  padding-right: 30px;
   text-align: center;
   padding-left: 5px;
-  font-size:medium;
+  font-size: medium;
+  
+}
+.nav-items {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  padding-right: 30px;
+  text-align: center;
+  padding-left: 5px;
+  font-size: medium;
+  color: #424242;
+  font-size: 16px;
 }
 
-#nav-link {
-  padding-left: 10%;
-}
 .modal-header {
   border-bottom: 0 none;
 }
-.btn-login a{
- text-decoration: inherit;
- font-weight: 600;
- font-size:medium;
-
+.btn-login button{
+  border-radius: 25px;
+  background-color: #FFD54F;
+  padding: 5px 25px;
+  margin: 2px; 
+ border: #FFD54F;
 
 }
