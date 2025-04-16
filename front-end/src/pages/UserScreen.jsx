@@ -6,6 +6,7 @@ import RecommendedJobs from '../components/recommend jobs/Recommended_Jobs'
 import FeedbackForm from '../components/FeedbackForm/FeedbackForm'
 import FeaturedCandidates from '../components/FeaturedCandidates/FeaturedCandidates'
 import UserNavbar from '../components/usernavbar/UserNavbar'
+// import Latestjob from
 function UserScreen() {
   return (
     <div>
@@ -13,6 +14,7 @@ function UserScreen() {
       <UserbannerAutoSlider />
       <UrgentFeaturedJobs />
       <RecommendedJobs />
+      {/* <Latestjob/> */}
       <JobCategories />
       <FeedbackForm />
       <FeaturedCandidates />
