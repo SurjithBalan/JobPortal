@@ -1,0 +1,32 @@
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    min-height: 320px;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-container {
+    font-size: 36px;
+    color: #28a745;
+  }
+  
+  .slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .slider-controls button {
+    padding: 6px 16px;
+    font-size: 16px;
+    border-radius: 30px;
+  }

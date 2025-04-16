@@ -3,6 +3,8 @@ import UserNavbar from '../components/usernavbar/UserNavbar'
 import UserBanner from '../components/userbanner/UserBanner'
 import JobCategories from '../components/jobcategory/BrowseCategory'
 import Tophiring from '../components/tophiring/Tophiring'
+import Ourservices from '../components/services/Ourservices'
+import HireingTeam from '../components/hireingTeam/hireingTeam'
 function UserScreen() {
   return (
     <div>
@@ -10,6 +12,8 @@ function UserScreen() {
         <UserBanner/>
         <Tophiring/>
         <JobCategories/>
+        <Ourservices/>
+        <HireingTeam/>
     </div>
   )
 }

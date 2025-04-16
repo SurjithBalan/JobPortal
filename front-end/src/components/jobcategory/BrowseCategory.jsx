@@ -26,12 +26,9 @@ const jobCategories = [
     { id: 12, name: "Miscellaneous", openings: 5, logo: <BsFillPatchQuestionFill size={50} /> },
 ];
 
-// Custom Arrow Buttons
+// Custom Arrow Component
 const CustomArrow = ({ onClick, direction }) => (
-    <button
-        className={`custom-arrow ${direction}`}
-        onClick={onClick}
-    >
+    <button className={`custom-arrow ${direction}`} onClick={onClick}>
         {direction === "next" ? "›" : "‹"}
     </button>
 );
@@ -45,31 +42,35 @@ const settings = {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    pauseOnHover: true, // Pauses autoplay when hovered
+    pauseOnHover: true,
     nextArrow: <CustomArrow direction="next" />,
     prevArrow: <CustomArrow direction="prev" />,
     responsive: [
-        { breakpoint: 1024, settings: { slidesToShow: 3 } },
-        { breakpoint: 768, settings: { slidesToShow: 2 } },
-        { breakpoint: 480, settings: { slidesToShow: 1 } }
+        { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+        { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
     ]
 };
 
 const JobCategoriesCarousel = () => {
     return (
-        <div className="container py-5">
-            <h2 className="mb-4 text-center fw-bold">Top Companies Hiring Now</h2>
-            <Slider {...settings}>
-                {jobCategories.map(({ id, name, openings, logo }) => (
-                    <div key={id} className="px-2">
-                        <Card className="shadow-sm p-3 rounded-4 border-0 text-center job-card">
-                            <div className="mb-3 text-primary">{logo}</div>
-                            <h5 className="fw-bold">{name} &gt;</h5>
-                            <p>{openings} are actively hiring</p>
-                        </Card>
-                    </div>
-                ))}
-            </Slider>
+        <div className="carousel-container">
+            <h2 className="mb-6 text-center text-3xl font-extrabold text-gray-800 tracking-wide">
+                Browse by Category
+            </h2>
+            <div className="carousel-wrapper">
+                <Slider {...settings}>
+                    {jobCategories.map(({ id, name, openings, logo }) => (
+                        <div key={id} className="px-2">
+                            <Card className="shadow-sm p-3 rounded-4 border-0 text-center job-card">
+                                <div className="mb-3 text-primary">{logo}</div>
+                                <h5 className="fw-bold" >{name}</h5>
+                                <p className="fw">{openings} are actively hiring</p>
+                            </Card>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
         </div>
     );
 };
