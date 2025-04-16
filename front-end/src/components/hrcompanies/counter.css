@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.conuter-section {
+  margin: 20px 60px 10px 60px;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  padding: 5px 20px;
+  box-shadow: 4px 4px 4px #f5f5f5, -4px -4px 4px #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-top {
+  width: 200px;
+  height: 220px;
+}
+.counter {
+  width: 170px;
+  height: auto;
+  background-color: white;
+  border-radius: 16px;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.counter-container h6 {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 700;
+}
+.counter-container span {
+  color: #1e88e5;
+  font-family: "Poppins";
+  font-weight: 700;
+}
+.counter img {
+  width: 90px;
+  height: 70px;
+}
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-sport {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: self-start;
+  align-items: flex-start;
+}
+
+.sport {
+  width: 360px;
+  height: 553px;
+  border-radius: 16px;
+  margin: 20px;
+  background-color: #fcf7ff;
+}
+.header {
+  background-color: #1e88e5;
+  border-radius: 16px 16px 0px 0px;
+  padding: 15px;
+  text-align: left;
+}
+.header h6 {
+  font-family: "Poppins";
+  font-weight: 600;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 10px;
+}
+.company-logo {
+  background-color: white;
+  margin: 20px 10px 10px 10px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+}
+.badeg {
+  background-color: white;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #424242;
+  border: 1px solid black;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1e88e5;
+  color: white;
+  border: 2px solid white;
+  padding: 1px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50%;
+  /* transition: background 0.3s ease; */
+}
+
+.nextarrow {
+  right: 10px;
+  top: -32px;
+}
+
+.previous {
+  left: 280px;
+  top: -32px;
+}
+
+.company-btn button{
+     background-color: #FF5B5B;
+     border:none;
+}
+
+.slick-dots li button {
+  display: none;
+  text-indent: -9999px;
+}
+
+@media (max-width: 932px) {
+  .conuter-section {
+    max-width: 100%;
+    margin: 5px;
+    display: flex;
+  }
+  .sport{
+    width: 105%;
+    margin-right: 100px;
+  }
+}
+@media (max-width: 810px) {
+  .conuter-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .counter-container {
+    display: flex;
+    padding: 0%;
+    margin: auto;
+  }
+  .sport {
+    width: 150%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 180%;
+  }
+
+}
+
+@media (max-width: 610px) {
+  .sport{
+    width: 170%;
+    height: auto;
+  }
+
+  .previous {
+    left: 220px;
+    top: -32px;
+  }
+}
+@media(max-width:500px){
+    .sport{
+        width: 230%;
+        margin-left: 230%;
+    }
+}

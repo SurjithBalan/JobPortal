@@ -5,15 +5,26 @@ import UrgentFeaturedJobs from '../components/UrgentFeauturedJobs/UrgentFeauture
 import RecommendedJobs from '../components/recommend jobs/Recommended_Jobs'
 import FeedbackForm from '../components/FeedbackForm/FeedbackForm'
 import FeaturedCandidates from '../components/FeaturedCandidates/FeaturedCandidates'
+import UserNavbar from '../components/usernavbar/UserNavbar'
+import Counter from '../components/hrcompanies/Counter'
+import HrCompanies from '../components/hrcompanies/HrCompanies'
+import Latestjob from '../components/latestjobs/Latestjob'
+import About from '../components/about/About'
 function UserScreen() {
   return (
     <div>
+      <UserNavbar/>
       <UserbannerAutoSlider />
+      <Counter/>
+      <HrCompanies/>
       <UrgentFeaturedJobs />
       <RecommendedJobs />
+      <Latestjob/>
       <JobCategories />
-      <FeedbackForm />
       <FeaturedCandidates />
+      <About/>
+      <FeedbackForm />
+      
     </div>
   )
 }
