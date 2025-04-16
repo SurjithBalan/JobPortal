@@ -30,9 +30,8 @@ function UserScreen() {
       <About/>
       <Testimonials/>
       <FeedbackForm />
-      <Footer/>
+      <Footer/>    
      
-      {/* <Tophiring/> */}
     </div>
   )
 }

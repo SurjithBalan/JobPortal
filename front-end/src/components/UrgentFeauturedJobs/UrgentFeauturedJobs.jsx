@@ -146,7 +146,7 @@ const UrgentFeaturedJobs = () => {
 
                 {/* CTA */}
                 <Col xs={12} md={2} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
-                  <Button className="px-4 py-2 rounded-pill" style={{ background: "#7b1fa2", border: "none" }}>
+                  <Button className="px-4 py-2 rounded-pill" style={{ background: "#7b1fa2", border: "none", color:'white' }}>
                     Apply Now
                   </Button>
                   <div className="text-muted small mt-2">
@@ -173,7 +173,7 @@ const UrgentFeaturedJobs = () => {
       </Row>
 
       <div className="text-center mt-4">
-        <Button variant="secondary" className="rounded-pill px-4 py-2" style={{ background: "#7b1fa2", border: "none" }}>
+        <Button variant="secondary" className="rounded-pill px-4 py-2" style={{ background: "#7b1fa2", border: "none", color: 'white' }}>
           View More
         </Button>
       </div>

@@ -129,8 +129,8 @@ export default function Counter() {
                       {data}
                     </Badge>
                   ))}
-                  <div className="company-btn">
-                    <button className=" mt-4 px-5  py-2 rounded-pill">
+                  <div>
+                    <button className=" mt-4 px-5  py-2 rounded-pill company-btn">
                       Contact Us
                     </button>
                   </div>
