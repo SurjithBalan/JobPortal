@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-wrapper-canidate-email {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.login-box-canidate-email {
+    max-width: 75%;
+    width: 100%;
+    background-color: white;
+    /* border:solid red; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    padding: 0;
+}
+
+.left-side-canidate-email {
+    background-color: #1e88e5;
+    text-align: center;
+    padding: 2rem;
+    padding: 20px;
+}
+
+.logo-text-canidate-email {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.right-side-canidate-email {
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.input-group-custom-canidate-email .form-control-canidate-email {
+    background-color: #f0f0f0;
+    border: none;
+}
+
+.input-group-text-canidate-email {
+    border: none;
+}
+
+.social-icons-canidate-email svg {
+    cursor: pointer;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.social-icons-canidate-email svg:hover {
+    color: #007bff;
+}
+
+.input-icon-canidate-email {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #1a70bb;
+    pointer-events: none;
+}
+
+
+.logo-heading-canidate-email {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: -20%;
+    left: -45%;    
+}
+
+.responsive-logo-email {
+    max-width: 120px;
+    height: auto;
+}
+
+@media (max-width: 1199.98px) {
+    .logo-heading-canidate-email {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+@media (max-width: 768px) {
+    .responsive-logo-email {
+        max-width: 100px;
+    }
+    .left-side-canidate-otp {
+        align-items: flex-start !important;
+      }
+}
+
+@media (max-width: 576px) {
+    .responsive-logo-email {
+        max-width: 80px;
+    }
+}

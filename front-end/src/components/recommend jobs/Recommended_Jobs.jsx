@@ -126,7 +126,7 @@ const RecommendedJobs = () => {
                             </Col>
 
                             <Col xs={12} md={2} className="text-md-end mt-3 mt-md-0">
-                                <Button variant="primary" className="mb-2 rounded-pill px-4" style={{background:'#1e88e5', color:'white'}}>
+                                <Button variant="primary" className="mb-2 rounded-pill px-4 apply-now-btn" style={{background:'#1e88e5', color:'white'}}>
                                     Apply Now
                                 </Button>
                                 <div className="text-muted small">
@@ -152,7 +152,7 @@ const RecommendedJobs = () => {
                 ))}
 
                 <div className="text-center mb-4">
-                    <Button className= 'rounded-pill' style={{background:'#1e88e5', color:'white'}}>View More</Button>
+                    <Button className= 'rounded-pill apply-now-btn' style={{background:'#1e88e5', color:'white'}}>View More</Button>
                 </div>
             </Container>
         </section>

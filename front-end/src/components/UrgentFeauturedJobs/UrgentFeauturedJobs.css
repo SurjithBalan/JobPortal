@@ -4,8 +4,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* .urgent-jobs-section h4 {
-    color: #6a1b9a; /* Purple like in image */
+
 .urgent-jobs-section {
   position: relative;
   margin-top: 30px;
@@ -102,4 +101,25 @@
 }
 .icon_color{
   color: #43A047;
+}
+.apply-btn{
+  transition: all 0.3s ease-in-out;
+  background-color: #7b1fa2;
+  color: white;
+}.apply-btn:hover {
+  background-color: #6a1b9a; /* Slightly darker purple */
+  transform: scale(1.05);    /* Subtle zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: #fff;
+}
+.View-more-btn{
+  transition: all 0.3s ease-in-out;
+  background-color: #7b1fa2;
+  color: white;
+}
+.View-more-btn:hover {
+  background-color: #6a1b9a; /* Slightly darker purple */
+  transform: scale(1.05);    /* Subtle zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: #fff;
 }

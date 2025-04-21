@@ -27,12 +27,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
   }
   .input-group {
     position: relative;
     border-radius: 4px;
+    flex: 1 1 180px; /* grow, shrink, base width */
+    min-width: 150px;
   }
   .input {
     width: 100%;
@@ -52,6 +54,10 @@
     border-radius: 8px;
     text-transform: capitalize;
     font-size: 18px;
+    width: 100%; /* make it responsive within its wrapper */
+    max-width: 180px;
+    padding: 10px 20px;
+    font-size: 16px;
   }
   .input-icon {
     position: absolute;
@@ -62,4 +68,73 @@
     color: #777;
     pointer-events: none;
   }
+  .btn-wrapper {
+    flex: 1 1 120px;
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .searchConstant {
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 50px;
+    }
   
+    .form-wrapper {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1268px) {
+    .searchConstant {
+      width: 75%;            /* More flexible width */
+      left: 50%;
+      transform: translateX(-50%);  /* Center horizontally */
+      bottom: 100px;
+    }
+  }
+  @media (max-width: 1268px) {
+    .searchConstant {
+      width: 75%;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 100px;
+    }
+  }
+  
+  /* Tablets (landscape) and large phones */
+  @media (max-width: 992px) {
+    .searchConstant {
+      width: 75%;
+      padding: 16px;
+      bottom: 50px;
+    }
+  }
+  
+  /* Phones */
+  @media (max-width: 768px) {
+    .searchConstant {
+      bottom: 60px;
+      padding: 14px;
+    }
+  }
+  
+  /* Small phones */
+  @media (max-width: 576px) {
+    .searchConstant {
+      width: 65%;
+      bottom: 40px;
+      padding: 12px;
+    }
+  
+    .form-wrapper {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .submit-btn {
+      width: 100%;
+      max-width: none;
+    }
+  }
