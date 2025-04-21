@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-wrapper-canidate-otp {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box-canidate-otp {
+    max-width: 65%;
+    width: 100%;
+    background-color: white;
+    /* border:solid red; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    padding: 0;
+}
+
+.left-side-canidate-otp {
+    background-color: #1e88e5;
+    text-align: center;
+    padding: 2rem;
+    padding: 20px;
+}
+
+.right-side-canidate-otp {
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.input-group-custom-canidate-otp .form-control-canidate-otp {
+    background-color: #f0f0f0;
+    border: none;
+}
+
+.input-group-text-canidate-otp {
+    border: none;
+}
+
+.social-icons-canidate-otp svg {
+    cursor: pointer;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.social-icons-canidate-otp svg:hover {
+    color: #007bff;
+}
+
+.input-icon-canidate-otp {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #1a70bb;
+    pointer-events: none;
+}
+
+.logo-heading-canidate-otp {
+    position: relative;
+    /* display: flex; */
+    justify-content: center;
+    top: -25%;
+    left: -10%; 
+}
+
+.responsive-logo-otp {
+    max-width: 120px;
+    height: auto;
+}
+
+@media (max-width: 1199.98px) {
+    .logo-heading-canidate-otp {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+@media (max-width: 768px) {
+    .responsive-logo-otp {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-logo-otp {
+        max-width: 80px;
+    }
+}

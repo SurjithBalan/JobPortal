@@ -65,3 +65,14 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
+  
+  .apply-now-btn{
+    transition: all 0.3s ease-in-out;
+    background-color: #7b1fa2;
+    color: white;
+  }.apply-now-btn:hover {
+    background-color: #6a1b9a; /* Slightly darker purple */
+    transform: scale(1.05);    /* Subtle zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    color: #fff;
+  }
