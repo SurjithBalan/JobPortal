@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import logo from "../../assets/image/skylarklogo.png";
 import "../usernavbar/usernavbar.css";
 import { FaStar } from "react-icons/fa";
@@ -8,6 +8,7 @@ import CompanyLogin from "../companylogin/CompanyLogin";
 import "../companylogin/companylogin.css";
 import UserLogin from "../userlogin/UserLogin";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 function UserNavbar() {
   const [show, setShow] = useState(false);
   const [candidate, setCandidate] = useState(false);
@@ -17,7 +18,6 @@ function UserNavbar() {
   const handleShow = () => setShow(true);
 
   function candidateOpen() {
-
     setCompany(false);
     setShow(true);
     setCandidate(true);
@@ -29,7 +29,7 @@ function UserNavbar() {
   }
   return (
     <>
-       <nav
+      <nav
         className="navbar navbar-expand-lg sticky-top "
         style={{ backgroundColor: "#1E88E5" }}
       >
@@ -78,22 +78,19 @@ function UserNavbar() {
               </li>
             </ul>
             <div className="btn-login ">
-              <button
-                onClick={companyOpen}
-                className="hover-underline mx-3  "
-               
-              >
-                <span className="m-2">
-                  <MdCorporateFare fontSize="1.5em" />
-                </span>
-                Company Login
-              </button>
-
-              <button
-                onClick={candidateOpen}
-                className="hover-underline  mx-3"
-               
-              >
+              <Link to={"/companylogin"}>
+                <button
+                  // onClick={companyOpen}
+                  className="hover-underline mx-3  "
+                  style={{ color: "#424242" }}
+                >
+                  <span className="m-2">
+                    <MdCorporateFare fontSize="1.5em" />
+                  </span>
+                  Company Login
+                </button>
+              </Link>
+              <button onClick={candidateOpen} className="hover-underline  mx-3">
                 <span className="m-1">
                   <PiUserCircleThin color="black" fontSize="1.5em" />
                 </span>{" "}
@@ -143,8 +140,8 @@ function UserNavbar() {
           {company && <CompanyLogin />}
         </Modal.Body>
       </Modal>
-  </>
-  )
+    </>
+  );
 }
 
-export default UserNavbar
+export default UserNavbar;

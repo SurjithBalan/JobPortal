@@ -10,7 +10,7 @@ export default function Companysentmail() {
       <UserNavbar/>
       <div className="sentmail-wrapper">
         <Container >
-          <Row className="w-75 mh-100">
+          <Row className="w-100 mh-100">
             {/* Left Side */}
             <Col
               md={5}

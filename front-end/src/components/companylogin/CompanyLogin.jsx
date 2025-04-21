@@ -12,7 +12,7 @@ export default function CompanyLogin() {
       <UserNavbar/>
       <div  className="companylogin-wrapper ">
         <Container >
-          <Row className="w-75 mh-100">
+          <Row className="w-100 mh-100">
             {/* Left Side */}
             <Col
               md={5}
