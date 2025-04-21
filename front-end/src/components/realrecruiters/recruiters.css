@@ -17,10 +17,9 @@
     
 }
 .recruiter-image img{
-    width: 350px;
+    width: 80%;
     border-radius: 60px;
-    position: relative;
-    left: 2%;
+    
 }
 .recruiter-content button{
     position: relative;
@@ -80,15 +79,22 @@ padding: 20px;
 }
 
 
-@media(max-width:774px){
+@media(max-width:1126px){
     .recruiter-content button{
         position: unset;
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .recruiter-image{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
-@media(max-width:375px){
+@media(max-width:426px){
+    .recruiter-section{
+        margin: 0%;
+    }
     .recruiter-image img{
         width: 100%;
     }

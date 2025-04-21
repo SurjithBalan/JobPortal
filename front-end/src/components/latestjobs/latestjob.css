@@ -20,7 +20,7 @@
 
 
 .card-wrap{
-    width:450px;                
+    /* width:450%;                 */
 border-radius: 40px;
 margin-bottom: 16px;
 background-color: #1565C040 ;
@@ -30,7 +30,7 @@ flex-direction: column;
     
 }
 .job-contant{
-    width: 380px;
+    
     background-color: #FFFFFF;
     border-radius: 40px;
     display: flex;
@@ -82,27 +82,26 @@ align-content:center;
 
 
 
-  @media(max-width:1210px){
+  @media(max-width:1068px){
     .jobs-listing{
-        max-width: 130%;
+       
         display: flex;
         justify-content: center;
 
     }
-    .card-wrap{
-        max-width: 100%;
-    }
+    
   }
   @media(max-width:920px){
+    .section-latest{
+        margin: auto;
+    }
     .jobs-listing{
         max-width: max-content;
         display: flex;
         flex-direction: row;
 
     }
-    .section-latest{
-       
-    }
+
     .job-contant{
         max-width:100%;
        
@@ -112,22 +111,17 @@ align-content:center;
        max-width: 100%;
     }
   }
-  @media(max-width:437px){
-    .header-jobs{
-        position: relative;
-        right: 60px;
-    } 
+  @media(max-width:426px){
+  .section-latest{
+   margin: auto;
+  }
     .jobs-listing{
-        max-width: 60%;
-       
-
-    }
-    .card-wrap{
-        max-width: 120%;
-    }
-    .job-contant{
         max-width:100%;
+    }
+
+    .job-contant{
+        
         position: relative;
-        left: 20px;
+        left: 1px;
     }
   }

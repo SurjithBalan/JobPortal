@@ -9,13 +9,13 @@ export default function Recruiters() {
   return (
     <Container className='recruiter-section w-auto py-4'>
       <Row >
-        <Col md={8} className='recruiter-top'>
+        <Col lg={7} md={6}  className='recruiter-top'>
           <div className='recruiter-content '>
             <h1 className='text-white'>Get <b>Notified</b> by <b>1000s</b> of <b>Real Recruiters</b></h1>
             <button className='bg-white rounded-4 ' style={{color:'#1E88E5'}}> Highlight My Profile</button>
           </div>
           </Col>
-          <Col md={4} >
+          <Col lg={5} md={6}  >
           <div className='recruiter-image'>
             <img src={image} alt="recruiter-image" />
           </div>

@@ -59,7 +59,7 @@ export default function HrCompanies() {
             <div className="card-jobs  my-lg-4 ">
               <div className="card  ">
                 <div
-                  className="ms-auto p-1 rounded-pill  text-white"
+                  className="ms-auto p-1 rounded-pill  "
                   style={{ backgroundColor: "#00FF0B", padding: "5px" }}
                 >
                   <span>150+</span>

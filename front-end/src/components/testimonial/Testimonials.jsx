@@ -67,8 +67,8 @@ export default function Testimonials() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     pauseOnHover: true, // Pauses autoplay when hovered
     nextArrow: <CustomArrow direction="front" />,
     prevArrow: <CustomArrow direction="back" />,
@@ -80,7 +80,7 @@ export default function Testimonials() {
     testimonial.map((state,index)=>(
         <div className="testimonial-top ">
         <div key={index} className="testimonial">
-          <div className="message">
+          <div className="message px-4">
             <p className="">
               {state.massage}
             </p>

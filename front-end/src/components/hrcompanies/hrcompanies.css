@@ -12,6 +12,7 @@
 .card-jobs {
    display: flex;
    justify-items: center;
+   
 }
 
 .image-container {
@@ -44,16 +45,10 @@
     font-size: 16px;
 }
 
-.card {
-
-
-
-}
 
 .card-jobs:hover {
     transform: scale(1.03);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
+   
 }
 
 .card button {
@@ -68,7 +63,8 @@
 
 .card span {
     font-size: small;
-    font-weight: 400;
+    font-weight: 600;
+    color: black;
     
 }
 
@@ -142,13 +138,27 @@
     opacity: 1;
     transform: rotate(-45deg) translateY(100%);
 }
-@media(max-width:760px){
+@media(max-width:769px){
+    .slider-container{
+        margin: 2%;
+    }
     .card{
         width: 250px;
         margin-bottom: 20px;
     }
+    .next {
+        right: 0px;
+    }
+    
+    .prev {
+        left: 0px;
+    }
+    
 }
-@media(max-width:448px) {
+@media(max-width:425px) {
+    .slider-container{
+        margin: 0%;
+    }
     .card {
         width: 190px;
         margin-bottom: 20px;
@@ -165,4 +175,12 @@
         text-align: center;
         justify-content: space-around;
     }
+    .next {
+        right: 0px;
+    }
+    
+    .prev {
+        left: 0px;
+    }
+    
 }

@@ -93,9 +93,22 @@ align-items: center;
         width: 100%;
     }
 }
-@media(max-width:492px){
+@media(max-width:426px){
+    .testimonial-section {
+     margin: auto;
+    }
     .message {
         width: 100%;
         height: fit-content;
+    }
+
+    .front{
+        top: 160px;
+        right: -0px;
+        transform: rotate(180deg);
+    }
+    
+    .back {
+        left: -0px;
     }
 }

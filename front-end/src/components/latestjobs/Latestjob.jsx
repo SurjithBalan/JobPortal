@@ -51,8 +51,8 @@ export default function Latestjob() {
                   <div className="small-card ">
                     <div className="jobs   my-3">
                       <h6>Graphic Designer</h6>
-                      <i>
-                        <CiBookmark />
+                      <i className="p-1" style={{backgroundColor:'#E8F5E9' ,borderRadius:'50px'}}>
+                        <CiBookmark color="#43A047"  />
                       </i>
                     </div>
                     <div className="body-text  ">
