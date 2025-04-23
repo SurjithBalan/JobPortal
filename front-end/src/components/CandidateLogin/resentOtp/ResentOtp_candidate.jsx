@@ -5,10 +5,14 @@ import { FaAsterisk, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Candidate_resentOtp_login.css';
 import skylarkLogo from '../../../assets/image/skylarkLogo.png'
 import { Link } from "react-router-dom";
+import UserNavbar from '../../usernavbar/UserNavbar';
 
 const Candidate_resentOtp_login = () => {
     
     return (
+        <>
+        <UserNavbar/>
+       
         <div className="login-wrapper-canidate-otp">
             <Container fluid>
                 <Row className="min-vh-100 justify-content-center align-items-center">
@@ -44,6 +48,7 @@ const Candidate_resentOtp_login = () => {
                 </Row>
             </Container>
         </div>
+        </>
     );
 };
 export default Candidate_resentOtp_login;

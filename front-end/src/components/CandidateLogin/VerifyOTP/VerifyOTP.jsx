@@ -4,9 +4,12 @@ import { FaAsterisk, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { IoIosStar } from "react-icons/io";
 import './VerifyOTP.css';
 import skylarkLogo from '../../../assets/image/skylarklogo.png'
+import UserNavbar from '../../usernavbar/UserNavbar';
 
 const VerifyOTP = () => {
     return (
+        <>
+        <UserNavbar/>
         <div className="login-wrapper-canidate-otp">
             <Container fluid>
                 <Row className="min-vh-100 justify-content-center align-items-center">
@@ -65,6 +68,7 @@ const VerifyOTP = () => {
                 </Row>
             </Container>
         </div>
+        </>
     );
 };
 export default VerifyOTP;

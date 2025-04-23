@@ -55,7 +55,7 @@ const JobSearchBar = () => {
             </Container>
             <Container>
                 {/* Category Scroll */}
-                <div className="scroll-bar-wrapper p-3 rounded-4 d-flex align-items-center justify-content-between bg-light shadow-sm">
+                <div className="d-flex  scroll-bar-wrapper p-2 rounded-4 d-flex  bg-light shadow-sm">
                     {/* Left Button */}
                     <Button variant="light" className="arrow-btn p-0" onClick={() => scroll('left')}>
                         <FaChevronLeft />

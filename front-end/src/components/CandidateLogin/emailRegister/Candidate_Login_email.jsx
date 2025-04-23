@@ -5,11 +5,14 @@ import './Candidate_Login_email.css';
 import skylarkLogo from '../../../assets/image/skylarklogo.png'
 // import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import UserNavbar from "../../usernavbar/UserNavbar";
 
 const CandidateLogin = () => {
 
     const navigate = useNavigate();
     return (
+        <>
+        <UserNavbar/>
         <div className="login-wrapper-canidate-email">
             <Container fluid>
                 <Row className="min-vh-100 justify-content-center align-items-center">
@@ -67,6 +70,7 @@ const CandidateLogin = () => {
                 </Row>
             </Container>
         </div>
+        </>
     );
 };
 export default CandidateLogin;

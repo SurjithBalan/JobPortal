@@ -1,7 +1,20 @@
 import React from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import { FaBuilding, FaBriefcase } from 'react-icons/fa';
+import { PiBuildingOffice } from "react-icons/pi";
+import { LuArrowDownLeft, LuArrowUpRight } from 'react-icons/lu';
+import { PiCurrencyInrDuotone } from "react-icons/pi";
+import { PiStudentDuotone } from "react-icons/pi";
+import { BsGenderAmbiguous } from "react-icons/bs";
+import { TiDocumentText } from "react-icons/ti";
+import { PiCalendar } from "react-icons/pi";
+import { IoLanguageOutline } from "react-icons/io5";
+
+
+
 import CompanysList from './CompanyList/CompanysList'
+import './HRCompanyJobs.css'
 
 const HRCompanyJobListingPage = () => {
   const dateOptions = [
@@ -13,97 +26,131 @@ const HRCompanyJobListingPage = () => {
     "2025-04-27",
     "2025-04-28"
   ];
+
+  const [experience, setExperience] = useState(10);
+  const [salary, setSalary] = useState(900);
+
   return (
-    <Container fluid className="py-4 px-3">
+    <Container fluid className="py-4 px-3" style={{ overflowX: 'hidden' }}>
       <Row>
         {/* Left Sidebar - Filters */}
-        <Col xs={12} md={3} lg={3} className="bg-light rounded p-3 mb-4 mb-md-0 shadow-sm">
+        <Col
+          xs={12}
+          md={3}
+          lg={3}
+          className="rounded p-3 mb-3 mb-md-0 shadow-sm mx-60  HRcompany-area"
+          style={{ overflowY: 'auto' }}
+        >
           <h5 className="fw-bold mb-3">Work Mode</h5>
-          <Form.Select className="mb-4">
-            <option>Work Mode</option>
-            <option>Remote</option>
-            <option>Hybrid</option>
-            <option>On-site</option>
-          </Form.Select>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <PiBuildingOffice className="custom-icon" />
+            <Form.Select className="custom-select">
+              <option>Work Mode</option>
+              <option>Remote</option>
+              <option>Hybrid</option>
+              <option>On-site</option>
+            </Form.Select>
+          </div>
 
           <h5 className="fw-bold mb-3">Experience Level</h5>
-          <div className="d-flex align-items-center mb-2 gap-2">
-            <Form.Control type="number" min={0} max={50} defaultValue={0} />
-            <span className="fw-bold">to</span>
-            <Form.Control type="number" min={0} max={50} defaultValue={20} />
+          <div className="d-flex align-items-center justify-content-start mb-2 gap-5 mb-2">
+            <div className="experience-box d-flex align-items-center">
+              <LuArrowDownLeft className="me-2" />
+              <span>0</span>
+            </div>
+            <div className="experience-box d-flex align-items-center">
+              <LuArrowUpRight className="me-2" />
+              <span>{experience}</span>
+            </div>
           </div>
-          <Form.Range />
-
+          <div className="d-flex align-items-center mb-2 gap-2 mb-5">
+            <Form.Range
+              min={0}
+              max={20}
+              value={experience}
+              onChange={(e) => setExperience(parseInt(e.target.value))}
+            />
+          </div>
           <h5 className="fw-bold mt-4 mb-3">Company Type</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBuilding /></InputGroup.Text>
-            <Form.Select>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <PiBuildingOffice className="custom-icon" />
+            <Form.Select className='custom-select' >
               <option>Company Type</option>
               <option>Startup</option>
               <option>MNC</option>
             </Form.Select>
-          </InputGroup>
-
+          </div>
           <h5 className="fw-bold mb-3">Functionality</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>Functionality</option>
               <option>Frontend</option>
               <option>Backend</option>
               <option>DevOps</option>
             </Form.Select>
-          </InputGroup>
+          </div>
 
           <h5 className="fw-bold mb-3">Salary Range</h5>
-          <div className="d-flex align-items-center mb-2 gap-2">
-            <Form.Control type="number" min={0} defaultValue={0} prefix="₹" />
-            <span className="fw-bold">to</span>
-            <Form.Control type="number" min={0} defaultValue={900} prefix="₹" />
+          <div className="d-flex align-items-center justify-content-start mb-2 gap-5 mb-2">
+            <div className="experience-box d-flex align-items-center">
+              <PiCurrencyInrDuotone className="me-2" />
+              <span>0</span>
+            </div>
+            <div className="experience-box d-flex align-items-center">
+              <PiCurrencyInrDuotone className="me-2" />
+              <span>{salary}</span>
+            </div>
           </div>
-          <Form.Range />
+          <div className="d-flex align-items-center mb-2 gap-2 mb-5">
+            <Form.Range
+              min={0}
+              max={900}
+              value={salary}
+              onChange={(e) => setSalary(parseInt(e.target.value))}
+            />
+          </div>
+
+
           <h5 className="fw-bold mb-3">Education</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
-            <Form.Select>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <PiStudentDuotone className="custom-icon" />
+            <Form.Select className='custom-select'>
               <option>Bsc</option>
               <option>BE</option>
               <option>B-Tech</option>
               <option>MCA</option>
             </Form.Select>
-          </InputGroup>
+          </div>
           <h5 className="fw-bold mb-3">Specific Qualification</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>Qualification 1</option>
               <option>Qualification 2</option>
               <option>Qualification 3</option>
               <option>Qualification 4</option>
             </Form.Select>
-          </InputGroup>
+          </div>
           <h5 className="fw-bold mb-3">Gender</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
-            <Form.Select>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <BsGenderAmbiguous className="custom-icon" />
+            <Form.Select className='custom-select' >
               <option>Male</option>
               <option>Female</option>
               <option>Transgender</option>
             </Form.Select>
-          </InputGroup>
+          </div>
           <h5 className="fw-bold mb-3">Notice Period</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>7 Days</option>
               <option>15 Days</option>
               <option>30 Days</option>
               <option>45 Days</option>
             </Form.Select>
-          </InputGroup>
+          </div>
+
           <h5 className="fw-bold mb-3"> Job Type</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>Full-Time </option>
               <option>Remote</option>
@@ -113,12 +160,12 @@ const HRCompanyJobListingPage = () => {
               <option>Temporary</option>
               <option>Commission-Based</option>
             </Form.Select>
-          </InputGroup>
+          </div>
+
           <h5 className="fw-bold mb-3">Career Level</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
-            <Form.Select>
-              <option> </option>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <TiDocumentText className="custom-icon" />
+            <Form.Select className='custom-select'>
               <option>Internship / Student</option>
               <option>Entry Level / Fresher</option>
               <option>Junior Leve</option>
@@ -127,31 +174,32 @@ const HRCompanyJobListingPage = () => {
               <option>Director</option>
               <option>Consultant / Specialist</option>
             </Form.Select>
-          </InputGroup>
+          </div>
+
+
+
           <h5 className="fw-bold mb-3">Date Posted</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
-            <Form.Select>
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <PiCalendar className="custom-icon" />
+            <Form.Select className='custom-select'>
               <option value="">Select Date</option>
               {dateOptions.map((date, index) => (
                 <option key={index} value={date}>{date}</option>
               ))}
             </Form.Select>
-          </InputGroup>
+          </div>
+
           <h5 className="fw-bold mb-3">Language</h5>
-          <InputGroup className="mb-4">
-            <InputGroup.Text><FaBriefcase /></InputGroup.Text>
-            <Form.Select>
-              <option>Engish</option>
+
+          <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
+            <IoLanguageOutline className="custom-icon" />
+            <Form.Select className='custom-select'>
+
               <option>Tamil</option>
-              <option>Hindi</option>
-
+              <option>English</option>
+              <option>Hindi / Specialist</option>
             </Form.Select>
-          </InputGroup>
-
-
-
-
+          </div>
         </Col>
         {/* Right Column - Job Component */}
         <Col xs={12} md={9} lg={9} className="d-flex justify-content-center text-center mt-0">
