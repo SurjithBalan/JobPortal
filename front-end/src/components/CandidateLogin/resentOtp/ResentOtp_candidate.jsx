@@ -4,8 +4,10 @@ import { FaAsterisk, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { IoIosStar } from "react-icons/io";
 import './Candidate_resentOtp_login.css';
 import skylarkLogo from '../../../assets/image/skylarkLogo.png'
+import { Link } from "react-router-dom";
 
 const Candidate_resentOtp_login = () => {
+    
     return (
         <div className="login-wrapper-canidate-otp">
             <Container fluid>
@@ -33,7 +35,7 @@ const Candidate_resentOtp_login = () => {
                             <h3 className="fw-bold mb-3 fs-2" style={{ color: '#1e88e5' }}>Re-send OTP</h3>
                             <p className="small text-muted">We’ve sent an OTP to xyz@gmail.com please enter your code.</p>
                             <p className="small text-muted">
-                                Back to <a href="/login" style={{ color: '#1e88e5', textDecoration: 'none', fontWeight: '500' }}>Log-in</a>
+                                Back to <a href="/login" style={{ color: '#1e88e5', textDecoration: 'none', fontWeight: '500' }}><Link to="/Candidate_verify_Otp">Log-in</Link></a>
                             </p>
 
                         </Col>

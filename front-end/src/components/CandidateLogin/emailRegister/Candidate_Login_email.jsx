@@ -3,8 +3,12 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { FaEnvelope, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Candidate_Login_email.css';
 import skylarkLogo from '../../../assets/image/skylarklogo.png'
+// import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const CandidateLogin = () => {
+
+    const navigate = useNavigate();
     return (
         <div className="login-wrapper-canidate-email">
             <Container fluid>
@@ -50,10 +54,10 @@ const CandidateLogin = () => {
                                     </div>
                                 </Form.Group>
 
-                                <Button
+                                <Button onClick={() => navigate('/CandidateLogin_otp')}
                                     className="rounded-pill text-white "
                                     style={{ backgroundColor: '#1e88e5' }}
-                                >
+                                 >
                                     Send OTP
                                 </Button>
                             </Form>

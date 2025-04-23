@@ -9,6 +9,7 @@ import "../companylogin/companylogin.css";
 import UserLogin from "../userlogin/UserLogin";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 function UserNavbar() {
   const [show, setShow] = useState(false);
   const [candidate, setCandidate] = useState(false);
@@ -16,6 +17,8 @@ function UserNavbar() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const navigate = useNavigate();
 
   function candidateOpen() {
     setCompany(false);
@@ -90,11 +93,12 @@ function UserNavbar() {
                   Company Login
                 </button>
               </Link>
-              <button onClick={candidateOpen} className="hover-underline  mx-3">
+              <Link to={"/CandidateLogin"}></Link>
+              <button  className="hover-underline  mx-3" onClick={() => navigate('/CandidateLogin')}>
                 <span className="m-1">
                   <PiUserCircleThin color="black" fontSize="1.5em" />
                 </span>{" "}
-                Candidate Login
+                CandidateLogin
               </button>
             </div>
           </div>

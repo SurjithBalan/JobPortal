@@ -4,8 +4,10 @@ import { FaAsterisk, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { IoIosStar } from "react-icons/io";
 import './Candidate_Login_otp.css';
 import skylarkLogo from '../../../assets/image/skylarklogo.png'
+import { useNavigate } from 'react-router-dom';
 
-const CandidateLoginEmail = () => {
+const CandidateLogin_otp = () => {
+    const navigate = useNavigate();
     return (
         <div className="login-wrapper-canidate-otp">
             <Container fluid>
@@ -36,7 +38,7 @@ const CandidateLoginEmail = () => {
                                 {/* <FaLinkedin size={20} />
                                 <FaGithub size={20} /> */}
                             </div>
-                            <p className="small text-muted">Or use your email for registration</p>
+                            <p className="small text-muted">Enter the otp received from the mail</p>
                             <Form className="w-70">
                                 <Form.Group className="mb-3">
                                     <div className="position-relative">
@@ -57,7 +59,7 @@ const CandidateLoginEmail = () => {
                                         Re-send <a href="/login" className="text-decoration-none">OTP?</a>
                                     </p>
                                 </div>
-                                <Button
+                                <Button onClick={() => navigate('/Candidate_resentOtp_login')}
                                     className="rounded-pill text-white "
                                     style={{ backgroundColor: '#1e88e5' }}
                                 >
@@ -66,10 +68,9 @@ const CandidateLoginEmail = () => {
                             </Form>
                         </Col>
                     </div>
-
                 </Row>
             </Container>
         </div>
     );
 };
-export default CandidateLoginEmail;
+export default CandidateLogin_otp;

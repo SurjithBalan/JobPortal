@@ -10,7 +10,20 @@
 .react-multi-carousel-item {
     padding: 0 20px;
 }
-
+.input-field{
+  width: 100%;
+  overflow: hidden;
+}
+.submit-btn {
+  min-width: 0;
+  min-height: auto;
+}
+.search-box {
+  background-color: #7dbff1 !important;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+}
 
 .searchConstant {
     position: relative;    

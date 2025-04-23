@@ -75,6 +75,16 @@
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
+.custom-badge4 {
+  background-color: #f9f7d7!important; /* custom color */
+  color: #424242;            /* custom text color */
+  padding: 0.4em 0.855em;     /* optional */
+  border-radius: 0.5rem;     /* optional */
+  font-weight:bold;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
 .badge-sub-datas{
   background-color:transparent !important;
   color: #424242;            /* custom text color */

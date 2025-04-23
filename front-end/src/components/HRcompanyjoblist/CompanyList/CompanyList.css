@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.recommended-jobs-section {
+    position: relative;
+    margin-top: 30px;
+}
+
+.recommend_title {
+    font-weight: 700;
+    color: #1E88E5;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.job-card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.company-logo {
+    width: 64px;
+    height: auto;
+    object-fit: contain;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: inline;
+}
+
+.badge-list .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.badge-inine {
+    display: inline;
+}
+
+.job-info,
+.job-meta,
+.job-location {
+    font-size: 14px;
+}
+
+.btn-primary {
+    padding: 6px 16px;
+    font-weight: 600;
+}
+
+.hover-zoom-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-zoom-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.apply-now-btn {
+    transition: all 0.3s ease-in-out;
+    background-color: #7b1fa2;
+    color: white;
+}
+
+.apply-now-btn:hover {
+    background-color: #6a1b9a;
+    /* Slightly darker purple */
+    transform: scale(1.05);
+    /* Subtle zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    color: #fff;
+}

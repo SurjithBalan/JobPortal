@@ -1,0 +1,14 @@
+sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+  }
+  
+  .job-card {
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
