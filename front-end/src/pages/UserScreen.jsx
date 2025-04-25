@@ -13,12 +13,9 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-// import CandidateLoginEmail from '../components/CandidateLogin/emailRegister/Candidate_Login_email'
-// import Candidate_Login_otp from '../components/CandidateLogin/otpEnterPage/Candidate_Login_otp'
-// import Candidate_resentOtp_login from '../components/CandidateLogin/resentOtp/ResentOtp_candidate'
-// import VerifyOTP from '../components/CandidateLogin/VerifyOTP/VerifyOTP'
 import JobSearchBar from '../components/HRcompanyjoblist/JobSearchBar'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
+
 function UserScreen() {
   return (
     <div>
@@ -34,12 +31,7 @@ function UserScreen() {
       <Recruiters/>
       <About/>
       <Testimonials/>
-      <FeedbackForm />
-      {/* <CandidateLoginEmail/>    
-      <Candidate_Login_otp/>
-      <Candidate_resentOtp_login/>
-      <VerifyOTP/> */}
-      <JobSearchBar/>
+      <FeedbackForm />  
       <HRCompanyJobListingPage/>
       <Footer/>
       
