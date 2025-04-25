@@ -7,6 +7,7 @@ import UserBanner_3 from "./slider_3/Userbanner_slider_3";
 import "./UserbannerCarousel.css"
 import { CiSearch, CiLocationOn } from "react-icons/ci";
 import { InputGroup, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const UserbannerAutoSlider = () => {
     const responsive = {
@@ -48,9 +49,11 @@ const UserbannerAutoSlider = () => {
                         />
                     </div>
                     <div className="btn-wrapper">
+                        <Link to='/hero-search-filter'>
                         <button type="submit" className="submit-btn">
                             Search
                         </button>
+                        </Link>
                     </div>
                 </form>
             </div>

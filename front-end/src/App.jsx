@@ -10,6 +10,7 @@ import Candidate_resentOtp_login from './components/CandidateLogin/resentOtp/Res
 import VerifyOTP from './components/CandidateLogin/VerifyOTP/VerifyOTP'
 import UserScreen from './pages/UserScreen'
 import { HashRouter as Router , Routes, Route } from "react-router-dom";
+import Herofilter from './components/herofilter/Herofilter';
 function App() {
  
 
@@ -27,6 +28,7 @@ function App() {
             <Route path='/CandidateLogin_otp' element = {<CandidateLogin_otp/>}/>
             <Route path='/Candidate_resentOtp_login' element = {<Candidate_resentOtp_login/>}/>
             <Route path='/Candidate_verify_Otp' element = {<VerifyOTP/>}/>
+            <Route path='/hero-search-filter' element = {<Herofilter/>}/>
                       
           </Routes>
         </div>
