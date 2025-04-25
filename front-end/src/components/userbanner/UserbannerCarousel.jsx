@@ -6,8 +6,9 @@ import UserBanner_2 from "./slider_2/Userbanner_slider_2";
 import UserBanner_3 from "./slider_3/Userbanner_slider_3";
 import "./UserbannerCarousel.css"
 import { CiSearch, CiLocationOn } from "react-icons/ci";
-import { InputGroup, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+// import { InputGroup, Form, Button } from "react-bootstrap";
+// import { Link } from "react-router-dom";
 
 const UserbannerAutoSlider = () => {
     const responsive = {
@@ -27,6 +28,12 @@ const UserbannerAutoSlider = () => {
             breakpoint: { max: 768, min: 0 },
             items: 1,
         },
+    };
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        // Do some logic here...
+        navigate('/hero-search-filter'); // navigate manually
     };
     const SearchBar = () => {
         return (
@@ -49,11 +56,9 @@ const UserbannerAutoSlider = () => {
                         />
                     </div>
                     <div className="btn-wrapper">
-                        <Link to='/hero-search-filter'>
-                        <button type="submit" className="submit-btn">
+                        <button type="button" className="submit-btn" onClick={handleSearch}>
                             Search
                         </button>
-                        </Link>
                     </div>
                 </form>
             </div>

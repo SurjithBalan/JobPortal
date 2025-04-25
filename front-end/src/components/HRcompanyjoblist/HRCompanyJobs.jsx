@@ -12,7 +12,7 @@ import { PiCalendar } from "react-icons/pi";
 import { IoLanguageOutline } from "react-icons/io5";
 import CompanysList from './CompanyList/CompanysList'
 import './HRCompanyJobs.css'
-import JobSearchBar from './JobSearchBar'
+import JobSearchBarCarousal from './JobSearchBarCarousal'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 
@@ -127,14 +127,16 @@ const HRCompanyJobListingPage = () => {
 
     return (
       <div className="dropdown w-100" style={{ maxWidth: 500, margin: "auto" }}>
-       
         <button
           className=" d-flex btn justify-content-between align-items-center bg-white  w-100 fs-6 fw-normal"
           type="button"
           onClick={() => setOpen(!open)}
           style={{ color: "#424242" }}
         >
-          {selected || "Language"}
+          <span className="d-flex align-items-center gap-2">
+            <IoLanguageOutline className="text-secondary" />
+            {selected || "Language"}
+          </span>
           {/* Icon for dropdown */}
           {open ? <FaChevronUp /> : <FaChevronDown />}
 
@@ -289,17 +291,17 @@ const HRCompanyJobListingPage = () => {
 
   return (
     <Container fluid className="py-4 px-3 m-3" style={{ overflowX: 'hidden' }}>
-      <JobSearchBar />
+      <JobSearchBarCarousal />
       <Row>
         {/* Left Sidebar - Filters */}
         <Col
           xs={12}
           md={3}
           lg={3}
-          className="rounded p-3 mb-3 mb-md-0 shadow-sm mx-60  HRcompany-area"
+          className="rounded p-3 mb-3 mb-md-0 shadow-sm HRcompany-area"
           style={{ overflowY: 'auto' }}
         >
-          <h5 className="fw-bold mb-3">Work Mode</h5>
+          <h5 className="fw-bold mb-3 fs-6">Work Mode</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5 position-relative">
             <PiBuildingOffice className="custom-icon" />
             <Form.Select className='custom-select'>
@@ -308,7 +310,7 @@ const HRCompanyJobListingPage = () => {
               <option>Remote</option>
             </Form.Select>
           </div>
-          <h5 className="fw-bold mb-3">Experience Level</h5>
+          <h5 className="fw-bold mb-3 fs-6">Experience Level</h5>
           <div className="d-flex align-items-center justify-content-start mb-2 gap-5">
             <div className="experience-box d-flex align-items-center">
               <LuArrowDownLeft className="me-2" />
@@ -334,7 +336,7 @@ const HRCompanyJobListingPage = () => {
               />
             </div>
           </div>
-          <h5 className="fw-bold mt-4 mb-3">Company Type</h5>
+          <h5 className="fw-bold mt-4 mb-3 fs-6">Company Type</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <PiBuildingOffice className="custom-icon" />
             <Form.Select className='custom-select'
@@ -348,12 +350,12 @@ const HRCompanyJobListingPage = () => {
 
             </Form.Select>
           </div>
-          <h5 className="fw-bold mb-3">Functionality</h5>
+          <h5 className="fw-bold mb-3 fs-6">Functionality</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <SearchableFunctionalityDropdown />
           </div>
 
-          <h5 className="fw-bold mb-3">Salary Range</h5>
+          <h5 className="fw-bold mb-3 fs-6">Salary Range</h5>
           <div className="d-flex align-items-center justify-content-start mb-2 gap-5 mb-2">
             <div className="experience-box d-flex align-items-center">
               <PiCurrencyInrDuotone className="me-2" />
@@ -381,7 +383,7 @@ const HRCompanyJobListingPage = () => {
           </div>
 
 
-          <h5 className="fw-bold mb-3">Education</h5>
+          <h5 className="fw-bold mb-3 fs-6">Education</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <PiStudentDuotone className="custom-icon" />
             <Form.Select className='custom-select'>
@@ -392,12 +394,12 @@ const HRCompanyJobListingPage = () => {
               <option>Others</option>
             </Form.Select>
           </div>
-          <h5 className="fw-bold mb-3">Specific Qualification</h5>
+          <h5 className="fw-bold mb-3 fs-6">Specific Qualification</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <SpecificQualificationDropdown />
           </div>
 
-          <h5 className="fw-bold mb-3">Gender</h5>
+          <h5 className="fw-bold mb-3 fs-6">Gender</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <BsGenderAmbiguous className="custom-icon" />
             <Form.Select className='custom-select' >
@@ -406,7 +408,7 @@ const HRCompanyJobListingPage = () => {
               <option>Both</option>
             </Form.Select>
           </div>
-          <h5 className="fw-bold mb-3">Notice Period</h5>
+          <h5 className="fw-bold mb-3 fs-6">Notice Period</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>Immediately</option>
@@ -415,7 +417,7 @@ const HRCompanyJobListingPage = () => {
             </Form.Select>
           </div>
 
-          <h5 className="fw-bold mb-3"> Job Type</h5>
+          <h5 className="fw-bold mb-3 fs-6"> Job Type</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <Form.Select>
               <option>Job Type</option>
@@ -425,7 +427,7 @@ const HRCompanyJobListingPage = () => {
             </Form.Select>
           </div>
 
-          <h5 className="fw-bold mb-3">Career Level</h5>
+          <h5 className="fw-bold mb-3 fs-6">Career Level</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <TiDocumentText className="custom-icon" />
             <Form.Select className='custom-select'>
@@ -436,10 +438,7 @@ const HRCompanyJobListingPage = () => {
               <option>C-Suite</option>
             </Form.Select>
           </div>
-
-
-
-          <h5 className="fw-bold mb-3">Date Posted</h5>
+          <h5 className="fw-bold mb-3 fs-6">Date Posted</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <PiCalendar className="custom-icon" />
             <Form.Select className='custom-select'>
@@ -450,7 +449,7 @@ const HRCompanyJobListingPage = () => {
               <option>4 Weeks Ago</option>
             </Form.Select>
           </div>
-          <h5 className="fw-bold mb-3">Language</h5>
+          <h5 className="fw-bold mb-3 fs-6">Language</h5>
           <div className="d-flex align-items-center custom-select-wrapper mb-2 gap-2 mb-5">
             <SelectLanguage />
           </div>

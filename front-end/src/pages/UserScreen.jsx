@@ -13,7 +13,7 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-import JobSearchBar from '../components/HRcompanyjoblist/JobSearchBar'
+// import JobSearchBar from '../components/HRcompanyjoblist/JobSearchBar'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 
 function UserScreen() {
