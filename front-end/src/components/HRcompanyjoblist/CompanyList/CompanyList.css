@@ -108,11 +108,12 @@
     border-radius: 1rem;
     min-width: 0;
 }
+
 .button-violet{
     background-color: #7b1fa2;
     border-radius: 1rem;
     min-width: 0;
 }
 .button-violet:hover{
-    background-color: violet;
+    background-color:#6936f5;
 }
