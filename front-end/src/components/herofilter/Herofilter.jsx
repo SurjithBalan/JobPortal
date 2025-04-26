@@ -243,14 +243,15 @@ export default function Herofilter() {
                   </span>
                   <input
                     type="text"
-                    className="form-control border-start-0"
+                    className="form-control shadow-none border-start-1 border  border-right-1"
                     placeholder="Job title, Keywords, or Skills"
                     value={search}
+                    style={{borderRadius:"0px"}}
                     onChange={(e)=>setSearch(e.target.value)}
                   />
                   <input
                     type="text"
-                    className="form-control border-start-1 border-end-1"
+                    className="form-control shadow-none border-start-1 border border-end-1"
                     placeholder="Location"
                     value={searchLocation}
                     onChange={(e)=>setSearchLocation(e.target.value)}
