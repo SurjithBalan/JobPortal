@@ -13,12 +13,13 @@ const CandidateLogin = () => {
     return (
         <>
         <UserNavbar/>
-        <div className="login-wrapper-canidate-email">
+       
+        <div className="login-wrapper-canidate-email mt-0">
             <Container fluid>
-                <Row className="min-vh-100 justify-content-center align-items-center">
-                    <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', maxHeight: 'auto' }}>
+            <Row className="justify-content-center align-items-start " style={{ minHeight: '100vh' }}>
+            <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', minHeight: '50vh' }}>
                         {/* Left Side */}
-                        <Col md={6} className="d-flex flex-column justify-content-center align-items-center left-side-canidate-email">
+                        <Col md={5} className="d-flex flex-column justify-content-center align-items-center left-side-canidate-email">
                             <div className='logo-heading-canidate-email'>
                                 <img
                                     src={skylarkLogo}
@@ -37,7 +38,7 @@ const CandidateLogin = () => {
                         </Col>
 
                         {/* Right Side */}
-                        <Col md={6} className="d-flex flex-column justify-content-center align-items-center right-side-canidate-email">
+                        <Col md={7} className="d-flex flex-column justify-content-center align-items-center right-side-canidate-email">
                             <h3 className="fw-bold mb-3 fs-2" style={{ color: '#1e88e5' }}>Candidate Login</h3>
                             <div className="d-flex gap-3 mb-2 social-icons-canidate-email">
                                 <FaGoogle size={20} style={{ color: '#DB4437' }} />

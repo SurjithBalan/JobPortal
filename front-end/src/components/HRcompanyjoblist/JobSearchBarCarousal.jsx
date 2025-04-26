@@ -46,6 +46,8 @@ const CategoryCarousel = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        centerMode: false,
+        centerPadding: '0px',
         prevArrow: <LeftArrow onClick={() => sliderRef.current.slickPrev()} />,  // Custom Left Arrow with slickPrev method
         nextArrow: <RightArrow onClick={() => sliderRef.current.slickNext()} />,  // Custom Right Arrow with slickNext method
         responsive: [
@@ -65,14 +67,14 @@ const CategoryCarousel = () => {
     };
 
     return (
-        <Container className="p-4 overflow-hidden align-items-center">
+        <Container className="p-2 overflow-hidden align-items-center">
             {/* Search Box */}
-            <div className="position-relative align-items-center bg-light p-4 rounded-4 shadow-sm my-4">
+            <div className="position-relative align-items-center justify-content-between bg-light p-4 rounded-4 shadow-sm my-4">
                 <Slider ref={sliderRef} {...settings}>
                     {categories.map((cat, idx) => (
                         <div
                             key={idx}
-                            className="d-flex justify-content-center"
+                            className="d-flex justify-content-center align-items-center"
                             style={{
                                 minWidth: '0',
                                 maxWidth: '220px',
@@ -84,7 +86,7 @@ const CategoryCarousel = () => {
                             }}
                         >
                             <div
-                                className="d-flex flex-wrap  p-3 text-dark fw-bold rounded-5 category-pill d-flex flex-shrink-0 text-center"
+                                className="d-flex flex-wrap  p-3 me-0 text-dark fw-bold rounded-5 category-pill d-flex flex-shrink-0 text-center"
                                 style={{
                                     minWidth: '0',
                                     maxWidth: '220px',
@@ -106,11 +108,11 @@ const CategoryCarousel = () => {
 };
 
 
-const JobSearchBarCarousal = () => {   
-    
+const JobSearchBarCarousal = () => {
+
     return (
         <>
-            <Container className="py-4 px-3 overflow-hidden">
+            <Container className=" px-3 overflow-hidden">
                 {/* Search Box */}
                 <div className="search-box bg-primary rounded-4 p-4 shadow-sm w-100">
                     <Row className="align-items-center p-2 g-0 bg-white rounded-3" >

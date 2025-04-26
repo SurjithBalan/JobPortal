@@ -84,7 +84,7 @@ const FeaturedCandidates = () => {
                 arrows={true}
                 keyBoardControl={true}
                 containerClass="carousel-container"
-                itemClass="px-3"
+                itemClass="px-3"                
             >
                 {candidates.map((candidate, index) => (
                     <div key={index} className="shadow-sm h-100 d-flex flex-column justify-content-between">

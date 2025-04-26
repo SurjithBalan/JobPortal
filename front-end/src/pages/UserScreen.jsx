@@ -13,28 +13,29 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-// import JobSearchBar from '../components/HRcompanyjoblist/JobSearchBar'
+import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 
 function UserScreen() {
   return (
     <div>
-      <UserNavbar/>
+      <UserNavbar />
       <UserbannerAutoSlider />
-      <Counter/>
-      <HrCompanies/>
+      <Counter />
+      <HrCompanies />
       <UrgentFeaturedJobs />
       <RecommendedJobs />
-      <Latestjob/>
+      <Latestjob />
       <JobCategories />
       <FeaturedCandidates />
-      <Recruiters/>
-      <About/>
-      <Testimonials/>
-      <FeedbackForm />  
-      <HRCompanyJobListingPage/>
-      <Footer/>
-      
+      <Recruiters />
+      <About />
+      <Testimonials />
+      <FeedbackForm />
+      <BreadcrumbNavbarCompanyList />
+      <HRCompanyJobListingPage />
+      <Footer />
+
     </div>
   )
 }

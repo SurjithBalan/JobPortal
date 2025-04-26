@@ -43,93 +43,133 @@
 .job-logo {
   width: 64px;
   height: auto;
-  object-fit: contain;  
+  object-fit: contain;
 }
+
 .custom-badge1 {
-  background-color: rgb(237,231,246, 0.8)!important; /* custom color */
-  color: #424242;            /* custom text color */
-  padding: 0.4em 0.85em;     /* optional */
-  border-radius: 0.5rem;     /* optional */
+  background-color: rgb(237, 231, 246, 0.8) !important;
+  /* custom color */
+  color: #424242;
+  /* custom text color */
+  padding: 0.4em 0.85em;
+  /* optional */
+  border-radius: 0.5rem;
+  /* optional */
   font-weight: 600;
   font-size: 16px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
+
 .custom-badge2 {
-  background-color: #dbefdc!important; /* custom color */
-  color: #424242;            /* custom text color */
-  padding: 0.4em 0.85em;     /* optional */
-  border-radius: 0.5rem;     /* optional */
-  font-weight:bold;
+  background-color: #dbefdc !important;
+  /* custom color */
+  color: #424242;
+  /* custom text color */
+  padding: 0.4em 0.85em;
+  /* optional */
+  border-radius: 0.5rem;
+  /* optional */
+  font-weight: bold;
   font-size: 16px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
+
 .custom-badge3 {
-  background-color: #f9d7d7!important; /* custom color */
-  color: #424242;            /* custom text color */
-  padding: 0.4em 0.855em;     /* optional */
-  border-radius: 0.5rem;     /* optional */
-  font-weight:bold;
+  background-color: #f9d7d7 !important;
+  /* custom color */
+  color: #424242;
+  /* custom text color */
+  padding: 0.4em 0.855em;
+  /* optional */
+  border-radius: 0.5rem;
+  /* optional */
+  font-weight: bold;
   font-size: 16px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
+
 .custom-badge4 {
-  background-color: #f9f7d7!important; /* custom color */
-  color: #424242;            /* custom text color */
-  padding: 0.4em 0.855em;     /* optional */
-  border-radius: 0.5rem;     /* optional */
-  font-weight:bold;
+  background-color: #f9f7d7 !important;
+  /* custom color */
+  color: #424242;
+  /* custom text color */
+  padding: 0.4em 0.855em;
+  /* optional */
+  border-radius: 0.5rem;
+  /* optional */
+  font-weight: bold;
   font-size: 16px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
-.badge-sub-datas{
-  background-color:transparent !important;
-  color: #424242;            /* custom text color */
-  padding: 0.4em 0.855em;     /* optional */
-  border-radius: 0.5rem;     /* optional */
-  font-weight:bold;
+
+.badge-sub-datas {
+  background-color: transparent !important;
+  color: #424242;
+  /* custom text color */
+  padding: 0.4em 0.855em;
+  /* optional */
+  border-radius: 0.5rem;
+  /* optional */
+  font-weight: bold;
   font-size: 16px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: normal;
 }
-.bookmark_icon{
+
+.bookmark_icon-ufj {
   display: flex;
   align-items: start;
-  font-size: 16px!important;
-  height: 50px;
-  width: 50px;
+  font-size: 16px !important;
+  height: 50px !important;
+  width: 50px !important;
   padding: 8px;
   border-radius: 50%;
-  background-color: rgba(144, 238, 144, 0.3)  
+  background-color: rgba(144, 238, 144, 0.3)
 }
-.icon_posistion{
+
+.icon_posistion-ufj {
   position: relative;
-  right: 8px;
+  right: 10px !important;
+  left: 5px !important;
+  top: 5px !important;
 }
-.icon_color{
+
+.icon_color-ufj {
   color: #43A047;
 }
-.apply-btn{
+
+.apply-btn {
   transition: all 0.3s ease-in-out;
   background-color: #7b1fa2;
   color: white;
-}.apply-btn:hover {
-  background-color: #6a1b9a; /* Slightly darker purple */
-  transform: scale(1.05);    /* Subtle zoom effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.apply-btn:hover {
+  background-color: #6a1b9a;
+  /* Slightly darker purple */
+  transform: scale(1.05);
+  /* Subtle zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Soft shadow */
   color: #fff;
 }
-.View-more-btn{
+
+.View-more-btn {
   transition: all 0.3s ease-in-out;
   background-color: #7b1fa2;
   color: white;
 }
+
 .View-more-btn:hover {
-  background-color: #6a1b9a; /* Slightly darker purple */
-  transform: scale(1.05);    /* Subtle zoom effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  background-color: #6a1b9a;
+  /* Slightly darker purple */
+  transform: scale(1.05);
+  /* Subtle zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Soft shadow */
   color: #fff;
 }

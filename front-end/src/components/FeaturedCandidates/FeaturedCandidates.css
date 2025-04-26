@@ -32,3 +32,43 @@
     position: relative;
     left: 15px;
 }
+/* Style for custom carousel arrows */
+.custom-arrow {
+    background-color: #1e88e5 !important; /* Default background color */
+    color: white !important;               /* Icon color */
+    border-radius: 50%;                    /* Round the button */
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  .custom-arrow.left {
+    /* Additional styling for the left arrow */
+  }
+  
+  .custom-arrow.right {
+    /* Additional styling for the right arrow */
+  }
+  
+  /* Hover effect */
+  .custom-arrow:hover {
+    background-color: #1565c0 !important; /* Darker blue on hover */
+  }
+  /* Custom button background */
+.carousel .btn-purple {
+    background-color: #6a1b9a; /* Custom background color */
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+  
+  /* Hover effect for the button */
+  .carousel .btn-purple:hover {
+    background-color: #9c4dcc; /* Darker shade on hover */
+    color: white;
+  }

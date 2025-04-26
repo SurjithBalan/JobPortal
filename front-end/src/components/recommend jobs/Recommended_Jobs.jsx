@@ -138,11 +138,11 @@ const RecommendedJobs = () => {
                                 <div>
                                 </div>
                                 <div className="d-flex flex-wrap gap-2">
-                                    <div className="d-flex gap-2 flex-wrap bookmark_icon">
-                                        <div className="icon_posistion">
-                                            <Badge className="badge-sub-datas">
-                                                <MdBookmarkBorder size={24} className="icon_color" />
-                                            </Badge>
+                                    <div className="d-flex gap-2 flex-wrap bookmark_icon-rcj">
+                                        <div className="icon_posistion-rcj">
+                                            <span>
+                                                <MdBookmarkBorder size={24} className="icon_color-rcj" />
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

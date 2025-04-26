@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .recommended-jobs-section {
@@ -42,7 +42,8 @@
     padding: 4px 8px;
     border-radius: 12px;
 }
-.badge-inine{
+
+.badge-inine {
     display: inline;
 }
 
@@ -56,23 +57,51 @@
     padding: 6px 16px;
     font-weight: 600;
 }
+
 .hover-zoom-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-zoom-card:hover {
+}
+
+.hover-zoom-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-  }
-  
-  .apply-now-btn{
+}
+
+.apply-now-btn {
     transition: all 0.3s ease-in-out;
     background-color: #7b1fa2;
     color: white;
-  }.apply-now-btn:hover {
-    background-color: #6a1b9a; /* Slightly darker purple */
-    transform: scale(1.05);    /* Subtle zoom effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.apply-now-btn:hover {
+    background-color: #6a1b9a;
+    /* Slightly darker purple */
+    transform: scale(1.05);
+    /* Subtle zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
     color: #fff;
-  }
+}
+
+.bookmark_icon-rcj {
+    display: flex;
+    align-items: start;
+    font-size: 16px !important;
+    height: 50px !important;
+    width: 50px !important;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(144, 238, 144, 0.3)
+}
+
+.icon_posistion-rcj {
+    position: relative;
+    right: 10px !important;
+    left: 5px !important;
+    top: 5px !important;
+}
+
+.icon_color-rcj {
+    color: #43A047;
+}

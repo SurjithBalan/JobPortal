@@ -15,26 +15,32 @@
     font-size: 36px;
     font-family: 'Poppins', sans-serif;
 }
-.text-inside{
+
+.text-inside {
     font-size: 16px;
     font-weight: 400;
     color: #424242;
 }
+
 .white-star svg {
     color: white !important;
     fill: white !important;
     stroke: white !important;
-  }
-.custom-badge-tag {    
-    color: #424242;            /* custom text color */
-    padding: 0.4em 0.85em;     /* optional */
-    border-radius: 1rem;     /* optional */
-    font-weight:bold;
+}
+
+.custom-badge-tag {
+    color: #424242;
+    /* custom text color */
+    padding: 0.4em 0.85em;
+    /* optional */
+    border-radius: 1rem;
+    /* optional */
+    font-weight: bold;
     font-size: 16px;
     font-family: 'Poppins', sans-serif !important;
     font-weight: normal;
     background-color: #f0d497 !important;
-  }
+}
 
 .subtitle {
     font-size: 16px;
@@ -103,17 +109,53 @@
     /* Soft shadow */
     color: #fff;
 }
-.button-blue{
+
+.button-blue {
     background-color: #1e88e5;
     border-radius: 1rem;
     min-width: 0;
 }
 
-.button-violet{
+.button-violet {
     background-color: #7b1fa2;
     border-radius: 1rem;
     min-width: 0;
 }
-.button-violet:hover{
-    background-color:#6936f5;
+
+.button-violet:hover {
+    background-color: #6936f5;
 }
+
+.overflowHider {
+    overflow-x: auto;
+    /* allow horizontal scroll */
+    scrollbar-width: none;
+    /* for Firefox */
+    -ms-overflow-style: none;
+    /* for Internet Explorer and Edge */
+}
+.overflowHider::-webkit-scrollbar {
+    display: none;               /* for Chrome, Safari, Opera */
+  }
+  .bookmark_icon-clist {
+    display: flex;
+    align-items: start;
+    font-size: 16px !important;
+    height: 40px !important;
+    width: 40px !important;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(144, 238, 144, 0.3)
+  }
+  
+  .icon_posistion-clist {
+    position: relative;
+    right: 11px !important;
+    left: 2px !important;
+    top: -2px !important;
+    bottom: 5px!important;
+  }
+  
+  .icon_color-clist {
+    color: #43A047;
+  }

@@ -13,8 +13,8 @@ const CandidateLogin_otp = () => {
         <><UserNavbar />
             <div className="login-wrapper-canidate-otp">
                 <Container fluid>
-                    <Row className="min-vh-100 justify-content-center align-items-center">
-                        <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', maxHeight: 'auto' }}>
+                    <Row className="justify-content-center align-items-start " style={{ minHeight: '100vh' }}>
+                        <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', minHeight: '50vh' }}>
                             {/* Left Side */}
                             <Col md={6} className="d-flex flex-column justify-content-center align-items-center left-side-canidate-otp">
                                 <div className='logo-heading-canidate-email'>
