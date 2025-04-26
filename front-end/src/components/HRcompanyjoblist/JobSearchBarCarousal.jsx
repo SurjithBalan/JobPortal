@@ -40,6 +40,15 @@ const RightArrow = ({ onClick }) => {
 
 const CategoryCarousel = () => {
     const sliderRef = useRef(null);
+
+    const categories = [
+        'IT',
+        'Banking & Financial Services',
+        'Healthcare & Health Tech',
+        'E-Commerce / Retail Tech',
+        'Telecommunications',
+    ];
+
     const settings = {
         dots: false,
         infinite: true,
@@ -48,55 +57,27 @@ const CategoryCarousel = () => {
         slidesToScroll: 1,
         centerMode: false,
         centerPadding: '0px',
-        prevArrow: <LeftArrow onClick={() => sliderRef.current.slickPrev()} />,  // Custom Left Arrow with slickPrev method
-        nextArrow: <RightArrow onClick={() => sliderRef.current.slickNext()} />,  // Custom Right Arrow with slickNext method
+        prevArrow: <LeftArrow onClick={() => sliderRef.current.slickPrev()} />,
+        nextArrow: <RightArrow onClick={() => sliderRef.current.slickNext()} />,
         responsive: [
             {
                 breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                },
+                settings: { slidesToShow: 2 },
             },
             {
                 breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                },
+                settings: { slidesToShow: 1 },
             },
         ],
     };
 
     return (
-        <Container className="p-2 overflow-hidden align-items-center">
-            {/* Search Box */}
+        <Container className="overflow-hidden align-items-center">
             <div className="position-relative align-items-center justify-content-between bg-light p-4 rounded-4 shadow-sm my-4">
                 <Slider ref={sliderRef} {...settings}>
                     {categories.map((cat, idx) => (
-                        <div
-                            key={idx}
-                            className="d-flex justify-content-center align-items-center"
-                            style={{
-                                minWidth: '0',
-                                maxWidth: '220px',
-                                fontSize: '1rem',
-                                lineHeight: '1.3',
-                                whiteSpace: 'normal',
-                                wordWrap: 'break-word',
-                                border: '0.5px solid #424242',
-                            }}
-                        >
-                            <div
-                                className="d-flex flex-wrap  p-3 me-0 text-dark fw-bold rounded-5 category-pill d-flex flex-shrink-0 text-center"
-                                style={{
-                                    minWidth: '0',
-                                    maxWidth: '220px',
-                                    fontSize: '1rem',
-                                    lineHeight: '1.3',
-                                    whiteSpace: 'normal',
-                                    wordWrap: 'break-word',
-                                    border: '0.5px solid #424242',
-                                }}
-                            >
+                        <div key={idx} className="d-flex justify-content-center align-items-center">
+                            <div className="category-pill">
                                 {cat}
                             </div>
                         </div>
