@@ -4,9 +4,9 @@ import './FilterSection.css'; // for custom styles
 
 const FilterSection = () => {
     return (
-        <div className="filter-section">
+        <div className="filter-section py-0">
             <Container>
-                <Row className="d-flex align-items-center">
+                <Row className="d-flex align-items-center py-0">
                     <Col md={6} className="mb-2 mb-md-0 d-flex justify-content-start">
                         <div className="results-text">
                             Showing 1 - 10 of 11 results

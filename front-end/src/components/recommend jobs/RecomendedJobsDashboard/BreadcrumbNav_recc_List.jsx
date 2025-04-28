@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, Container } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
-const BreadcrumbNavbarCompanyList = () => {
+const BreadcrumbNav_recc_List = () => {
   const location = useLocation();
 
   return (
@@ -23,14 +23,14 @@ const BreadcrumbNavbarCompanyList = () => {
           </Breadcrumb.Item>
           <Breadcrumb.Item linkAs="span">
             <Link
-              to="/hr-company-page"
+              to="/reccommended_job_list"
               style={{
                 textDecoration: 'none', // always no underline
                 fontWeight: location.pathname === '/hr-company-page' ? '600' : '400',
                 color: '#424242',
               }}
             >
-              HR Company
+              Recommended Jobs
             </Link>
           </Breadcrumb.Item>
         </Breadcrumb>
@@ -39,4 +39,4 @@ const BreadcrumbNavbarCompanyList = () => {
   );
 };
 
-export default BreadcrumbNavbarCompanyList;
+export default BreadcrumbNav_recc_List;

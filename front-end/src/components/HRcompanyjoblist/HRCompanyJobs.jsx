@@ -15,7 +15,6 @@ import './HRCompanyJobs.css'
 import JobSearchBarCarousal from './JobSearchBarCarousal'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-
 const HRCompanyJobListingPage = () => {
 
   const [minExperience, setMinExperience] = useState(0);
@@ -289,7 +288,7 @@ const HRCompanyJobListingPage = () => {
   }
 
   return (
-    <Container fluid className="py-4 px-3 m-3" style={{ overflowX: 'hidden' }}>     
+    <Container fluid className="py-4 px-3 m-3" style={{ overflowX: 'hidden' }}>
       <JobSearchBarCarousal />
       <Row>
         {/* Left Sidebar - Filters */}
@@ -457,7 +456,7 @@ const HRCompanyJobListingPage = () => {
         {/* Right Column - Job Component */}
         <Col xs={12} md={9} lg={9} className="d-flex justify-content-center text-center mt-0">
           {/* <h5>&lt;RecommendedJobs component /&gt;</h5> */}
-          <CompanysList />        
+          <CompanysList />
         </Col>
       </Row>
     </Container>
