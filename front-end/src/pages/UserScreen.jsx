@@ -13,9 +13,9 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
+// import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
-
+import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 function UserScreen() {
   return (
     <div>
@@ -31,11 +31,10 @@ function UserScreen() {
       <Recruiters />
       <About />
       <Testimonials />
-      <FeedbackForm />
-      <BreadcrumbNavbarCompanyList />
+      <FeedbackForm />     
       <HRCompanyJobListingPage />
       <Footer />
-
+      <RecomendedJobsDashborad/>
     </div>
   )
 }

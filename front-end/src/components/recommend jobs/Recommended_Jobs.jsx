@@ -10,6 +10,7 @@ import Accenture from "../../assets/logo/Accenture.png"
 import HCL from "../../assets/logo/HCL.png"
 import { MdBookmarkBorder } from "react-icons/md";
 import './Recommended_Jobs.css';
+import { Link } from 'react-router-dom';
 
 const jobList = [
     {
@@ -126,7 +127,7 @@ const RecommendedJobs = () => {
                             </Col>
 
                             <Col xs={12} md={2} className="text-md-end mt-3 mt-md-0">
-                                <Button variant="primary" className="mb-2 rounded-pill px-4 apply-now-btn" style={{background:'#1e88e5', color:'white'}}>
+                                <Button variant="primary" className="mb-2 rounded-pill px-4 apply-now-btn" style={{ background: '#1e88e5', color: 'white' }}>
                                     Apply Now
                                 </Button>
                                 <div className="text-muted small">
@@ -152,7 +153,10 @@ const RecommendedJobs = () => {
                 ))}
 
                 <div className="text-center mb-4">
-                    <Button className= 'rounded-pill apply-now-btn' style={{background:'#1e88e5', color:'white'}}>View More</Button>
+                    <Link to='/Recommended_jobs_Dashboard'>
+                        <Button className='rounded-pill apply-now-btn' style={{ background: '#1e88e5', color: 'white' }}>View More</Button>
+                    </Link>
+
                 </div>
             </Container>
         </section>

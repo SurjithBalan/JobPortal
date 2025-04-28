@@ -7,15 +7,7 @@ import { MdOutlineLocationSearching } from 'react-icons/md';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-const categories = [
-    'IT',
-    'Banking & Financial Services',
-    'Healthcare & Health Tech',
-    'E-Commerce / Retail Tech',
-    'Telecommunications',
-    'Manufacturing',
-    'Education',
-];
+
 
 const LeftArrow = ({ onClick }) => {
     return (

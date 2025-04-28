@@ -14,7 +14,7 @@ import '../../UrgentFeauturedJobs/UrgentFeauturedJobs.css';
 import { BsBorderRight } from "react-icons/bs";
 import { Button, Row, Col, Badge } from 'react-bootstrap';
 import { FaMapMarkerAlt, FaCalendarAlt, FaBriefcase, FaBookmark } from 'react-icons/fa';
-import './CompanyList.css';
+// import './CompanyList.css';
 import { FaStar } from "react-icons/fa";
 import { PiCodeBlockLight } from "react-icons/pi";
 import { CiAt } from "react-icons/ci";
@@ -22,8 +22,8 @@ import { PiCurrencyInrDuotone } from "react-icons/pi";
 import { HiDocumentText } from "react-icons/hi";
 import { MdOutlineArticle } from "react-icons/md";
 import { PiCalendar } from "react-icons/pi";
-import CustomPagination from './HRcompanyPagenation'
-import FilterSection from './FilterSection'
+import CustomPagination from '../../HRcompanyjoblist/CompanyList/HRcompanyPagenation'
+import FilterSection from '../../HRcompanyjoblist/CompanyList/FilterSection'
 
 
 const CompanysList = () => {
@@ -159,7 +159,7 @@ const CompanysList = () => {
 
     return (
         <div className="p-2 d-flex flex-column gap-3">
-            <FilterSection/>
+            <FilterSection />
             {jobs.map((job) => {
                 const isRecommended = job.tags?.includes("Recommend");
                 return (
@@ -167,7 +167,7 @@ const CompanysList = () => {
                         key={job.id}
                         className="p-3 shadow-sm border-0"
                         style={{ backgroundColor: job.bgColor, borderRadius: '16px' }}
-                    > 
+                    >
                         <Row className="align-items-center">
                             {/* Logo */}
                             <Col md={1} className="d-flex justify-content-center align-items-center text-center">
@@ -175,50 +175,34 @@ const CompanysList = () => {
                             </Col>
 
                             {/* Job Info */}
-                            <Col md={6}>
+                            <Col md={5}>
 
                                 <div className="d-flex align-items-center gap-2 overflow-auto flex-nowrap overflowHider" >
-                                    {isRecommended ? (
-                                        <>
-                                            <span className="fw-bold fs-6 ">{job.role}</span>
-                                            <Badge className="custom-badge-tag d-flex fw-medium">
-                                                <span className="white-star me-1 fw-bold"><FaStar /></span> Recommend
-                                            </Badge>
-                                        </>
 
-                                    ) : (
-                                        <><span className="text-inside"> {job.company}</span>
-                                            <Badge className="custom-badge1 fw-small fs-6">Featured</Badge>
-                                            <Badge className="custom-badge2 fw-small fs-6">Full Time</Badge>
-                                            <Badge className="custom-badge3 fw-small fs-6">{job.applicants} Applicants</Badge>
-                                            <Badge className="custom-badge4 fw-small fs-6">{job.Open_Positions} Open Positions</Badge>
-                                        </>
-                                    )}
+                                    <>
+                                        <span className="fw-bold fs-6 ">{job.role}</span>
+                                        <Badge className="custom-badge-tag d-flex fw-medium">
+                                            <span className="white-star me-1 fw-bold"><FaStar /></span> Recommend
+                                        </Badge>
+                                    </>
+
                                 </div>
 
                                 <div>
-                                    {isRecommended ? (
-                                        <>
-                                            <div className="d-flex align-items-center gap-4 mt-2 flex-wrap fs-6">
-                                                <span className="text-inside"><CiAt /> {job.company}</span>
-                                                <span className="text-inside"><PiCodeBlockLight className="me-1" />Java Full Stack</span>
-                                            </div>
-                                            <div className="d-flex align-items-center gap-4 mt-2 flex-wrap">
-                                                <span><PiCurrencyInrDuotone /> {job.ctc}</span>
-                                                <span><HiDocumentText className="me-1" style={{ transform: 'rotate(20deg)' }} />{job.experience}</span>
-                                                <span><MdOutlineArticle className="me-1" />NP {job.postedOn.includes("days") ? "15 days" : "30 days"}</span>
-                                            </div>
-                                        </>
 
-                                    ) : <>
+                                    <>
+                                        <div className="d-flex align-items-center gap-4 mt-2 flex-wrap fs-6">
+                                            <span className="text-inside"><CiAt /> {job.company}</span>
+                                            <span className="text-inside"><PiCodeBlockLight className="me-1" />Java Full Stack</span>
+                                        </div>
                                         <div className="d-flex align-items-center gap-4 mt-2 flex-wrap">
-                                            <span className="fw-bold fs-6 ">{job.role}</span>
-                                            <span className="text-inside"><IoLocationOutline size={16} className="me-1" />{job.location}</span>
-                                            <span><HiDocumentText className="me-1" style={{ transform: 'rotate(20deg)' }} />{job.experience}</span>
                                             <span><PiCurrencyInrDuotone /> {job.ctc}</span>
+                                            <span><HiDocumentText className="me-1" style={{ transform: 'rotate(20deg)' }} />{job.experience}</span>
                                             <span><MdOutlineArticle className="me-1" />NP {job.postedOn.includes("days") ? "15 days" : "30 days"}</span>
                                         </div>
-                                    </>}
+                                    </>
+
+
                                 </div>
 
                             </Col>
@@ -228,27 +212,12 @@ const CompanysList = () => {
                                 </div>
                             </Col>
                             {/* Apply Button */}
-                            <Col md={2} className="text-end">
+                            <Col md={3} className="text-end">
                                 <div className="d-flex justify-content-center align-items-center text-center flex-wrap">
-                                    {isRecommended ? (
-                                        <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
-                                    ) : (
-                                        <>
-                                            <Button className="mb-2 button-violet text-white px-4 py-2 fs-6">Apply Now</Button>
-                                        </>
-                                    )}
-                                    {/* <Button variant="primary" className="mb-2">Apply Now</Button> */}
-                                    {isRecommended ? (
-                                        <div className="text-muted text-inside">
-
-                                            <p><PiCalendar className="me-1" /> Posted 2 days ago</p>
-                                        </div>
-                                    ) : (
-                                        <div className="text-muted text-inside">
-                                            {job.postedOn.includes("days") ? `Posted ${job.postedOn}` : `Posted on ${job.postedOn}`}
-                                        </div>
-                                    )}
-
+                                    <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
+                                    <div className="text-muted text-inside">
+                                        <p><PiCalendar className="me-1" /> Posted 2 days ago</p>
+                                    </div>
                                 </div>
                             </Col>
 
@@ -264,11 +233,11 @@ const CompanysList = () => {
                                     </div>
                                 </div>
                             </Col>
-                        </Row>                       
+                        </Row>
                     </div>
                 );
             })}
-          <CustomPagination/>
+            <CustomPagination />
         </div>
     );
 };

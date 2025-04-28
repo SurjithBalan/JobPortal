@@ -2,8 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 import "../hrcompanies/hrcompanies.css";
 import jobsData from "../../components/data/job";
+import { useNavigate } from 'react-router-dom';
 
 export default function HrCompanies() {
+  const navigagte = useNavigate()
+  const companyNavigate = () => {
+    navigagte('/HR_companyes')
+  }
+
   // Custom Arrow Buttons
   const CustomArrow = ({ onClick, direction }) => (
     <button className={`custom-arrow ${direction}`} onClick={onClick}>
@@ -67,7 +73,7 @@ export default function HrCompanies() {
                 <div className="image-container">
                   <img src={data.imgURL} alt="" />
                 </div>
-                <button>View all jobs</button>
+                <button onClick={companyNavigate}>View all jobs</button>
               </div>
             </div>
           ))}
