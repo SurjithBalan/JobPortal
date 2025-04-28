@@ -13,6 +13,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Herofilter from './components/herofilter/Herofilter';
 import HRCompanyJobListingPage from'./components/HRcompanyjoblist/HRCompanyJobs';
 import BreadcrumbNavbarCompanyList from './components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
+import Featurefilter from './components/featurefilter/Featurefilter';
 function App() {
 
 
@@ -20,7 +21,7 @@ function App() {
     <>
       <Router>
         <div>
-        <BreadcrumbNavbarCompanyList />
+        {/* <BreadcrumbNavbarCompanyList /> */}
           <Routes>
             <Route path="/" element={<UserScreen />} />
             <Route path="/companylogin" element={<CompanyLogin />} />
@@ -32,6 +33,7 @@ function App() {
             <Route path='/Candidate_resentOtp_login' element={<Candidate_resentOtp_login />} />
             <Route path='/Candidate_verify_Otp' element={<VerifyOTP />} />
             <Route path='/hero-search-filter' element={<Herofilter />} />
+            <Route path='/feature-filter' element = {<Featurefilter/>}/>
             <Route path='/hr-company-page' element = {<HRCompanyJobListingPage/>}/>
           </Routes>
           
