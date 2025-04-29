@@ -23,7 +23,7 @@ function App() {
       <Router>
         <div>
           {/* <UserNavbar /> */}
-          <BreadcrumbNavbarCompanyList />
+          {/* <BreadcrumbNavbarCompanyList /> */}
           <Routes>
             <Route path="/" element={<UserScreen />} />
             <Route path="/companylogin" element={<CompanyLogin />} />
@@ -35,10 +35,10 @@ function App() {
             <Route path='/Candidate_resentOtp_login' element={<Candidate_resentOtp_login />} />
             <Route path='/Candidate_verify_Otp' element={<VerifyOTP />} />
             <Route path='/hero-search-filter' element={<Herofilter />} />
-            <Route path='/hr-company-page' element={<HRCompanyJobListingPage />} />
+            <Route path='/hr-company-page' element={< HRCompanyJobListingPage/>} />
             <Route path='/Recommended_jobs_Dashboard' element = {<RecomendedJobsDashborad/>}></Route>
-            <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route>
-             <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
+            {/* <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route> */}
+            <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
           </Routes>
         </div>
       </Router>

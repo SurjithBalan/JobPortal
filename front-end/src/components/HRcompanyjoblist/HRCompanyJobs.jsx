@@ -14,6 +14,9 @@ import CompanysList from './CompanyList/CompanysList'
 import './HRCompanyJobs.css'
 import JobSearchBarCarousal from './JobSearchBarCarousal'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import BreadcrumbNavbarCompanyList from './BreadcrumbNavbarCompanyList'
+import { Outlet } from 'react-router-dom';
+// import UserNavbar from '../../components/usernavbar/UserNavbar'
 
 const HRCompanyJobListingPage = () => {
 
@@ -289,7 +292,10 @@ const HRCompanyJobListingPage = () => {
 
   return (
     <Container fluid className="py-4 px-3 m-3" style={{ overflowX: 'hidden' }}>
+      {/* <UserNavbar/> */}
+      <BreadcrumbNavbarCompanyList/>
       <JobSearchBarCarousal />
+      <Outlet /> {/* Here company pages render */}
       <Row>
         {/* Left Sidebar - Filters */}
         <Col
