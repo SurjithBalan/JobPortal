@@ -11,7 +11,7 @@ import HCL from "../../assets/logo/HCL.png"
 import { FaNewspaper } from "react-icons/fa";
 import { PiCurrencyInrDuotone } from "react-icons/pi";
 import { MdBookmarkBorder } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 // import InfosysLogo from "../../assets/logo/Infosys.png";
 import './UrgentFeauturedJobs.css';
 import { BsBorderRight } from "react-icons/bs";
@@ -173,9 +173,11 @@ const UrgentFeaturedJobs = () => {
       </Row>
 
       <div className="text-center mt-4">
-        <Button variant="secondary" className="rounded-pill px-4 py-2 View-more-btn" style={{ background: "#7b1fa2", border: "none", color: 'white' }}>
+       <Link to={'/feature-filter'}>
+       <Button variant="secondary" className="rounded-pill px-4 py-2 View-more-btn" style={{ background: "#7b1fa2", border: "none", color: 'white' }}>
           View More
         </Button>
+       </Link>
       </div>
     </Container>
   );
