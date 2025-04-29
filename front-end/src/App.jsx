@@ -37,7 +37,7 @@ function App() {
             <Route path='/hero-search-filter' element={<Herofilter />} />
             <Route path='/hr-company-page' element={< HRCompanyJobListingPage/>} />
             <Route path='/Recommended_jobs_Dashboard' element = {<RecomendedJobsDashborad/>}></Route>
-            {/* <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route> */}
+            <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route>
             <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
           </Routes>
         </div>
