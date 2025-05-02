@@ -96,8 +96,8 @@ const RecommendedJobs = () => {
                 {jobList.map((job) => (
                     <div
                         key={job.id}
-                        className="mb-4 rounded-4 p-3 border-1 hover-zoom-card"
-                        style={{ backgroundColor: job.bgColor }}
+                        className="mb-4 rounded-4 p-3 border-1 hover-zoom-card mx-auto"
+                        style={{ backgroundColor: job.bgColor, maxWidth: '1140px' }}
                     >
                         <Row className="align-items-center justify-content-center g-2">
                             <Col xs={12} md={2} className="text-center ">
@@ -109,33 +109,32 @@ const RecommendedJobs = () => {
                             </Col>
                             <Col xs={12} md={4} className="d-flex  align-items-center">
                                 <div>
-                                    <h5 className="job-title">{job.role}</h5>
                                     <div className="d-flex align-items-center gap-2 mb-2">
-                                        <Badge bg="warning" text="dark" className='badge-inine'>
+                                        <h5 className="job-title mb-0" style={{ color: '#424242' }}>{job.role}</h5>
+                                        <Badge bg="warning" text="dark" className="badge-inline ">
                                             <FaStar size={12} className="me-1" />
                                             Recommend
                                         </Badge>
                                     </div>
-                                    <p className="mb-1 fw-semibold">{job.company} | {job.skills}</p>
-                                    <p className="mb-1 text-muted">{job.ctc} • {job.experience} • NP {job.noticePeriod}</p>
+
+                                    <p className="mb-1">{job.company} | {job.skills}</p>
+                                    <p className="mb-1 ">{job.ctc} • {job.experience} • NP {job.noticePeriod}</p>
                                 </div>
                             </Col>
-                            <Col xs={12} md={2} className="d-flex align-items-center">
+                            <Col xs={12} md={3} className="d-flex align-items-center justify-content-center ">
                                 <div>
                                     <p className="mb-0 text-muted"><CiLocationOn /> {job.location}</p>
                                 </div>
                             </Col>
 
                             <Col xs={12} md={2} className="text-md-end mt-3 mt-md-0">
-                                <Button variant="primary" className="mb-2 rounded-pill px-4 apply-now-btn" style={{ background: '#1e88e5', color: 'white' }}>
-                                    Apply Now
-                                </Button>
-                                <div className="text-muted small">
-                                    <BsClock className="me-1" />
+                                 <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
+                                <div className="text-muted small fw-semibold" >
+                                    <BsClock className="me-1 " />
                                     Posted {job.posted}
                                 </div>
                             </Col>
-                            <Col xs={12} md={2} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
+                            <Col xs={12} md={1} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
                                 <div>
                                 </div>
                                 <div className="d-flex flex-wrap gap-2">

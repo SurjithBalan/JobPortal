@@ -36,14 +36,13 @@ const latestjob = [
 
 export default function Latestjob() {
   return (
-    <Container className=" section-latest w-auto  my-lg-4">
-      <div className="header-jobs  my-4 ">
+    <Container className="mr-0">
+      <div className="header-jobs  my-3 ">
         <h1>Latest Job Listing</h1>
       </div>
-
-      <Row className="g-4 ">
+      <Row className="g-2 ms-3">
         {latestjob.map((state, index) => (
-          <Col className="" key={index} md={6}>
+          <Col  key={index} md={6}>
             <div className="jobs-listing w-auto ">
               <div key={index} className="card-wrap w-auto mx-5">
                 <div className=" job-contant  my-4 ">

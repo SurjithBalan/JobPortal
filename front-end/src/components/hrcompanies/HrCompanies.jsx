@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "../hrcompanies/hrcompanies.css";
 import jobsData from "../../components/data/job";
 import { useNavigate } from 'react-router-dom';
-
+import { Container } from "react-bootstrap";
 export default function HrCompanies() {
   const navigagte = useNavigate()
   const companyNavigate = () => {
@@ -53,7 +53,7 @@ export default function HrCompanies() {
     ],
   };
   return (
-    <>
+    <Container>
       <div className="slider-container w-auto bg-white py-lg-4">
         <div>
           <h3 className="text-center p-2">Well-known HR companies</h3>
@@ -79,6 +79,9 @@ export default function HrCompanies() {
           ))}
         </Slider>
       </div>
-    </>
+    </Container>
+
+
+
   );
 }
