@@ -37,7 +37,7 @@ const latestjob = [
 export default function Latestjob() {
   return (
     <Container className="mr-0">
-      <div className="header-jobs  my-3 ">
+      <div className="header-jobs  my-3  header-jobs my-3 d-flex justify-content-center align-items-center">
         <h1>Latest Job Listing</h1>
       </div>
       <Row className="g-2 ms-3">

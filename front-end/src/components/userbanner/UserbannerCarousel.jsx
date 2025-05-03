@@ -35,6 +35,8 @@ const UserbannerAutoSlider = () => {
         // Do some logic here...
         navigate('/hero-search-filter'); // navigate manually
     };
+    const [searchQuery, setSearchQuery] = useState('');
+    const [locationQuery, setLocationQuery] = useState('');
     const SearchBar = () => {
         return (
             <div className="input-field m-0">
