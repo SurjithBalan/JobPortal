@@ -1,14 +1,32 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { FaAsterisk, FaGoogle, FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { IoIosStar } from "react-icons/io";
 import './Candidate_Login_otp.css';
 import skylarkLogo from '../../../assets/image/skylarklogo.png'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import UserNavbar from '../../usernavbar/UserNavbar';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const CandidateLogin_otp = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const [success, setSuccess] = useState(false);
+    const formik = useFormik({
+        initialValues: {
+            otp: '',
+        },
+        validationSchema: Yup.object({
+            otp: Yup.string()
+                .matches(/^\d{4}$/, 'OTP must be exactly 4 digits')
+                .required('OTP is required'),
+        }),
+        onSubmit: (values) => {
+            console.log('Valid OTP:', values.otp);
+            setSuccess(true); // Show success message
+            // navigate('/Candidate_resentOtp_login'); // Remove navigation
+        },
+    });
     return (
         <><UserNavbar />
             <div className="login-wrapper-canidate-otp">
@@ -41,7 +59,7 @@ const CandidateLogin_otp = () => {
                                 <FaGithub size={20} /> */}
                                 </div>
                                 <p className="small text-muted">Enter the otp received from the mail</p>
-                                <Form className="w-70">
+                                <Form className="w-70" onSubmit={formik.handleSubmit}>
                                     <Form.Group className="mb-3">
                                         <div className="position-relative">
                                             <div className="position-absolute top-50 start-0 translate-middle-y d-flex ps-2 gap-2">
@@ -50,23 +68,38 @@ const CandidateLogin_otp = () => {
                                                 <FaAsterisk size={5} className="text-dark" />
                                             </div>
                                             <Form.Control
-                                                type="Otp"
-                                                placeholder="Enter otp"
-                                                className="ps-5"
+                                                type="text"
+                                                name="otp"
+                                                placeholder="Enter OTP"
+                                                className={`ps-5 ${formik.touched.otp && formik.errors.otp ? 'is-invalid' : ''}`}
+                                                onChange={formik.handleChange}
+                                                onBlur={formik.handleBlur}
+                                                value={formik.values.otp}
                                             />
+                                            {formik.touched.otp && formik.errors.otp ? (
+                                                <div className="text-danger mt-1 small">{formik.errors.otp}</div>
+                                            ) : null}
                                         </div>
                                     </Form.Group>
-                                    <div className='d-flex justify-content-end' >
+
+                                    <div className='d-flex justify-content-end'>
                                         <p className="small" style={{ color: '#1e88e5' }}>
                                             Re-send <a href="/login" className="text-decoration-none">OTP?</a>
                                         </p>
                                     </div>
-                                    <Button onClick={() => navigate('/Candidate_resentOtp_login')}
-                                        className="rounded-pill text-white "
+
+                                    <Button
+                                        type="submit"
+                                        className="rounded-pill text-white"
                                         style={{ backgroundColor: '#1e88e5' }}
                                     >
                                         Verify OTP
                                     </Button>
+                                    {success && (
+                                        <div className="mt-2 text-success small fw-semibold">
+                                            OTP verified successfully!
+                                        </div>
+                                    )}
                                 </Form>
                             </Col>
                         </div>
