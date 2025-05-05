@@ -44,6 +44,7 @@ function App() {
             <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
 
           </Routes>
+          {/* demo later shouldbe delete */}
         </div>
       </Router>
     </>
