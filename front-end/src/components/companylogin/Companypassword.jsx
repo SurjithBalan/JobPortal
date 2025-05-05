@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function Companypassword() {
   return (
     <>
-      <UserNavbar/>
+      <UserNavbar />
       <div className="company-password">
         <Container>
           <Row className="w-100 mh-100">
@@ -19,17 +19,19 @@ export default function Companypassword() {
               className="d-flex flex-column justify-content-center align-items-center left-side rounded-1"
             >
               <div className="company-password-logo">
-                              <img src={logo} alt="" />
-                            </div>
+                <img src={logo} alt="" />
+              </div>
               <h2 className="text-white fw-bold mt-4">Welcome Back!</h2>
               <p className="text-white">To Hire the best Candidates</p>
-              <Button
-                variant="outline-success"
-                className="rounded-pill px-5 border border-1 border-white text-white"
-                style={{ backgroundColor: "#1e88e5" }}
-              >
-                Register
-              </Button>
+              <Link to={"/company-register-form"}>
+                <Button
+                  variant="outline-success"
+                  className="rounded-pill px-5 border border-1 border-white text-white"
+                  style={{ backgroundColor: "#1e88e5" }}
+                >
+                  Register
+                </Button>
+              </Link>
             </Col>
 
             {/* Right Side */}

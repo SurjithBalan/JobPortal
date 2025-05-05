@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 export default function Resetpassword() {
   return (
     <>
-     <UserNavbar/>
+      <UserNavbar />
       <div className="reset-wrapper">
-        <Container >
+        <Container>
           <Row className="w-100 mh-100">
             {/* Left Side */}
             <Col
@@ -22,13 +22,15 @@ export default function Resetpassword() {
               </div>
               <h2 className="text-white fw-bold mt-4">Welcome Back!</h2>
               <p className="text-white">To Hire the best Candidates</p>
-              <Button
-                variant="outline-success"
-                className="rounded-pill px-5 border border-1 border-white text-white"
-                style={{ backgroundColor: "#1e88e5" }}
-              >
-                Register
-              </Button>
+              <Link to={"/company-register-form"}>
+                <Button
+                  variant="outline-success"
+                  className="rounded-pill px-5 border border-1 border-white text-white"
+                  style={{ backgroundColor: "#1e88e5" }}
+                >
+                  Register
+                </Button>
+              </Link>
             </Col>
 
             {/* Right Side */}
@@ -58,7 +60,6 @@ export default function Resetpassword() {
                       className="ps-5"
                     />
                   </div>
-                 
                 </Form.Group>
 
                 <Link to={"/"}>

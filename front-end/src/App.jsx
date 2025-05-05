@@ -14,6 +14,7 @@ import Herofilter from './components/herofilter/Herofilter';
 import HRCompanyJobListingPage from'./components/HRcompanyjoblist/HRCompanyJobs';
 import BreadcrumbNavbarCompanyList from './components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
 import Featurefilter from './components/featurefilter/Featurefilter';
+import Companyinformation from './components/companyloginform/Companyinformation';
 function App() {
 
 
@@ -21,7 +22,6 @@ function App() {
     <>
       <Router>
         <div>
-        <BreadcrumbNavbarCompanyList />
           <Routes>
             <Route path="/" element={<UserScreen />} />
             <Route path="/companylogin" element={<CompanyLogin />} />
@@ -35,6 +35,7 @@ function App() {
             <Route path='/hero-search-filter' element={<Herofilter />} />
             <Route path='/feature-filter' element = {<Featurefilter/>}/>
             <Route path='/hr-company-page' element = {<HRCompanyJobListingPage/>}/>
+            <Route path='/company-register-form' element = {<Companyinformation/>}/>
           </Routes>
           
         </div>

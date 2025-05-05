@@ -9,9 +9,9 @@ import UserNavbar from "../usernavbar/UserNavbar";
 export default function CompanyLogin() {
   return (
     <>
-      <UserNavbar/>
-      <div  className="companylogin-wrapper ">
-        <Container >
+      <UserNavbar />
+      <div className="companylogin-wrapper ">
+        <Container>
           <Row className="w-100 mh-100">
             {/* Left Side */}
             <Col
@@ -23,13 +23,15 @@ export default function CompanyLogin() {
               </div>
               <h2 className="text-white fw-bold mt-4">Welcome Back!</h2>
               <p className="text-white">To Hire the best Candidates</p>
-              <Button
-                variant="outline-success"
-                className="rounded-pill px-5 border border-1 border-white text-white"
-                style={{ backgroundColor: "#1e88e5" }}
-              >
-               Register
-              </Button>
+              <Link to={"/company-register-form"}>
+                <Button
+                  variant="outline-success"
+                  className="rounded-pill px-5 border border-1 border-white text-white"
+                  style={{ backgroundColor: "#1e88e5" }}
+                >
+                  Register
+                </Button>
+              </Link>
             </Col>
 
             {/* Right Side */}
@@ -60,7 +62,10 @@ export default function CompanyLogin() {
                     />
                   </div>
                   <div className="d-flex justify-content-end">
-                   <Link to={'/companypassword'}> <a href="">Forget Password?</a></Link>
+                    <Link to={"/companypassword"}>
+                      {" "}
+                      <a href="">Forget Password?</a>
+                    </Link>
                   </div>
                 </Form.Group>
 

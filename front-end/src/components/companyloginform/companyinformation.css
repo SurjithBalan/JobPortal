@@ -1,0 +1,63 @@
+
+
+.bg-blue-500{
+    background-color: #1E88E5;
+}
+.bg-gray-200{
+background-color: #ECECEC;
+color: #938D8D;
+}
+
+.image-top{
+    background-color: #1E88E5;
+    
+}
+.company-top-logo{
+   width: 20%;
+   
+}
+
+
+.company-top-logo img{
+    width: 110px;
+    background-color: white;
+}
+
+.form-info{
+    border: 1px solid #E0DFDF;   
+}
+.form-info h6{
+    background-color: #ECECEC;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.col-form-label{
+    font-size: small;
+     font-weight: 300;
+     display: flex;
+     justify-content: start;  
+}
+
+.form-info button{
+    border-radius: 32px;
+    background-color: #1E88E5;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+}
+.phone{
+    width: 50%;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #E0DFDF;
+    border-radius: 5px;
+   
+}
+.PhoneInputInput{
+    background-color:white;
+    border: none;
+  
+}
