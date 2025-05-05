@@ -1,127 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 
-.section-latest{
-    margin: 20px 60px 10px 60px;
-    border-radius: 16px;
-    box-shadow: 4px 4px 4px #f5f5f5, -4px -4px 4px #f5f5f5; 
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-  
-   
-}
-.header-jobs h1{
+.header-jobs h1 {
     color: #1E88E5;
     font-family: "Poppins";
     font-weight: 700;
 }
-
-
-.card-wrap{
-    /* width:450%;                 */
-border-radius: 40px;
-margin-bottom: 16px;
-background-color: #1565C040 ;
-display: flex;
-flex-direction: column;
-
-    
-}
-.job-contant{
-    
-    background-color: #FFFFFF;
-    border-radius: 40px;
-    display: flex;
-    /* justify-content: start; */
+.bookmark_icon_position{
     position: relative;
-    right: 6%;
-  
+    left: 25%;    
     
+}
+
+.card-wrap {
+    /* width:450%;                 */
+    border-radius: 40px;
+    margin-bottom: 16px;
+    background-color: #1565C040;
+    display: flex;
+    flex-direction: column;   
 
 }
-.job-contant img{
+
+.job-contant {
+    overflow: hidden;
+
+    background-color: #FFFFFF;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    position: relative;
+    right: 3%;
+
+
+
+}
+
+.job-contant img {
     width: 80px;
     height: 80px;
     margin: 10px;
     border-radius: 50px;
-   
-   
-    
 }
-.small-card{
- 
-}
-.jobs{
-    width: 220px;
-   display: flex;
- justify-content :space-between;
-align-items:baseline;
-align-content:center;
 
-  
-}
-.body-text{
-    width:auto;
+.jobs {
+    width: 220px;
     display: flex;
-}
-.ctc{
-    display: flex;
-    justify-content:space-around;
+    justify-content: space-between;
+    align-items: baseline;
     align-content: center;
-    align-items:last baseline;
+
+
 }
-.ctc{
+
+.body-text {
+    width: auto;
+    display: flex;
+}
+
+.ctc {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: last baseline;
+}
+
+.ctc {
     font-weight: 500;
     font-size: 15px;
 }
+
 .job-card-bg {
-    background-color: #e3edf9; /* light blue from Figma */
-  }
-
-
-
-  @media(max-width:1068px){
-    .jobs-listing{
-       
-        display: flex;
-        justify-content: center;
-
+    background-color: #e3edf9;
+    /* light blue from Figma */
+}
+.lpa-position{
+    position: relative;
+    left: 10%;    
+}
+.viewButton_position{
+    position: relative;
+    right: 13%;
+}
+@media (max-width: 767.98px) {
+    .card-wrap {
+      width: 90% !important;
+      margin: 0 auto;
     }
-    
-  }
-  @media(max-width:920px){
-    .section-latest{
-        margin: auto;
+  
+    .ctc {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 0.5rem;
     }
-    .jobs-listing{
-        max-width: max-content;
-        display: flex;
-        flex-direction: row;
-
+  
+    .ctc button {
+      width: 100%;
     }
-
-    .job-contant{
-        max-width:100%;
-       
+  
+    .job-contant {
+      flex-direction: column;
     }
-    
-    .card-wrap{
-       max-width: 100%;
-    }
-  }
-  @media(max-width:426px){
-  .section-latest{
-   margin: auto;
-  }
-    .jobs-listing{
-        max-width:100%;
-    }
-
-    .job-contant{
-        
-        position: relative;
-        left: 1px;
+  
+    .card-wrap img {
+      max-width: 100%;
+      height: auto;
     }
   }

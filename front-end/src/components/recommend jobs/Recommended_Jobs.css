@@ -68,12 +68,6 @@
     cursor: pointer;
 }
 
-.apply-now-btn {
-    transition: all 0.3s ease-in-out;
-    background-color: #7b1fa2;
-    color: white;
-}
-
 .apply-now-btn:hover {
     background-color: #6a1b9a;
     /* Slightly darker purple */

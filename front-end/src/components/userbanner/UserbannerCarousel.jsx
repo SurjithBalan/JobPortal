@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import UserBanner_1 from "./slider_1/Userbanner_slider_1";
@@ -35,6 +35,8 @@ const UserbannerAutoSlider = () => {
         // Do some logic here...
         navigate('/hero-search-filter'); // navigate manually
     };
+    const [searchQuery, setSearchQuery] = useState('');
+    const [locationQuery, setLocationQuery] = useState('');
     const SearchBar = () => {
         return (
             <div className="input-field m-0">

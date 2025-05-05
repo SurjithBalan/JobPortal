@@ -175,7 +175,7 @@ const CompanysList = () => {
                             </Col>
 
                             {/* Job Info */}
-                            <Col md={5}>
+                            <Col md={4}>
 
                                 <div className="d-flex align-items-center gap-2 overflow-auto flex-nowrap overflowHider" >
 
@@ -206,7 +206,7 @@ const CompanysList = () => {
                                 </div>
 
                             </Col>
-                            <Col md={2}>
+                            <Col md={3}>
                                 <div className="align-item-center justify-content-center">
                                     <span className="text-inside"><IoLocationOutline size={16} className="me-1" />{job.location}, Tamil Nadu, India</span>
                                 </div>

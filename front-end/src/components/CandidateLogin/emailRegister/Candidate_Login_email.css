@@ -66,14 +66,9 @@
     position: absolute;
     top: 50%;
     left: 15px;
-    transform: translateY(-50%);
-    color: #6c757d;
+    transform: translateY(-50%);   
     font-size: 1rem;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
+    pointer-events: none;   
     color: #1a70bb;
     pointer-events: none;
 }

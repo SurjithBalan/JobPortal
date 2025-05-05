@@ -3,7 +3,7 @@ import "../hrcompanies/counter.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Badge } from "react-bootstrap";
+import { Badge, Container } from "react-bootstrap";
 import jobData from "../data/job";
 import img1 from "../../assets/image/counterlogo1.png";
 import img2 from "../../assets/image/counterlogo2.png";
@@ -11,6 +11,8 @@ import img3 from "../../assets/image/counterlogo3.png";
 import img4 from "../../assets/image/counterlogo4.png";
 import img5 from "../../assets/image/counterlogo5.png";
 import img6 from "../../assets/image/counterlogo6.png";
+import { Row, Col } from 'react-bootstrap';
+
 const couterData = [
   {
     id: 1,
@@ -84,9 +86,9 @@ export default function Counter() {
     prevArrow: <CustomArrow direction="previous" />,
   };
   return (
-    <>
-      <div className=" container conuter-section  ">
-        <div className=" counter-container col-7">
+    <Container>
+      <div className="container conuter-section">
+        {/* <div className=" counter-container col-7">
           {couterData.map((data, index) => (
             <div className="card-top ">
               <div key={index} className="counter shadow ">
@@ -98,8 +100,20 @@ export default function Counter() {
               </div>
             </div>
           ))}
+        </div> */}
+        <div className="counter-container col-7 d-flex flex-wrap gap-2">
+          {couterData.map((data, index) => (
+            <div key={index} className="card-top flex-fill" style={{ flex: '1 1 30%', minWidth: '200px' }}>
+              <div className="counter shadow d-flex flex-column align-items-center justify-content-between p-3 mr-0 gap-1" style={{ height: '200px' }}>
+                <div className="image mb-2">
+                  <img src={data.img} alt="" style={{ width: '40px', height: '40px' }} />
+                </div>
+                <span className="fw-bold">3,400</span>
+                <h6 className="mt-2">{data.title}</h6>
+              </div>
+            </div>
+          ))}
         </div>
-
         <div className="top-sport m-0 col-5">
           <div className="sport text-center ">
             <div className="header text-white fw-bold">
@@ -140,7 +154,7 @@ export default function Counter() {
           </div>
         </div>
       </div>
-    </>
+    </Container >
   );
 }
 

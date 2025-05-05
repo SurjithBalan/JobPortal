@@ -1,38 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 
-.recruiter-section{
-    margin: 20px 60px 10px 60px;
+.recruiter-section {
+    /* margin: 20px 60px 10px 60px; */
     border-radius: 16px;
-     background: linear-gradient(180deg, #1E88E5 0%, #176AB2 50%);
-    background: linear-gradient( X-0, Y-2, Blur-6, #000000 -25%);
-   display: flex;
+    background: linear-gradient(180deg, #1E88E5 0%, #176AB2 50%);
+    background: linear-gradient(X-0, Y-2, Blur-6, #000000 -25%);
+    display: flex;
     flex-direction: column;
-   
-   
+
+
 }
-.recruiter-top{
+
+.recruiter-top {
     display: flex;
     flex-direction: row;
-    
+
 }
-.recruiter-image img{
+
+.recruiter-image img {
     width: 80%;
     border-radius: 60px;
-    
+
 }
-.recruiter-content button{
+
+.recruiter-content button {
     position: relative;
     left: 60%;
     border-radius: 15px;
-    background-color:white;
-    color:#1E88E5;
+    background-color: white;
+    color: #1E88E5;
     padding: 10px 24px 10px 24px;
     font-family: "Poppins";
     font-weight: 700;
     border: none;
 }
-.recruiter-content h1{
+
+.recruiter-content h1 {
     font-family: "Poppins";
     font-size: 30px;
     font-weight: 400;
@@ -40,38 +44,43 @@
 }
 
 
-.recruiter-sign span{
-color:white;
-font-family: "Poppins", sans-serif;
-font-weight: 400;
-font-size: 30px;
- 
-}
-.recruiter{
-   display: flex;
-   flex-direction: column; 
-}
-.recruiter-sign{
-display: flex;
-align-items: center;
-justify-content: start;
-flex-wrap: wrap;
-padding: 20px;
+.recruiter-sign span {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
 
 }
-.recruiter-details p{
-   color: white;
-   font-family: "Poppins";
-   font-weight: 600;
+
+.recruiter {
+    display: flex;
+    flex-direction: column;
 }
-.recruiter-button{
- display: flex;
- justify-content: end;
+
+.recruiter-sign {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
+
 }
-.recruiter-button button{
+
+.recruiter-details p {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 600;
+}
+
+.recruiter-button {
+    display: flex;
+    justify-content: end;
+}
+
+.recruiter-button button {
     border-radius: 15px;
-    background-color:white;
-    color:#1E88E5;
+    background-color: white;
+    color: #1E88E5;
     padding: 10px 24px 10px 24px;
     font-family: "Poppins";
     font-weight: 700;
@@ -79,24 +88,26 @@ padding: 20px;
 }
 
 
-@media(max-width:1126px){
-    .recruiter-content button{
+@media(max-width:1126px) {
+    .recruiter-content button {
         position: unset;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .recruiter-image{
+
+    .recruiter-image {
         display: flex;
         flex-wrap: wrap;
     }
 }
 
-@media(max-width:426px){
-    .recruiter-section{
+@media(max-width:426px) {
+    .recruiter-section {
         margin: 0%;
     }
-    .recruiter-image img{
+
+    .recruiter-image img {
         width: 100%;
     }
-    
+
 }

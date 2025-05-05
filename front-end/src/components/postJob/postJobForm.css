@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-form-label {
+    font-size: #424242;
+    font-size: 16px;
+}
+
+.react-phone-input-2 .flag-dropdown .arrow {
+    display: none !important;
+}
+
+
+/* Hide the arrow in the phone input */
+.react-phone-input-2 .selected-flag .arrow {
+    display: none !important;
+}
+
+/* Optional: remove padding around flag */
+.react-phone-input-2 .selected-flag {
+    padding-right: 8px !important;
+}
+
+/* Optional: adjust dropdown background if needed */
+.react-phone-input-2 .flag-dropdown {
+    background: transparent !important;
+    border: none !important;
+}

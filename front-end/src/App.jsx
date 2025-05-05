@@ -11,17 +11,19 @@ import VerifyOTP from './components/CandidateLogin/VerifyOTP/VerifyOTP'
 import UserScreen from './pages/UserScreen'
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Herofilter from './components/herofilter/Herofilter';
-import HRCompanyJobListingPage from'./components/HRcompanyjoblist/HRCompanyJobs';
-import BreadcrumbNavbarCompanyList from './components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
+import HRCompanyJobListingPage from './components/HRcompanyjoblist/HRCompanyJobs';
 import Featurefilter from './components/featurefilter/Featurefilter';
 import Companyinformation from './components/companyloginform/Companyinformation';
-function App() {
+import RecomendedJobsDashborad from './components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 
 
+
+function App() {  
   return (
     <>
       <Router>
         <div>
+
           <Routes>
             <Route path="/" element={<UserScreen />} />
             <Route path="/companylogin" element={<CompanyLogin />} />
@@ -36,8 +38,12 @@ function App() {
             <Route path='/feature-filter' element = {<Featurefilter/>}/>
             <Route path='/hr-company-page' element = {<HRCompanyJobListingPage/>}/>
             <Route path='/company-register-form' element = {<Companyinformation/>}/>
+            <Route path='/hr-company-page' element={< HRCompanyJobListingPage/>} />
+            <Route path='/Recommended_jobs_Dashboard' element = {<RecomendedJobsDashborad/>}></Route>
+            <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route>
+            <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
+
           </Routes>
-          
         </div>
       </Router>
     </>

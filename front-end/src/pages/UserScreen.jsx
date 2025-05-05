@@ -16,6 +16,8 @@ import Footer from '../components/Footer/Footer'
 // import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
+import PostJob from '../components/postJob/postJob'
+
 function UserScreen() {
   return (
     <div>
@@ -25,16 +27,17 @@ function UserScreen() {
       <HrCompanies />
       <UrgentFeaturedJobs />
       <RecommendedJobs />
-      <Latestjob />
+      <Latestjob />     
       <JobCategories />
       <FeaturedCandidates />
       <Recruiters />
       <About />
       <Testimonials />
       <FeedbackForm />     
-      <HRCompanyJobListingPage />
+      {/* <HRCompanyJobListingPage /> */}
       <Footer />
-      <RecomendedJobsDashborad/>
+      {/* <RecomendedJobsDashborad/>
+      <PostJob/> */}
     </div>
   )
 }
