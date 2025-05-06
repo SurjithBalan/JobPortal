@@ -16,8 +16,6 @@ import Featurefilter from './components/featurefilter/Featurefilter';
 import Companyinformation from './components/companyloginform/Companyinformation';
 import RecomendedJobsDashborad from './components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 
-
-
 function App() {  
   return (
     <>
@@ -43,8 +41,7 @@ function App() {
             <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route>
             <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
 
-          </Routes>
-          {/* demo later shouldbe delete */}
+          </Routes>         
         </div>
       </Router>
     </>
