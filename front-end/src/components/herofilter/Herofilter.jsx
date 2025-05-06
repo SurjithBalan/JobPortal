@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../herofilter/herofilter.css";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { TbCurrentLocation } from "react-icons/tb";
@@ -18,6 +19,10 @@ import qualification from "../data/qualification.js";
 import industry from "../data/industry.js";
 import language from "../data/language.js";
 import functionality from "../data/functionality.js";
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 export default function Herofilter() {
   const [jobs, setJobs] = useState(herojobs);
   const [currentPage, setCurrentPage] = useState(1);
@@ -112,10 +117,29 @@ export default function Herofilter() {
     setSort(event.target.value);
   };
 
+  // hero page search input field
+const query = useQuery();
+const filterTitle = query.get("functionality")?.toLowerCase() || "";
+const filterLocation = query.get("location")?.toLowerCase() || "";
+
   // Filter and Sort Jobs
  useEffect(() => {
   let updatedJobs = [...herojobs];
 
+  // Hero page search input field (from query params)
+  if (filterTitle) {
+    updatedJobs = updatedJobs.filter((job) =>
+      job.functionality.toLowerCase().includes(filterTitle.toLowerCase())
+    );
+  }
+
+  if (filterLocation) {
+    updatedJobs = updatedJobs.filter((job) =>
+      job.location.toLowerCase().includes(filterLocation.toLowerCase())
+    );
+  }
+
+ 
   if (search) {
     updatedJobs = updatedJobs.filter((job) =>
       job.functionality.toLowerCase().includes(search.toLowerCase())
@@ -203,8 +227,10 @@ export default function Herofilter() {
 }, [
   search, filter, sort, jobType, workMode, industryFilter, companyType,
   functionalityFilter, education, specificQualification, gender,
-  noticePeriod, datePosted, languageFilter, minExperience, maxExperience, range,searchLocation,careerLevel
+  noticePeriod, datePosted, languageFilter, minExperience, maxExperience, range,searchLocation,careerLevel,
+  filterTitle,filterLocation
 ]);
+
 
   // pagination
   const jobsPerPage = 11;
@@ -502,7 +528,7 @@ export default function Herofilter() {
                   <InputGroup.Text>
                     <FaBriefcase />
                   </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setFilter(e.target.value)}>
+                  <Form.Select onChange={(e)=>setJobType(e.target.value)}>
                   <option value="Default">All Jobs </option>
                     <option value="Full-Time">Full-Time </option>
                     <option value="Remote">Remote</option>
