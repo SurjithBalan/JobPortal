@@ -15,6 +15,7 @@ export default function CompanyLogin() {
           <Row className="w-100 mh-100">
             {/* Left Side */}
             <Col
+            xs={12}
               md={5}
               className=" d-flex flex-column justify-content-center align-items-center left-side rounded-1"
             >
@@ -36,6 +37,7 @@ export default function CompanyLogin() {
 
             {/* Right Side */}
             <Col
+            xs={12}
               md={7}
               className="d-flex flex-column justify-content-center align-items-center right-side"
             >
@@ -43,14 +45,14 @@ export default function CompanyLogin() {
                 HR Company Login
               </h3>
 
-              <Form className="w-75">
-                <Form.Group className="mb-3">
+              <Form className="form-group w-75">
+                <Form.Group className=" mb-3 ">
                   <div className="position-relative my-5">
                     <GoPerson className="input-icon-candidate-login" />
                     <Form.Control
                       type="Name"
                       placeholder="Name"
-                      className="ps-5"
+                      className="form-control ps-5"
                     />
                   </div>
                   <div className="position-relative my-5">
@@ -58,7 +60,7 @@ export default function CompanyLogin() {
                     <Form.Control
                       type="Password"
                       placeholder="Password"
-                      className="ps-5"
+                      className="form-control ps-5"
                     />
                   </div>
                   <div className="d-flex justify-content-end">
@@ -69,14 +71,16 @@ export default function CompanyLogin() {
                   </div>
                 </Form.Group>
 
-                <Link to={"/"}>
-                  <Button
-                    className="rounded-pill text-white "
-                    style={{ backgroundColor: "#1e88e5" }}
-                  >
-                    Log In
-                  </Button>
-                </Link>
+                <div className="Login-button">
+                  <Link to={"/"}>
+                    <Button
+                      className=" rounded-pill text-white "
+                      style={{ backgroundColor: "#1e88e5" }}
+                    >
+                      Log In
+                    </Button>
+                  </Link>
+                </div>
               </Form>
             </Col>
           </Row>

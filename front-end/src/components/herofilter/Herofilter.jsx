@@ -20,9 +20,6 @@ import industry from "../data/industry.js";
 import language from "../data/language.js";
 import functionality from "../data/functionality.js";
 
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
-};
 export default function Herofilter() {
   const [jobs, setJobs] = useState(herojobs);
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,8 +37,11 @@ export default function Herofilter() {
   const [noticePeriod, setNoticePeriod] = useState("");
   const [datePosted, setDatePosted] = useState("");
   const [languageFilter, setLanguageFilter] = useState("");
-  const [searchLocation, setSearchLocation] = useState('');
-  const [careerLevel,setCareerLevel]=useState('');
+  const [searchLocation, setSearchLocation] = useState("");
+  const [careerLevel, setCareerLevel] = useState("");
+  const location = useLocation();
+  const [filterTitle, setFilterTitle] = useState("");
+  const [filterLocation, setFilterLocation] = useState("");
   // Sidebar States
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -91,19 +91,19 @@ export default function Herofilter() {
   // handle search input
   const handleFindClick = () => {
     let updatedJobs = [...herojobs];
-  
-   // Search by Job Title
-   if (search) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.functionality.toLowerCase().includes(search.toLowerCase())
-    );
-  }
-  //  search by Location
-  if (searchLocation) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.location.toLowerCase().includes(searchLocation.toLowerCase())
-    );
-  }
+
+    // Search by Job Title
+    if (search) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.functionality.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    //  search by Location
+    if (searchLocation) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.location.toLowerCase().includes(searchLocation.toLowerCase())
+      );
+    }
     setJobs(updatedJobs);
     setCurrentPage(1);
   };
@@ -118,122 +118,157 @@ export default function Herofilter() {
   };
 
   // hero page search input field
-const query = useQuery();
-const filterTitle = query.get("functionality")?.toLowerCase() || "";
-const filterLocation = query.get("location")?.toLowerCase() || "";
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    const title = query.get("functionality")?.toLowerCase() || "";
+    const loc = query.get("location")?.toLowerCase() || "";
+    setFilterTitle(title);
+    setFilterLocation(loc);
+  }, [location.search]);
 
   // Filter and Sort Jobs
- useEffect(() => {
-  let updatedJobs = [...herojobs];
+  useEffect(() => {
+    let updatedJobs = [...herojobs];
 
-  // Hero page search input field (from query params)
-  if (filterTitle) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.functionality.toLowerCase().includes(filterTitle.toLowerCase())
+    // Hero page search input field (from query params)
+
+    if (filterTitle) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.functionality.toLowerCase().includes(filterTitle.toLowerCase())
+      );
+    }
+
+    if (filterLocation) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.location.toLowerCase().includes(filterLocation.toLowerCase())
+      );
+    }
+
+    if (search) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.functionality.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    //  search by Location
+    if (searchLocation) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.location.toLowerCase().includes(searchLocation.toLowerCase())
+      );
+    }
+
+    if (filter !== "Default") {
+      updatedJobs = updatedJobs.filter((job) => job.jobType === filter);
+    }
+
+    if (jobType) {
+      updatedJobs = updatedJobs.filter((job) => job.jobType === jobType);
+    }
+
+    if (careerLevel) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.careerLevel === careerLevel
+      );
+    }
+
+    if (workMode) {
+      updatedJobs = updatedJobs.filter((job) => job.workMode === workMode);
+    }
+
+    if (industryFilter) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.industry === industryFilter
+      );
+    }
+
+    if (companyType) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.companyType === companyType
+      );
+    }
+
+    if (functionalityFilter) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.functionality === functionalityFilter
+      );
+    }
+
+    if (education) {
+      updatedJobs = updatedJobs.filter((job) => job.education === education);
+    }
+
+    if (specificQualification) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.qualification === specificQualification
+      );
+    }
+
+    if (gender) {
+      updatedJobs = updatedJobs.filter((job) => job.gender === gender);
+    }
+
+    if (noticePeriod) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.noticePeriod === noticePeriod
+      );
+    }
+
+    if (datePosted) {
+      updatedJobs = updatedJobs.filter((job) => job.postedOn === datePosted);
+    }
+
+    if (languageFilter) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.language === languageFilter
+      );
+    }
+
+    // Experience Range
+    updatedJobs = updatedJobs.filter(
+      (job) =>
+        job.experienceMin >= minExperience && job.experienceMax <= maxExperience
     );
-  }
 
-  if (filterLocation) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.location.toLowerCase().includes(filterLocation.toLowerCase())
+    // Salary Range
+    updatedJobs = updatedJobs.filter(
+      (job) => job.salary >= range[0] && job.salary <= range[1]
     );
-  }
 
- 
-  if (search) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.functionality.toLowerCase().includes(search.toLowerCase())
-    );
-  }
+    // Sorting
+    if (sort === "A-Z") {
+      updatedJobs.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sort === "Z-A") {
+      updatedJobs.sort((a, b) => b.title.localeCompare(a.title));
+    }
 
-   //  search by Location
-   if (searchLocation) {
-    updatedJobs = updatedJobs.filter((job) =>
-      job.location.toLowerCase().includes(searchLocation.toLowerCase())
-    );
-  }
-
-  if (filter !== 'Default') {
-    updatedJobs = updatedJobs.filter((job) => job.jobType === filter);
-  }
-
-  if (jobType) {
-    updatedJobs = updatedJobs.filter((job) => job.jobType === jobType);
-  }
-   
-  if(careerLevel){
-    updatedJobs = updatedJobs.filter((job)=>job.careerLevel === careerLevel)
-  }
-
-  if (workMode) {
-    updatedJobs = updatedJobs.filter((job) => job.workMode === workMode);
-  }
-
-  if (industryFilter) {
-    updatedJobs = updatedJobs.filter((job) => job.industry === industryFilter);
-  }
-
-  if (companyType) {
-    updatedJobs = updatedJobs.filter((job) => job.companyType === companyType);
-  }
-
-  if (functionalityFilter) {
-    updatedJobs = updatedJobs.filter((job) => job.functionality === functionalityFilter);
-  }
-
-  if (education) {
-    updatedJobs = updatedJobs.filter((job) => job.education === education);
-  }
-
-  if (specificQualification) {
-    updatedJobs = updatedJobs.filter((job) => job.qualification === specificQualification);
-  }
-
-  if (gender) {
-    updatedJobs = updatedJobs.filter((job) => job.gender === gender);
-  }
-
-  if (noticePeriod) {
-    updatedJobs = updatedJobs.filter((job) => job.noticePeriod === noticePeriod);
-  }
-
-  if (datePosted) {
-    updatedJobs = updatedJobs.filter((job) => job.postedOn === datePosted);
-  }
-
-  if (languageFilter) {
-    updatedJobs = updatedJobs.filter((job) => job.language === languageFilter);
-  }
-
-  // Experience Range
-  updatedJobs = updatedJobs.filter(
-    (job) => job.experienceMin >= minExperience && job.experienceMax <= maxExperience
-  );
-
-  // Salary Range
-  updatedJobs = updatedJobs.filter(
-    (job) => job.salary >= range[0] && job.salary <= range[1]
-  );
-
-  // Sorting
-  if (sort === 'A-Z') {
-    updatedJobs.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sort === 'Z-A') {
-    updatedJobs.sort((a, b) => b.title.localeCompare(a.title));
-  }
-
-  setJobs(updatedJobs);
-  setCurrentPage(1);
-}, [
-  search, filter, sort, jobType, workMode, industryFilter, companyType,
-  functionalityFilter, education, specificQualification, gender,
-  noticePeriod, datePosted, languageFilter, minExperience, maxExperience, range,searchLocation,careerLevel,
-  filterTitle,filterLocation
-]);
-
+    setJobs(updatedJobs);
+    setCurrentPage(1);
+  }, [
+    search,
+    filter,
+    sort,
+    jobType,
+    workMode,
+    industryFilter,
+    companyType,
+    functionalityFilter,
+    education,
+    specificQualification,
+    gender,
+    noticePeriod,
+    datePosted,
+    languageFilter,
+    minExperience,
+    maxExperience,
+    range,
+    searchLocation,
+    careerLevel,
+    filterTitle,
+    filterLocation,
+  ]);
 
   // pagination
-  const jobsPerPage = 11;
+  const jobsPerPage = 12;
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
 
@@ -244,11 +279,11 @@ const filterLocation = query.get("location")?.toLowerCase() || "";
 
   return (
     <>
-     <UserNavbar/>
+      <UserNavbar />
       <Container fluid>
         <Row>
           <Col md={12}>
-            <div className=" home-search-filter my-3">
+            <div className=" home-search-filter my-5">
               <p className="my-3">Home</p>
               <ul className="my-3">
                 <li>Search Filter</li>
@@ -257,41 +292,54 @@ const filterLocation = query.get("location")?.toLowerCase() || "";
           </Col>
         </Row>
 
-        <Row>
-          <Col md={12}>
-            <div className="search-input mt-4">
-              <div className="container my-2 p-0  rounded-2">
-                <div className="input-group bg-white ">
-                  <span className="input-group-text bg-transparent border-end-0">
-                    <i>
-                      <MdOutlineWorkOutline />
-                    </i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control shadow-none border-start-1 border  border-right-1"
-                    placeholder="Job title, Keywords, or Skills"
-                    value={search}
-                    style={{borderRadius:"0px"}}
-                    onChange={(e)=>setSearch(e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    className="form-control shadow-none border-start-1 border border-end-1"
-                    placeholder="Location"
-                    value={searchLocation}
-                    onChange={(e)=>setSearchLocation(e.target.value)}
-                  />
-                  <span className="input-group-text bg-transparent border-end-1">
-                    <i>
-                      <TbCurrentLocation />
-                    </i>
-                  </span>
-                  <span className="input-group-text border-start-0 bg-transparent">
-                    <button onClick={handleFindClick} className="btn btn-purple  btn-shadow py-2 px-4">
-                      Find Jobs
-                    </button>
-                  </span>
+        <Row className="mt-4">
+          <Col xs={12}>
+            <div className="search-input">
+              <div className="container my-2 p-0 rounded-2">
+                <div className="bg-white p-3 rounded-2">
+                  <Row className="g-2">
+                    {/* Job Title Input */}
+                    <Col xs={12} md={5}>
+                      <div className="input-group">
+                        <span className="input-group-text bg-transparent">
+                          <MdOutlineWorkOutline />
+                        </span>
+                        <input
+                          type="text"
+                          className="form-control shadow-none"
+                          placeholder="Job title, Keywords, or Skills"
+                          value={search}
+                          onChange={(e) => setSearch(e.target.value)}
+                        />
+                      </div>
+                    </Col>
+
+                    {/* Location Input */}
+                    <Col xs={12} md={5}>
+                      <div className="input-group">
+                        <input
+                          type="text"
+                          className="form-control shadow-none"
+                          placeholder="Location"
+                          value={searchLocation}
+                          onChange={(e) => setSearchLocation(e.target.value)}
+                        />
+                        <span className="input-group-text bg-transparent">
+                          <TbCurrentLocation />
+                        </span>
+                      </div>
+                    </Col>
+
+                    {/* Button */}
+                    <Col xs={12} md={2}>
+                      <button
+                        onClick={handleFindClick}
+                        className=" btn-purple border-0 rounded-3 btn-shadow w-100 py-2"
+                      >
+                        Find Jobs
+                      </button>
+                    </Col>
+                  </Row>
                 </div>
               </div>
             </div>
@@ -300,287 +348,316 @@ const filterLocation = query.get("location")?.toLowerCase() || "";
 
         <Row>
           <Col md={3} className="my-4">
-            <div >
-              <button className="toggle-btn mt-3" onClick={toggleSidebar}>
-                <CiFilter />
+            <div>
+              <button
+                className="toggle-btn  my-5 mx-1"
+                style={{ backgroundColor: "#7B1FA2", color: "white" }}
+                onClick={toggleSidebar}
+              >
+                <CiFilter color="#FFA900" />
                 Filter
               </button>
 
               <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
                 <div className=" my-4 hero-sidebar">
-                <h6 className="fw-bold mb-3">Work Mode</h6>
-                <Form.Select onChange={(e)=>setWorkMode(e.target.value)} className="mb-4">
-                  <option value=" ">Work Mode</option>
-                  <option value="On-site">On-site</option>
-                  <option value="Hybrid"> Hybrid</option>
-                  <option value="Remote">Remote</option>
-                </Form.Select>
+                  <h6 className="fw-bold mb-3">Work Mode</h6>
+                  <Form.Select
+                    onChange={(e) => setWorkMode(e.target.value)}
+                    className="mb-4"
+                  >
+                    <option value=" ">Work Mode</option>
+                    <option value="On-site">On-site</option>
+                    <option value="Hybrid"> Hybrid</option>
+                    <option value="Remote">Remote</option>
+                  </Form.Select>
 
-                <h6 className="fw-bold mb-0">Experience Level</h6>
-                <div className="d-flex align-items-center mb-0 gap-2">
-                  <div className="experience-slider-container">
-                    <div className="experience-inputs">
-                      <div>
-                        <label>Min</label>
-                        <input
-                          type="number"
-                          min={minExpLimit}
-                          max={maxExperience - 1}
-                          value={minExperience}
-                          onChange={(e)=>setMinExperience(e.target.value)}
-                        />
+                  <h6 className="fw-bold mb-0">Experience Level</h6>
+                  <div className="d-flex align-items-center mb-0 gap-2">
+                    <div className="experience-slider-container">
+                      <div className="experience-inputs">
+                        <div>
+                          <label>Min</label>
+                          <input
+                            type="number"
+                            min={minExpLimit}
+                            max={maxExperience - 1}
+                            value={minExperience}
+                            onChange={(e) => setMinExperience(e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <label>Max</label>
+                          <input
+                            type="number"
+                            min={minExperience + 1}
+                            max={maxExpLimit}
+                            value={maxExperience}
+                            onChange={(e) => setMaxExperience(e.target.value)}
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label>Max</label>
+
+                      <div className="slider-track">
                         <input
-                          type="number"
-                          min={minExperience + 1}
+                          type="range"
+                          min={minExpLimit}
+                          max={maxExpLimit}
+                          value={minExperience}
+                          onChange={(e) =>
+                            setMinExperience(
+                              Math.min(
+                                Number(e.target.value),
+                                maxExperience - 1
+                              )
+                            )
+                          }
+                          className="thumb thumb-left"
+                        />
+                        <input
+                          type="range"
+                          min={minExpLimit}
                           max={maxExpLimit}
                           value={maxExperience}
-                          onChange={(e)=>setMaxExperience(e.target.value)}
+                          onChange={(e) =>
+                            setMaxExperience(
+                              Math.max(
+                                Number(e.target.value),
+                                minExperience + 1
+                              )
+                            )
+                          }
+                          className="thumb thumb-right"
+                        />
+                        <div className="slider-track"></div>
+                        <div
+                          className="slider-range"
+                          style={{
+                            left: `${(minExperience / maxExpLimit) * 100}%`,
+                            right: `${
+                              100 - (maxExperience / maxExpLimit) * 100
+                            }%`,
+                          }}
                         />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="slider-track">
-                      <input
-                        type="range"
-                        min={minExpLimit}
-                        max={maxExpLimit}
-                        value={minExperience}
-                        onChange={(e) =>
-                          setMinExperience(
-                            Math.min(Number(e.target.value), maxExperience - 1)
-                          )
-                        }
-                        className="thumb thumb-left"
-                      />
-                      <input
-                        type="range"
-                        min={minExpLimit}
-                        max={maxExpLimit}
-                        value={maxExperience}
-                        onChange={(e) =>
-                          setMaxExperience(
-                            Math.max(Number(e.target.value), minExperience + 1)
-                          )
-                        }
-                        className="thumb thumb-right"
-                      />
-                      <div className="slider-track"></div>
-                      <div
-                        className="slider-range"
-                        style={{
-                          left: `${(minExperience / maxExpLimit) * 100}%`,
-                          right: `${
-                            100 - (maxExperience / maxExpLimit) * 100
-                          }%`,
-                        }}
-                      />
+                  <h6 className="fw-bold mt-4 mb-3">Industry</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBuilding />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setIndustryFilter(e.target.value)}
+                    >
+                      <option value="">Industry</option>
+                      {industry.map((data, index) => (
+                        <option key={index} value={data}>
+                          {data}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </InputGroup>
+
+                  <h6 className="fw-bold mt-4 mb-3">Company Type</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBuilding />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setCompanyType(e.target.value)}
+                    >
+                      <option value="">Company Type</option>
+                      <option value="Corporate">Corporate</option>
+                      <option value="Foreign MNC">Foreign MNC</option>
+                      <option value="Indian MNC">Indian MNC</option>
+                      <option value="Startup">Startup</option>
+                      <option value="Govt / PSU">Govt / PSU</option>
+                      <option value=" Others">Others</option>
+                    </Form.Select>
+                  </InputGroup>
+
+                  <h6 className="fw-bold mb-3">Functionality</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setFunctionalityFilter(e.target.value)}
+                    >
+                      <option value="">Functionality</option>
+                      {functionality.map((data, index) => (
+                        <option key={index} value={data}>
+                          {data}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </InputGroup>
+
+                  <h6 className="fw-bold ">Salary Range</h6>
+                  <div className="d-flex align-items-center  gap-2">
+                    <div className="range-container">
+                      <div className="inputs">
+                        <input
+                          type="number"
+                          value={range[0]}
+                          onChange={handleMinChange}
+                          min="0"
+                          step="1000"
+                        />
+                        <span>to</span>
+                        <input
+                          type="number"
+                          value={range[1]}
+                          onChange={handleMaxChange}
+                          step="1000"
+                        />
+                      </div>
+
+                      <div className="slider-track">
+                        <input
+                          type="range"
+                          min="0"
+                          max="100000"
+                          step="1000"
+                          value={range[0]}
+                          onChange={handleMinChange}
+                        />
+                        <input
+                          type="range"
+                          min="0"
+                          max="100000"
+                          step="1000"
+                          value={range[1]}
+                          onChange={handleMaxChange}
+                        />
+                      </div>
+
+                      <p className="result">
+                        ₹{range[0].toLocaleString()} – ₹
+                        {range[1].toLocaleString()}
+                      </p>
                     </div>
                   </div>
-                </div>
-
-                <h6 className="fw-bold mt-4 mb-3">Industry</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBuilding />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setIndustryFilter(e.target.value)}>
-                  <option value="">Industry</option>
-                    {industry.map((data, index) => (
-                      <option key={index} value={data}>
-                        {data}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </InputGroup>
-
-                <h6 className="fw-bold mt-4 mb-3">Company Type</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBuilding />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setCompanyType(e.target.value)}>
-                  <option value="">Company Type</option>
-                    <option value="Corporate">Corporate</option>
-                    <option value="Foreign MNC">Foreign MNC</option>
-                    <option value="Indian MNC">Indian MNC</option>
-                    <option value="Startup">Startup</option>
-                    <option value="Govt / PSU">Govt / PSU</option>
-                    <option value=" Others" >Others</option>
-                  </Form.Select>
-                </InputGroup>
-
-                <h6 className="fw-bold mb-3">Functionality</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setFunctionalityFilter(e.target.value)}>
-                  <option value="">Functionality</option>
-                    {functionality.map((data, index) => (
-                      <option key={index} value={data}>
-                        {data}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </InputGroup>
-
-                <h6 className="fw-bold ">Salary Range</h6>
-                <div className="d-flex align-items-center  gap-2">
-                  <div className="range-container">
-                    <div className="inputs">
-                      <input
-                        type="number"
-                        value={range[0]}
-                        onChange={handleMinChange}
-                        min="0"
-                        step="1000"
-                      />
-                      <span>to</span>
-                      <input
-                        type="number"
-                        value={range[1]}
-                        onChange={handleMaxChange}
-                        step="1000"
-                      />
-                    </div>
-
-                    <div className="slider-track">
-                      <input
-                        type="range"
-                        min="0"
-                        max="100000"
-                        step="1000"
-                        value={range[0]}
-                        onChange={handleMinChange}
-                      />
-                      <input
-                        type="range"
-                        min="0"
-                        max="100000"
-                        step="1000"
-                        value={range[1]}
-                        onChange={handleMaxChange}
-                      />
-                    </div>
-
-                    <p className="result">
-                      ₹{range[0].toLocaleString()} – ₹
-                      {range[1].toLocaleString()}
-                    </p>
-                  </div>
-                </div>
-                <h6 className="fw-bold mb-3">Education</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setEducation(e.target.value)}>
-                  <option value="">Education</option>
-                    <option value="Diploma">Diploma</option>
-                    <option value="Graduate">Graduate</option>
-                    <option value="Post Graduate">Post Graduate</option>
-                    <option value="PHD">PHD</option>
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Specific Qualification</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setSpecificQualification(e.target.value)}>
-                    <option value="">Select Qualification</option>
-                    {qualification.map((data, index) => (
-                      <option key={index} value={data}>
-                        {data}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Gender</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setGender(e.target.value)}>
-                  <option value="">Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Transgender">Transgender</option>
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Notice Period</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setNoticePeriod(e.target.value)}>
-                  <option value="">Notice Period</option>
-                    <option value="Immediate">Immediate</option>
-                    <option value="15 Days<">15 Days</option>
-                    <option value="30 Days">30 Days</option>
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3"> Job Type</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setJobType(e.target.value)}>
-                  <option value="Default">All Jobs </option>
-                    <option value="Full-Time">Full-Time </option>
-                    <option value="Remote">Remote</option>
-                    <option value="Contract">Contract</option>
-                    <option value="Freelance" >Freelance</option>
-                    <option value="Internship" >Internship</option>
-                    <option value="Temporary">Temporary</option>
-                    <option value="Commission-Based">Commission-Based</option>
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Career Level</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setCareerLevel(e.target.value)}>
-                    <option value="">Select Career Level </option>
-                    <option value="Entry Level">Entry Level</option>
-                    <option value="Junior Level">Junior Level</option>
-                    <option value="Mid Level">Mid Level</option>
-                    <option value="Senior level">Senior level</option>
-                    <option value="C-Suit">C-Suit</option>
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Date Posted</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setDatePosted(e.target.value)}>
-                    <option value="">Select Date</option>
-                    {dateOptions.map((date, index) => (
-                      <option key={index} value={date}>
-                        {date}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </InputGroup>
-                <h6 className="fw-bold mb-3">Language</h6>
-                <InputGroup className="mb-4">
-                  <InputGroup.Text>
-                    <FaBriefcase />
-                  </InputGroup.Text>
-                  <Form.Select onChange={(e)=>setLanguageFilter(e.target.value)}>
-                    <option value="">Select Language</option>
-                    {language.map((data, id) => (
-                      <option key={id} value={data}>
-                        {data}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </InputGroup>
+                  <h6 className="fw-bold mb-3">Education</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select onChange={(e) => setEducation(e.target.value)}>
+                      <option value="">Education</option>
+                      <option value="Diploma">Diploma</option>
+                      <option value="Graduate">Graduate</option>
+                      <option value="Post Graduate">Post Graduate</option>
+                      <option value="PHD">PHD</option>
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Specific Qualification</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setSpecificQualification(e.target.value)}
+                    >
+                      <option value="">Select Qualification</option>
+                      {qualification.map((data, index) => (
+                        <option key={index} value={data}>
+                          {data}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Gender</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select onChange={(e) => setGender(e.target.value)}>
+                      <option value="">Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Transgender">Transgender</option>
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Notice Period</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setNoticePeriod(e.target.value)}
+                    >
+                      <option value="">Notice Period</option>
+                      <option value="Immediate">Immediate</option>
+                      <option value="15 Days<">15 Days</option>
+                      <option value="30 Days">30 Days</option>
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3"> Job Type</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select onChange={(e) => setJobType(e.target.value)}>
+                      <option value="Default">All Jobs </option>
+                      <option value="Full-Time">Full-Time </option>
+                      <option value="Remote">Remote</option>
+                      <option value="Contract">Contract</option>
+                      <option value="Freelance">Freelance</option>
+                      <option value="Internship">Internship</option>
+                      <option value="Temporary">Temporary</option>
+                      <option value="Commission-Based">Commission-Based</option>
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Career Level</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setCareerLevel(e.target.value)}
+                    >
+                      <option value="">Select Career Level </option>
+                      <option value="Entry Level">Entry Level</option>
+                      <option value="Junior Level">Junior Level</option>
+                      <option value="Mid Level">Mid Level</option>
+                      <option value="Senior level">Senior level</option>
+                      <option value="C-Suit">C-Suit</option>
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Date Posted</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setDatePosted(e.target.value)}
+                    >
+                      <option value="">Select Date</option>
+                      {dateOptions.map((date, index) => (
+                        <option key={index} value={date}>
+                          {date}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </InputGroup>
+                  <h6 className="fw-bold mb-3">Language</h6>
+                  <InputGroup className="mb-4">
+                    <InputGroup.Text>
+                      <FaBriefcase />
+                    </InputGroup.Text>
+                    <Form.Select
+                      onChange={(e) => setLanguageFilter(e.target.value)}
+                    >
+                      <option value="">Select Language</option>
+                      {language.map((data, id) => (
+                        <option key={id} value={data}>
+                          {data}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </InputGroup>
                 </div>
               </div>
             </div>
@@ -605,7 +682,9 @@ const filterLocation = query.get("location")?.toLowerCase() || "";
                         <Col xs={12} md={2}>
                           <div className="hero-company">
                             <p className="mb-1 fw-medium ">{job.company}</p>
-                            <h6 className="text-muted  ">{job.functionality}</h6>
+                            <h6 className="text-muted  ">
+                              {job.functionality}
+                            </h6>
                           </div>
                         </Col>
 

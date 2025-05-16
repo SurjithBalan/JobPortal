@@ -83,8 +83,8 @@ const FeaturedCandidates = () => {
                 infinite={true}
                 arrows={true}
                 keyBoardControl={true}
-                containerClass="carousel-container"
-                itemClass="px-3"                
+                containerClassName="carousel-container"
+                itemClassName="px-3"                
             >
                 {candidates.map((candidate, index) => (
                     <div key={index} className="shadow-sm h-100 d-flex flex-column justify-content-between">

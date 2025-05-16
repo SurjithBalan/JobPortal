@@ -38,7 +38,7 @@ font-weight: 500;
   font-size: 24px;
   background: none;
   border: none;
-  color: #2c3e50;
+  color: #dbefdc;
   cursor: pointer;
 }
 
@@ -47,6 +47,7 @@ font-weight: 500;
   width: 250px;
   min-height: 100vh;
   border-radius: 20px;
+  overflow-y: auto;
   background-color: #FDF8FF;
   color: #424242;
   padding: 1rem;
@@ -371,6 +372,9 @@ font-weight: 500;
     transform: translateX(-100%);
     z-index: 998;
     border-radius: 20px;
+   height: 100vh;
+   overflow-y: auto;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
   }
 
@@ -380,6 +384,19 @@ font-weight: 500;
 
   .toggle-btn {
     display: block;
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    z-index: 999;
+    color: #dbefdc;
     font-size: medium;
+    border-radius: 8px;
+    padding: 0.3rem 0.7rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1)
   }
+  .input-group{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+ 
 }

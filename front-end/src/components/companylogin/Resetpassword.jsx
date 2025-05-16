@@ -42,14 +42,14 @@ export default function Resetpassword() {
                 Reset Password
               </h3>
 
-              <Form className="w-75">
+              <Form className=" form-group w-75">
                 <Form.Group className="mb-3">
                   <div className="position-relative my-4">
                     <PiPassword className="input-icon-candidate-login" />
                     <Form.Control
                       type="Password"
                       placeholder="Password"
-                      className="ps-5"
+                      className="form-input ps-5"
                     />
                   </div>
                   <div className="position-relative my-4">
@@ -57,19 +57,20 @@ export default function Resetpassword() {
                     <Form.Control
                       type="Confirm Password"
                       placeholder="Confirm Password"
-                      className="ps-5"
+                      className="form-input ps-5"
                     />
                   </div>
                 </Form.Group>
-
-                <Link to={"/"}>
-                  <Button
-                    className=" my-3 rounded-pill text-white "
-                    style={{ backgroundColor: "#1e88e5" }}
-                  >
-                    Reset Password
-                  </Button>
-                </Link>
+                <div className="Login-button">
+                  <Link to={"/"}>
+                    <Button
+                      className=" my-3 rounded-pill text-white "
+                      style={{ backgroundColor: "#1e88e5" }}
+                    >
+                      Reset Password
+                    </Button>
+                  </Link>
+                </div>
               </Form>
               <div className="my-4 d-flex flex-column justify-content-center align-items-center">
                 <p>

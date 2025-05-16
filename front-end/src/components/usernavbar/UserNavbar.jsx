@@ -1,35 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../assets/image/skylarklogo.png";
 import "../usernavbar/usernavbar.css";
 import { FaStar } from "react-icons/fa";
 import { PiUserCircleThin } from "react-icons/pi";
 import { MdCorporateFare } from "react-icons/md";
-import CompanyLogin from "../companylogin/CompanyLogin";
 import "../companylogin/companylogin.css";
-import UserLogin from "../userlogin/UserLogin";
-import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
+
 function UserNavbar() {
-  const [show, setShow] = useState(false);
-  const [candidate, setCandidate] = useState(false);
-  const [company, setCompany] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const navigate = useNavigate();
 
-  function candidateOpen() {
-    setCompany(false);
-    setShow(true);
-    setCandidate(true);
-  }
-  function companyOpen() {
-    setCandidate(false);
-    setShow(true);
-    setCompany(true);
-  }
   return (
     <>
       <nav
@@ -49,7 +31,10 @@ function UserNavbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <img src={logo} className="image"></img>
-          <div className="collapse navbar-collapse " id="navbarTogglerDemo03">
+          <div
+            className="collapse navbar-collapse justify-content-center "
+            id="navbarTogglerDemo03"
+          >
             <ul className="navbar-nav m-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a
@@ -80,11 +65,11 @@ function UserNavbar() {
                 </a>
               </li>
             </ul>
-            <div className="btn-login ">
+            <div className="btn-login d-flex justify-content-center flex-md-row align-items-center flex-column ">
               <Link to={"/companylogin"}>
                 <button
                   // onClick={companyOpen}
-                  className="hover-underline mx-3  "
+                  className=" mx-2  "
                   style={{ color: "#424242" }}
                 >
                   <span className="m-2">
@@ -93,13 +78,17 @@ function UserNavbar() {
                   Company Login
                 </button>
               </Link>
-              <Link to={"/CandidateLogin"}></Link>
-              <button  className="hover-underline  mx-3" onClick={() => navigate('/CandidateLogin')}>
-                <span className="m-1">
-                  <PiUserCircleThin color="black" fontSize="1.5em" />
-                </span>{" "}
-                CandidateLogin
-              </button>
+              <Link to={"/CandidateLogin"}>
+                <button
+                  className="hover-underline  mx-1"
+                  onClick={() => navigate("/CandidateLogin")}
+                >
+                  <span className="m-1">
+                    <PiUserCircleThin color="black" fontSize="1.5em" />
+                  </span>{" "}
+                  CandidateLogin
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,7 +97,7 @@ function UserNavbar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <div
-            className="collapse navbar-collapse justify-content-center"
+            className="collapse navbar-collapse justify-content-center  "
             id="navbarNavDropdown"
           >
             <ul className="navbar-nav">
@@ -136,14 +125,6 @@ function UserNavbar() {
           </div>
         </div>
       </nav>
-
-      <Modal show={show} onHide={handleClose} animation={false} centered>
-        <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
-          {candidate && <UserLogin />}
-          {company && <CompanyLogin />}
-        </Modal.Body>
-      </Modal>
     </>
   );
 }

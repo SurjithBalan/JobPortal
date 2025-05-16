@@ -61,8 +61,8 @@ export default function HrCompanies() {
         </div>
 
         <Slider {...settings}>
-          {jobsData.map((data) => (
-            <div className="card-jobs  my-lg-4 ">
+          {jobsData.map((data ,id) => (
+            <div key={id} className="card-jobs  my-lg-4 ">
               <div className="card  ">
                 <div
                   className="ms-auto p-1 rounded-pill  "
