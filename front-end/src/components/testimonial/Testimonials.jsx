@@ -80,8 +80,8 @@ export default function Testimonials() {
         <Slider {...settings}>
           {
             testimonial.map((state, index) => (
-              <div className="testimonial-top ">
-                <div key={index} className="testimonial">
+              <div key={index} className="testimonial-top ">
+                <div  className="testimonial">
                   <div className="message px-4">
                     <p className="">
                       {state.massage}

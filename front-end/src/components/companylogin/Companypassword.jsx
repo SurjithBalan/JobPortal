@@ -46,7 +46,7 @@ export default function Companypassword() {
               <p className="my-3 small text-muted">
                 Please enter your email to reset password
               </p>
-              <Form className="w-75">
+              <Form className="form-group w-75">
                 <Form.Group className="mb-3">
                   <div className="position-relative">
                     <FaEnvelope className="input-icon-candidate-login" />
@@ -58,14 +58,16 @@ export default function Companypassword() {
                   </div>
                 </Form.Group>
 
-                <Link to={"/companysentmail"}>
-                  <Button
-                    className=" my-5 rounded-pill text-white "
-                    style={{ backgroundColor: "#1e88e5" }}
-                  >
-                    Reset Password
-                  </Button>
-                </Link>
+                <div className="Login-button">
+                  <Link to={"/companysentmail"}>
+                    <Button
+                      className=" my-5 rounded-pill text-white "
+                      style={{ backgroundColor: "#1e88e5" }}
+                    >
+                      Reset Password
+                    </Button>
+                  </Link>
+                </div>
               </Form>
               <div className="my-1 d-flex flex-column justify-content-center align-items-center">
                 <p>

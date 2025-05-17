@@ -32,6 +32,9 @@
   color: #424242;
   font-size: 16px;
 }
+#nav-link {
+  text-decoration: none;
+}
 
 .modal-header {
   border-bottom: 0 none;
@@ -40,7 +43,28 @@
   border-radius: 25px;
   background-color: #FFD54F;
   padding: 5px 25px;
-  margin: 2px; 
- border: #FFD54F;
-
+  border: none;
+  color: #212121;
+  white-space: nowrap;
 }
+
+@media(max-width:1025px){
+  .btn-login{
+  margin: 0%;
+  
+  }
+}
+
+
+@media (max-width: 768px) {
+  .btn-login {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .custom-login-btn {
+    width: 90%;
+    text-align: center;
+  }
+}
+

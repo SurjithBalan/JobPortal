@@ -730,18 +730,18 @@ export default function Companyinformation() {
           </Col>
         </Row>
         <Row>
-          <Col md={12}>
+          <Col xs={12} sm={12}>
             <h4 className="d-flex justify-content-start my-4 mx-4 fs-3 fw-bolder">
               Company Registration
             </h4>
             <div>
-              <div className="p-6 max-w-3xl mx-auto ">
+              <div className=" w-auto ">
                 {/* Stepper */}
-                <div className="d-flex align-items-center justify-content-center w-75 mb-4">
+                <div className="stepper d-flex align-items-center  justify-content-center flex-nowrap overflow-auto gap-2 w-100 mb-4">
                   {steps.map((label, index) => (
                     <React.Fragment key={index}>
                       <div
-                        className={`rounded-pill px-6 py-3 text-sm font-medium transition-all px-3 duration-300 ${
+                        className={`step-label  rounded-pill text-center   duration-300 ${
                           currentStep === index
                             ? "bg-blue-500 text-white"
                             : "bg-gray-200 text-gray-600"
