@@ -82,11 +82,13 @@ export default function Testimonials() {
             testimonial.map((state, index) => (
               <div className="testimonial-top ">
                 <div key={index} className="testimonial">
-                  <div className="message px-4">
-                    <p className="">
+
+                  <div className="message px-4 w-100 g-2">
+                    <p className="text-white text-center text-wrap">
                       {state.massage}
                     </p>
                   </div>
+
                   <div>
                     <div className="testmonial-img">
                       <img src={state.logo} alt="candidate img" />

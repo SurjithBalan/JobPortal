@@ -173,3 +173,48 @@
   /* Soft shadow */
   color: #fff;
 }
+@media (max-width: 768px) {
+  .apply-btn {   
+    padding: 0.4rem 0.8rem; /* Smaller padding */
+    font-size: 0.875rem; /* Smaller text size */
+    min-width: 70%!important;
+    font-size: medium!important;
+  }
+  .company_name{
+    text-align: center;
+  }
+  .role{
+    text-align: center;
+  }
+  .mobile-size-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Heading_purple{
+    font-size: 28px !important;
+  }
+}
+/* Targeting devices with a width of 480px or less (mobile phones) */
+@media (max-width: 480px) {
+  .apply-btn {   
+    padding: 0.4rem 0.8rem; /* Smaller padding */
+    font-size: 0.875rem; /* Smaller text size */
+    min-width: 70%!important;
+    font-size: medium!important;
+  }
+  .company_name{
+    text-align: center;
+  }
+  .role{
+    text-align: center;
+  }
+  .mobile-size-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Heading_purple{
+    font-size: 28px !important;
+  }
+}

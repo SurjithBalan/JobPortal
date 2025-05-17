@@ -15,7 +15,7 @@ const UserBanner_3 = () => {
         <div className="row">
           <div className="col-xl-6 col-md-5"></div>
           <div className="col-xl-6 col-md-7">
-            <div className="hero-content text-center">
+            <div className="hero-content text-center ">
               <div className="inner-content">
                 <h1 className="hero-heading mb-2" >
                   <span className='H2'>We’re here to</span> <span className='H1ban3'>Support you</span>
@@ -28,32 +28,6 @@ const UserBanner_3 = () => {
                   "Exclusive Hiring for Mid & Senior Level Positions"
                 </span>
               </div>
-
-              {/* <div className="input-field m-0">
-                <form className="form-wrapper">
-                  <div className="input-group">
-                    <CiSearch className="input-icon" />
-                    <input
-                      type="text"
-                      placeholder="Job title"
-                      id="job-input-title"
-                    />
-                  </div>
-                  <div className="input-group">
-                    <CiLocationOn className="input-icon" />
-                    <input
-                      type="text"
-                      placeholder="Location"
-                      id="job-input-location"
-                    />
-                  </div>
-                  <div className="btn-wrapper">
-                    <button type="submit" className="submit-btn">
-                      Search
-                    </button>
-                  </div>
-                </form>
-              </div> */}
             </div>
           </div>
         </div>

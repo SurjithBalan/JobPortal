@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import UserbannerAutoSlider from '../components/userbanner/UserbannerCarousel'
 import JobCategories from '../components/jobCategories/JobCategories'
 import UrgentFeaturedJobs from '../components/UrgentFeauturedJobs/UrgentFeauturedJobs'
@@ -17,28 +18,32 @@ import Footer from '../components/Footer/Footer'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 import PostJob from '../components/postJob/postJob'
-
 function UserScreen() {
   return (
-    <div>
+    <Container fluid className='p-0' style={{
+      margin: "0",
+      padding: "0",
+      overflowX: "hidden",
+      width: "100%",
+    }}>
       <UserNavbar />
       <UserbannerAutoSlider />
       <Counter />
       <HrCompanies />
       <UrgentFeaturedJobs />
       <RecommendedJobs />
-      <Latestjob />     
+      <Latestjob />
       <JobCategories />
       <FeaturedCandidates />
       <Recruiters />
       <About />
       <Testimonials />
-      <FeedbackForm />     
+      <FeedbackForm />
       {/* <HRCompanyJobListingPage /> */}
       <Footer />
       {/* <RecomendedJobsDashborad/>
-      <PostJob/> */}
-    </div>
+      <PostJob/> */}      
+    </Container>
   )
 }
 

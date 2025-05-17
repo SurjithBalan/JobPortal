@@ -11,7 +11,6 @@ const FeedbackForm = () => {
                 <Col xs={12} md={8} lg={6}>
                     <div className="feedback-box rounded-4 p-4 shadow-sm">
                         <h4 className="text-center text-purple mb-4 ">Report & Feedback</h4>
-
                         <Form>
                             <Form.Group controlId="name" className="mb-3">
                                 <Form.Control type="text" placeholder="Enter your Name" className='input_feild' />

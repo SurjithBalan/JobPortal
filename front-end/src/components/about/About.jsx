@@ -36,7 +36,7 @@ export default function About() {
               <li>Clean, Easy-to-Use Dashboard for All Users</li>
             </ul>
           </div>
-          <div className="about-button">
+          <div className="about-button d-flex align-items-center justify-content-center">
             <button>View All Jobs</button>
           </div>
         </div>

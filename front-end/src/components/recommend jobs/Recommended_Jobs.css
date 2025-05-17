@@ -99,3 +99,24 @@
 .icon_color-rcj {
     color: #43A047;
 }
+
+@media (max-width: 768px) {
+    .company-logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+     .btn-mob {
+    display: flex;
+    justify-content: center;
+
+  }
+  .mb-1{
+    text-align: center;
+  }
+  .postedDate{
+    text-align: center;
+  }
+
+}

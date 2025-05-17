@@ -6,11 +6,7 @@ import backgroundImage from '../../../assets/image/Backgroung_Image_1.png'
 const UserBanner_1 = () => {
   return (
     <section className="banner-section">
-      <img
-        src={backgroundImage}
-        alt=""
-        className="img-fluid position-img"
-      />
+     
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-6 col-md-5"></div>
@@ -30,33 +26,12 @@ const UserBanner_1 = () => {
                   "Exclusive Hiring for Mid & Senior Level Positions"
                 </span>
               </div>
-
-              {/* <div className="input-field m-0">
-                <form className="form-wrapper">
-                  <div className="input-group">
-                    <CiSearch className="input-icon" />
-                    <input
-                      type="text"
-                      placeholder="Job title"
-                      id="job-input-title"                                           
-                    />
-                  </div>
-                  <div className="input-group">
-                    <CiLocationOn className="input-icon" />
-                    <input
-                      type="text"
-                      placeholder="Location"
-                      id="job-input-location"
-                    />
-                  </div>
-                  <div className="btn-wrapper">
-                    <button type="submit" className="submit-btn">
-                      Search
-                    </button>
-                  </div>
-                </form>
-              </div> */}
             </div>
+             <img
+        src={backgroundImage}
+        alt=""
+        className="img-fluid position-img"
+      />
           </div>
         </div>
       </div>

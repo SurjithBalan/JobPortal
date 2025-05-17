@@ -135,33 +135,19 @@ function RecomendedJobsDashborad() {
         "Bengali",
         "Marathi",
         "Urdu",
-        "Odia",
         "Assamese",
-        "Maithili",
-        "Sanskrit",
+        "German",
+        "Odia (Oriya)",
         "Konkani",
+        "Spanish",
         "Sindhi",
-        "Dogri",
-        "Manipuri",
-        "Nepali",
-        "Bodo",
-        "Santhali",
+        "Japanese",
+        "Sanskrit",
+        "Manipuri (Meitei)", 
         "Kashmiri",
-        "Maithili",
-        "Gujarati",
-        "Haryanvi",
-        "Rajasthani",
-        "Maggadi",
-        "Tulu",
-        "Mizo",
-        "Sikkimese",
-        "Bengali",
-        "Kumai",
-        "Tibetan",
-        "Ladakhi",
-        "Garhwali",
-        "Pahari",
-        "Chhattisgarhi"
+        "Bodo", 
+        "Santhali", 
+        "Dogri"
     ];
     //languages dropdown and filter
     const SelectLanguage = () => {
@@ -351,7 +337,7 @@ function RecomendedJobsDashborad() {
 
     return (
         <Container fluid className="py-4 px-3 m-3" style={{ overflowX: 'hidden' }}>
-            <BreadcrumbNav_recc_List/>
+            <BreadcrumbNav_recc_List />
             <JobSearchBar />
             <Row>
                 {/* Left Sidebar - Filters */}
@@ -493,7 +479,7 @@ function RecomendedJobsDashborad() {
                         <TiDocumentText className="custom-icon" />
                         <Form.Select className='custom-select'>
                             <option>Entry Level</option>
-                            <option>Junior Leve</option>
+                            <option>Junior Level</option>
                             <option>Mid Level</option>
                             <option>Senior Level</option>
                             <option>C-Suite</option>

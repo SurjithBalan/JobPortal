@@ -44,7 +44,7 @@ const UserbannerAutoSlider = () => {
     };
     return (
       <div className="input-field m-0">
-        <form className="form-wrapper">
+        <form className="form-wrapper d-flex flex-column flex-md-row align-items-center gap-2 w-100">
           <div className="input-group">
             <CiSearch className="input-icon" />
             <input
@@ -65,8 +65,12 @@ const UserbannerAutoSlider = () => {
               id="job-input-location"
             />
           </div>
-          <div className="btn-wrapper">
-            <button type="button" className="submit-btn" onClick={handleSearch}>
+          <div className="d-flex justify-content-center align-items-center flex-wrap">
+            <button
+              type="button"
+              className="btn btn-primary submit-btn px-4 py-2"
+              onClick={handleSearch}
+            >
               Search
             </button>
           </div>
@@ -75,7 +79,7 @@ const UserbannerAutoSlider = () => {
     );
   };
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" }} className="parantSearcConstant">
       <Carousel
         className="carousel-container"
         responsive={responsive}
@@ -90,10 +94,10 @@ const UserbannerAutoSlider = () => {
         <UserBanner_1 />
         <UserBanner_2 />
         <UserBanner_3 />
-      </Carousel>
-      <div className="searchConstant">
-        <SearchBar />
-      </div>
+      </Carousel>      
+        <div className="searchConstant">
+          <SearchBar />
+        </div>    
     </div>
   );
 };

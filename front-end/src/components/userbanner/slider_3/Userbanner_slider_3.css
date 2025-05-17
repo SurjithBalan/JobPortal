@@ -237,3 +237,35 @@
     padding-right: 15px;
   }
 }
+@media (max-width: 768px) {
+  .banner-section3 .hero-heading {
+    font-size: 1.4rem !important; /* Adjust as needed */
+    line-height: 1.2 !important;
+  }
+
+  .banner-section3 .H1ban3 {
+    font-size: 1.6rem !important; /* Adjust as needed */
+  }
+
+  .banner-section3 .H2 {
+    font-size: 1rem !important; /* Adjust as needed */
+  }
+
+  .banner-section3 .hero-sub-heading {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .banner-section3 .secondH1_ban3 {
+    font-size: 1rem !important;
+  }
+
+  .banner-section3 .secondH2 {
+    font-size: 0.85rem !important;
+  }
+
+  .banner-section3 .hero-description {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+  }
+}
