@@ -44,15 +44,15 @@ color: #fff;
     
   .toggle-btn {
     display: none;
-    position: fixed;
-    top: 2em;
-    left: -1rem;
-    z-index: 999;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #2c3e50;
-    cursor: pointer;
+  position: fixed;
+  top: 2em;
+  left: -1rem;
+  z-index: 999;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #dbefdc;
+  cursor: pointer;
   }
   
   /* Sidebar Styles */
@@ -384,6 +384,9 @@ color: #fff;
       transform: translateX(-100%);
       z-index: 998;
       border-radius: 20px;
+     height: 100vh;
+     overflow-y: auto;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       
     }
   
@@ -393,6 +396,20 @@ color: #fff;
   
     .toggle-btn {
       display: block;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 999;
+      background-color: #7B1FA2;
+      color:white;
       font-size: medium;
+      border-radius: 8px;
+      padding: 0.3rem 0.7rem;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1)
     }
+    .input-group{
+      width: 100%;
+      flex-wrap: wrap;
+    }
+   
   }
