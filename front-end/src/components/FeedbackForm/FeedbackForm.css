@@ -39,3 +39,38 @@ h4 {
     background-color: #fff8f0 !important;
     border-color: #8c8c8d;
 }
+
+@media (max-width: 768px) {
+    .feedback-container h4 {
+        font-size: 1.4rem !important;
+    }
+
+    .feedback-container .input_feild {
+        font-size: 0.9rem !important;
+        padding: 0.6rem !important;
+    }
+
+    .feedback-container .form-select,
+    .feedback-container textarea {
+        font-size: 0.9rem !important;
+    }
+
+    .feedback-container button {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1rem !important;
+    }
+
+    .feedback-container h6 {
+        font-size: 1rem !important;
+    }
+
+    .feedback-container p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        text-align: center;
+    }
+
+    .feedback-container .contact-text {
+        font-size: 1rem !important;
+    }
+}

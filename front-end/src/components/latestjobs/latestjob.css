@@ -24,7 +24,6 @@
 
 .job-contant {
     overflow: hidden;
-
     background-color: #FFFFFF;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -82,28 +81,73 @@
     position: relative;
     right: 13%;
 }
-@media (max-width: 767.98px) {
+.job-card {
+  background-color: #d0e5fa;
+  border-radius: 25px;
+  height: auto;
+  width: 100%;
+}
+.jobs2 {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: center;
+
+}
+
+/* Responsive tweaks */
+
+/* 
+@media (max-width: 768px) {
+  .job-card h6 {
+    font-size: 1rem;
+  }
+
+  .job-card p {
+    font-size: 0.85rem;
+  }
+
+  .job-card button {
+    font-size: 0.85rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+ */
+
+  
+  
+  /* For screens <= 992px (tablet) */
+  /* @media (max-width: 992px) {
     .card-wrap {
-      width: 90% !important;
-      margin: 0 auto;
-    }
-  
-    .ctc {
-      flex-direction: column;
-      align-items: flex-start !important;
-      gap: 0.5rem;
-    }
-  
-    .ctc button {
-      width: 100%;
+      margin-left: 0.5rem !important;
+      margin-right: 0.5rem !important;
     }
   
     .job-contant {
-      flex-direction: column;
+      width: 100% !important;
+    }
+  } */
+  
+  /* For screens <= 768px (mobile landscape) */
+  @media (max-width: 768px) {
+    .card-wrap {
+      margin: 0 auto !important;
     }
   
-    .card-wrap img {
-      max-width: 100%;
-      height: auto;
+    .job-contant {
+      width: 100% !important;
+    }
+  }
+  
+  /* For screens <= 576px (mobile portrait) */
+  @media (max-width: 576px) {
+    .card-wrap {
+      margin: 0.5rem auto !important;
+    }
+  
+    .job-contant {
+      width: 100% !important;
     }
   }

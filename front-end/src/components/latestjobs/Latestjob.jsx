@@ -37,15 +37,15 @@ const latestjob = [
 
 export default function Latestjob() {
   return (
-    <Container className="mr-0">
-      <div className="header-jobs  my-3  header-jobs my-3 d-flex justify-content-center align-items-center">
-        <h1>Latest Job Listing</h1>
-      </div>
-      <Row className="g-2 ms-3">
-        {latestjob.map((state, index) => (
-          <Col key={index} md={6}>
-            <div className="jobs-listing w-auto ">
-              <div key={index} className="card-wrap  mx-5">
+    <>
+      <Container className="px-2 my-4">
+        <div className="header-jobs  my-3  header-jobs my-3 d-flex justify-content-center align-items-center">
+          <h1>Latest Job Listing</h1>
+        </div>
+        <Row className="g-4" >
+          {latestjob.map((job) => (
+            <Col key={job.id} xs={12} sm={12} md={6} lg={6} xl={6}>
+              <div className="job-card py-3 g-2 ">
                 <div className="job-contant  my-3" style={{ width: '85%' }}>
                   <img src={logo} alt="" />
                   <div className="small-card ">
@@ -70,15 +70,17 @@ export default function Latestjob() {
                     </div>
                   </div>
                 </div>
-                <div className="ctc  d-flex justify-content-between align-items-center mb-2">
+
+
+                <div className="d-flex justify-content-between align-items-center pt-2 flex-wrap">
                   <div className="lpa-position"> <span className="fw-bold " style={{ color: '#424242' }}>₹10-15 LPA</span></div>
                   <Button className="mb-2 text-white fs-6 min-w-0 rounded-pill px-4 viewButton_position" style={{ backgroundColor: '#1e88e5', minWidth: 'auto' }} >View More</Button>
                 </div>
               </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
   );
 }

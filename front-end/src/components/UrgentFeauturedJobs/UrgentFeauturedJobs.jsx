@@ -84,7 +84,7 @@ const UrgentFeaturedJobs = () => {
     <Container className="urgent-jobs-section">
       <h4 className="text-center fw-bold mb-4 Heading_purple">Urgent Featured Jobs</h4>
 
-      <div className="filter-btns text-center mb-4">
+      <div className="filter-btns text-center mb-4 mobile-size-align-btns">
         {filters.map((filter) => (
           <Button
             key={filter}
@@ -117,12 +117,12 @@ const UrgentFeaturedJobs = () => {
                 {/* Tags */}
                 <Col xs={12} md={4} className="align-items-md-center align-items-center justify-content-center align-items-start">
                   <div className="d-flex flex-wrap gap-2">
-                    <div className="d-flex gap-2 flex-wrap">
+                    <div className="d-flex gap-2 flex-wrap mobile-size-align">
                       <Badge className="custom-badge1">Featured</Badge>
                       <Badge className="custom-badge2">Full Time</Badge>
                       <Badge className="custom-badge3">{job.applicants} Applicants</Badge>
                     </div>
-                    <div className="d-flex gap-2 flex-wrap">
+                    <div className="d-flex gap-2 flex-wrap mobile-size-align">
                       <Badge className="badge-sub-datas">
                         <IoLocationOutline size={16} className="me-1" />
                         {job.location}
@@ -174,7 +174,7 @@ const UrgentFeaturedJobs = () => {
 
       <div className="text-center mt-4">
        <Link to={'/feature-filter'}>
-       <Button variant="secondary" className="rounded-pill px-4 py-2 View-more-btn" style={{ background: "#7b1fa2", border: "none", color: 'white' }}>
+       <Button variant="secondary" className="rounded-pill px-4 py-2 View-more-btn apply-btn" style={{ background: "#7b1fa2", border: "none", color: 'white' }}>
           View More
         </Button>
        </Link>

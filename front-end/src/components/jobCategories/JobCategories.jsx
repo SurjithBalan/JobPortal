@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { FaLaptop, FaHeadphones, FaBriefcaseMedical, FaBullhorn, FaSuitcase, FaUserTie, FaChartLine, FaPaintBrush } from 'react-icons/fa';
-import './JobCategories.css'; 
+import './JobCategories.css';
 
 const categories = [
     { icon: <FaLaptop size={32} color="#1d4ed8" />, title: 'IT & Software' },
@@ -22,7 +22,7 @@ const JobCategories = () => {
                 {categories.map((cat, index) => (
                     <Col key={index} xs={6} md={3}>
                         <div className="shadow-sm p-3 category-card text-center d-flex flex-column align-items-center justify-content-center"
-  style={{ minWidth: '140px', height: '160px', flex: '1 1 0', borderRadius: '16px' }}>
+                            style={{ minWidth: '140px', height: '160px', flex: '1 1 0', borderRadius: '16px' }}>
                             <div className="mb-3 category-icon ">{cat.icon}</div>
                             <Card.Text className="fw-semibold">{cat.title}</Card.Text>
                         </div>
@@ -30,7 +30,7 @@ const JobCategories = () => {
                 ))}
             </Row>
             <div className="mt-4">
-                <Button  className="px-2 py-2  fw-semibold jobCatogery-button">Explore More</Button>
+                <Button className="px-2 py-2  fw-semibold jobCatogery-button">Explore More</Button>
             </div>
         </Container>
     );

@@ -6,6 +6,8 @@ import skylarkLogo from '../../../assets/image/skylarklogo.png';
 import { useNavigate } from 'react-router-dom';
 import UserNavbar from "../../usernavbar/UserNavbar";
 import { useFormik } from 'formik';
+import { FcGoogle } from "react-icons/fc";
+
 import * as Yup from 'yup';
 const CandidateLogin = () => {
     const navigate = useNavigate();
@@ -27,10 +29,9 @@ const CandidateLogin = () => {
     return (
         <>
             <UserNavbar />
-
-            <div className="login-wrapper-canidate-email mt-0">
+            <div className="login-wrapper-canidate-email" style={{ minHeight: '70vh' }}>
                 <Container fluid>
-                    <Row className="justify-content-center align-items-start " style={{ minHeight: '100vh' }}>
+                    <Row className="d-flex justify-content-center align-items-start">
                         <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', minHeight: '50vh' }}>
                             {/* Left Side */}
                             <Col md={5} className="d-flex flex-column justify-content-center align-items-center left-side-canidate-email">
@@ -55,7 +56,8 @@ const CandidateLogin = () => {
                             <Col md={7} className="d-flex flex-column justify-content-center align-items-center right-side-canidate-email">
                                 <h3 className="fw-bold mb-3 fs-2" style={{ color: '#1e88e5' }}>Candidate Login</h3>
                                 <div className="d-flex gap-3 mb-2 social-icons-canidate-email">
-                                    <FaGoogle size={20} style={{ color: '#DB4437' }} />
+                                    
+                                    <FcGoogle size={30} style={{ color: '#DB4437' }} />
                                     {/* <FaLinkedin size={20} />
                                 <FaGithub size={20} /> */}
                                 </div>
@@ -73,9 +75,13 @@ const CandidateLogin = () => {
                                                 onBlur={formik.handleBlur}
                                                 value={formik.values.email}
                                             />
+                                            <div className="text-danger mt-1 small" style={{ minHeight: '18px' }}>
+                                                {formik.touched.email && formik.errors.email ? formik.errors.email : ''}
+                                            </div>
+                                            {/*                                             
                                             {formik.touched.email && formik.errors.email ? (
                                                 <div className="text-danger mt-1 small">{formik.errors.email}</div>
-                                            ) : null}
+                                            ) : null} */}
                                         </div>
                                     </Form.Group>
 

@@ -100,11 +100,11 @@ const RecommendedJobs = () => {
                         style={{ backgroundColor: job.bgColor, maxWidth: '1140px' }}
                     >
                         <Row className="align-items-center justify-content-center g-2">
-                            <Col xs={12} md={2} className="text-center ">
+                            <Col xs={12} md={2} className="text-center d-flex justify-content-center align-items-center" >
                                 <img
                                     src={job.logo}
                                     alt={job.company}
-                                    className="me-5 company-logo"
+                                    className="company-logo"
                                 />
                             </Col>
                             <Col xs={12} md={4} className="d-flex  align-items-center">
@@ -128,10 +128,14 @@ const RecommendedJobs = () => {
                             </Col>
 
                             <Col xs={12} md={2} className="text-md-end mt-3 mt-md-0">
-                                 <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
-                                <div className="text-muted small fw-semibold" >
-                                    <BsClock className="me-1 " />
-                                    Posted {job.posted}
+                                <div className="d-flex d-md-block justify-content-center">
+                                    <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
+                                </div>
+                                <div className="text-muted small fw-semibold d-flex align-items-center justify-content-center text-center">
+                                    <div className='postedDate d-flex align-items-center justify-content-center'>
+                                        <BsClock className="me-1" />
+                                        <p className='mb-0'>Posted {job.posted}</p>
+                                    </div>
                                 </div>
                             </Col>
                             <Col xs={12} md={1} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
@@ -151,11 +155,12 @@ const RecommendedJobs = () => {
                     </div>
                 ))}
 
-                <div className="text-center mb-4">
+                <div className="d-flex  justify-content-center mb-4">
                     <Link to='/Recommended_jobs_Dashboard'>
-                        <Button className='rounded-pill apply-now-btn' style={{ background: '#1e88e5', color: 'white' }}>View More</Button>
+                        <Button className='rounded-pill apply-now-btn' style={{ background: '#1e88e5', color: 'white' }}>
+                            View More
+                        </Button>
                     </Link>
-
                 </div>
             </Container>
         </section>

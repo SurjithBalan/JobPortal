@@ -109,5 +109,46 @@
     .recruiter-image img {
         width: 100%;
     }
+}
 
+@media (max-width: 768px) {
+    .recruiter-section h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        text-align: center;
+    }
+
+    .recruiter-section button {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1rem !important;
+        text-align: center;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .recruiter-section .recruiter-sign {
+        gap: 1rem !important;        
+    }
+
+    .recruiter-section .recruiter-sign span {
+        font-size: 0.85rem !important;
+    }
+
+    .recruiter-section .recruiter-details {
+        font-size: 0.85rem !important;
+        text-align: center !important;
+        margin-top: 0.5rem;
+    }
+
+    .recruiter-section .recruiter-button button {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1.2rem !important;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .recruiter-image img {
+        width: 100% !important;
+        height: auto !important;
+    }
 }

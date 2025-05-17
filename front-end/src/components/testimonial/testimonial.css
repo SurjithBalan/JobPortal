@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+
+.message {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #1E88E5;
+    padding: 10px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+  
+  /* Adjust the text size and padding for smaller devices */
+  @media (max-width: 997px) {
+    .message {
+      padding: 15px;   
+      
+    }
+   
+  
+    .message p {
+      font-size: 16px; /* Adjust this as needed for better visibility */
+    }
+  }
+  @media (max-width: 768px) {
+    .message {
+        max-width: 90%; /* For smaller devices */
+    }
+}
+
+
+
+
 .testimonial-section {
     margin: 20px 60px 10px 60px;
     border-radius: 16px;

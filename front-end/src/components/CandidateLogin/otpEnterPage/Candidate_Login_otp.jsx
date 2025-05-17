@@ -8,9 +8,10 @@ import skylarkLogo from '../../../assets/image/skylarklogo.png'
 import UserNavbar from '../../usernavbar/UserNavbar';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from "react-router-dom";
 
 const CandidateLogin_otp = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
     const formik = useFormik({
         initialValues: {
@@ -28,10 +29,11 @@ const CandidateLogin_otp = () => {
         },
     });
     return (
-        <><UserNavbar />
-            <div className="login-wrapper-canidate-otp">
+        <>
+            <UserNavbar />
+            <div className="login-wrapper-canidate-otp" style={{ minHeight: '70vh' }}>
                 <Container fluid>
-                    <Row className="justify-content-center align-items-start " style={{ minHeight: '100vh' }}>
+                    <Row className="justify-content-center align-items-start " >
                         <div className="login-box-canidate-email d-flex flex-column flex-md-row w-100 mx-auto" style={{ maxWidth: '75%', minHeight: '50vh' }}>
                             {/* Left Side */}
                             <Col md={6} className="d-flex flex-column justify-content-center align-items-center left-side-canidate-otp">
@@ -62,16 +64,16 @@ const CandidateLogin_otp = () => {
                                 <Form className="w-70" onSubmit={formik.handleSubmit}>
                                     <Form.Group className="mb-3">
                                         <div className="position-relative">
-                                            <div className="position-absolute top-50 start-0 translate-middle-y d-flex ps-2 gap-2">
+                                            {/* <div className="position-absolute top-50 start-0 translate-middle-y d-flex ps-2 gap-2">
                                                 <FaAsterisk size={5} className="text-dark fw-bold" />
                                                 <FaAsterisk size={5} className="text-dark" />
                                                 <FaAsterisk size={5} className="text-dark" />
-                                            </div>
+                                            </div> */}
                                             <Form.Control
                                                 type="text"
                                                 name="otp"
                                                 placeholder="Enter OTP"
-                                                className={`ps-5 ${formik.touched.otp && formik.errors.otp ? 'is-invalid' : ''}`}
+                                                className={` ${formik.touched.otp && formik.errors.otp ? 'is-invalid' : ''}`}
                                                 onChange={formik.handleChange}
                                                 onBlur={formik.handleBlur}
                                                 value={formik.values.otp}
@@ -92,7 +94,7 @@ const CandidateLogin_otp = () => {
                                         type="submit"
                                         className="rounded-pill text-white"
                                         style={{ backgroundColor: '#1e88e5' }}
-                                    >
+                                    onClick={() => navigate("/CandidatequickProfilePage")}>
                                         Verify OTP
                                     </Button>
                                     {success && (
