@@ -53,7 +53,7 @@ export default function HrCompanies() {
     ],
   };
   return (
-    <Container>
+    <Container fluid>
       <div className="slider-container w-auto bg-white py-lg-4">
         <div>
           <h3 className="text-center p-2">Well-known HR companies</h3>

@@ -185,4 +185,17 @@
         width: 230%;
         margin-left: 230%;
     }
+}@media(max-width:321px){
+  .header{
+    display: flex;
+    justify-content: center;
+  }
+  .nextarrow{
+    right: 1%;
+    padding: 1% 3%;
+  }
+  .previous{
+    left: 1%;
+    padding: 1% 3%;
+  }
 }
