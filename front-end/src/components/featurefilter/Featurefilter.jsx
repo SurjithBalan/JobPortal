@@ -349,7 +349,7 @@ export default function Featurefilter() {
 
               <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
                 <div className=" my-4 hero-sidebar">
-                  <h6 className="fw-bold mb-3">Work Mode</h6>
+                  <h6 className="fw-bold mb-3 mt-5">Work Mode</h6>
                   <Form.Select
                     onChange={(e) => setWorkMode(e.target.value)}
                     className="mb-4"
