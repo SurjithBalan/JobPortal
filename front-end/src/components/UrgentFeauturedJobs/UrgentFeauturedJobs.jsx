@@ -118,27 +118,27 @@ const UrgentFeaturedJobs = () => {
                 <Col xs={12} md={4} className="align-items-md-center align-items-center justify-content-center align-items-start">
                   <div className="d-flex flex-wrap gap-2">
                     <div className="d-flex gap-2 flex-wrap mobile-size-align">
-                      <Badge className="custom-badge1">Featured</Badge>
-                      <Badge className="custom-badge2">Full Time</Badge>
-                      <Badge className="custom-badge3">{job.applicants} Applicants</Badge>
+                      <span className="custom-badge1">Featured</span>
+                      <span className="custom-badge2">Full Time</span>
+                      <span className="custom-badge3">{job.applicants} Applicants</span>
                     </div>
                     <div className="d-flex gap-2 flex-wrap mobile-size-align">
-                      <Badge className="badge-sub-datas">
+                      <span className="badge-sub-datas">
                         <IoLocationOutline size={16} className="me-1" />
                         {job.location}
-                      </Badge>
-                      <Badge className="badge-sub-datas">
+                      </span>
+                      <span className="badge-sub-datas">
                         <HiDocumentText size={16} className="me-1" />
                         {job.experience}
-                      </Badge>
-                      <Badge className="badge-sub-datas">
+                      </span>
+                      <span className="badge-sub-datas">
                         <PiCurrencyInrDuotone size={16} className="me-1" />
                         {job.ctc}
-                      </Badge>
-                      <Badge className="badge-sub-datas">
+                      </span>
+                      <span className="badge-sub-datas">
                         <FaNewspaper size={16} className="me-1" />
                         NP 30 days
-                      </Badge>
+                      </span>
 
                     </div>
                   </div>
