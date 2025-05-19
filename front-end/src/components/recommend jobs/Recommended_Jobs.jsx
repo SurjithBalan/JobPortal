@@ -128,13 +128,15 @@ const RecommendedJobs = () => {
                             </Col>
 
                             <Col xs={12} md={2} className="text-md-end mt-3 mt-md-0">
-                                <div className="d-flex d-md-block justify-content-center">
-                                    <Button className="mb-2 text-white px-4 py-2 fs-6 rounded-pill" >Apply Now</Button>
+                                <div className="d-flex justify-content-center">
+                                    <Button className='rounded-pill apply-now-btn' style={{ background: '#1e88e5', color: 'white' , minWidth: 'auto'}}>
+                                        Apply Now
+                                    </Button>
                                 </div>
                                 <div className="text-muted small fw-semibold d-flex align-items-center justify-content-center text-center">
                                     <div className='postedDate d-flex align-items-center justify-content-center'>
                                         <BsClock className="me-1" />
-                                        <p className='mb-0'>Posted {job.posted}</p>
+                                        <p className='mb-0 text-center'>Posted {job.posted}</p>
                                     </div>
                                 </div>
                             </Col>

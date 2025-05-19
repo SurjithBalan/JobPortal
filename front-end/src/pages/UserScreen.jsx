@@ -39,10 +39,10 @@ function UserScreen() {
       <About />
       <Testimonials />
       <FeedbackForm />
-      {/* <HRCompanyJobListingPage /> */}
       <Footer />
-      {/* <RecomendedJobsDashborad/>
-      <PostJob/> */}      
+      {/* <HRCompanyJobListingPage /> */}
+      {/* <RecomendedJobsDashborad /> */}
+      {/* <PostJob /> */}
     </Container>
   )
 }

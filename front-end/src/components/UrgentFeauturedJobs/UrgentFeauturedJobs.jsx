@@ -115,7 +115,7 @@ const UrgentFeaturedJobs = () => {
                 </Col>
 
                 {/* Tags */}
-                <Col xs={12} md={4} className="align-items-md-center align-items-center justify-content-center align-items-start">
+                <Col xs={12} md={5} className="align-items-md-center align-items-center justify-content-center align-items-start">
                   <div className="d-flex flex-wrap gap-2">
                     <div className="d-flex gap-2 flex-wrap mobile-size-align">
                       <span className="custom-badge1">Featured</span>
@@ -146,14 +146,14 @@ const UrgentFeaturedJobs = () => {
 
                 {/* CTA */}
                 <Col xs={12} md={2} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
-                  <Button className="px-4 py-2 rounded-pill apply-btn" style={{ background: "#7b1fa2", border: "none", color:'white' }}>
+                  <Button className="px-4 py-2 rounded-pill apply-btn" style={{ background: "#7b1fa2", border: "none", color:'white',minWidth: 'auto'}}>
                     Apply Now
                   </Button>
                   <div className="text-muted small mt-2">
                     Posted on {job.postedOn}
                   </div>
                 </Col>
-                <Col xs={12} md={2} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
+                <Col xs={12} md={1} className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center">
                   <div>
                   </div>
                   <div className="d-flex flex-wrap gap-2">

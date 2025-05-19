@@ -1,10 +1,8 @@
 
 import React from "react";
 import { useState } from "react";
-
 import { IoLocationOutline } from "react-icons/io5";
 import WiproLogo from "../../../assets/logo/Wipro.png";
-
 import CtsLogo from "../../../assets/logo/CTSH.png";
 import Infosys from "../../../assets/logo/Infosys.png"
 import Accenture from "../../../assets/logo/Accenture.png"
@@ -24,6 +22,7 @@ import { MdOutlineArticle } from "react-icons/md";
 import { PiCalendar } from "react-icons/pi";
 import CustomPagination from '../../HRcompanyjoblist/CompanyList/HRcompanyPagenation'
 import FilterSection from '../../HRcompanyjoblist/CompanyList/FilterSection'
+import './CompanysList.css'
 
 
 const CompanysList = () => {
@@ -173,23 +172,17 @@ const CompanysList = () => {
                             <Col md={1} className="d-flex justify-content-center align-items-center text-center">
                                 <img src={job.logo} alt={job.company} style={{ width: 50, height: 50 }} className="job-logo" />
                             </Col>
-
                             {/* Job Info */}
                             <Col md={4}>
-
                                 <div className="d-flex align-items-center gap-2 overflow-auto flex-nowrap overflowHider" >
-
                                     <>
                                         <span className="fw-bold fs-6 ">{job.role}</span>
-                                        <Badge className="custom-badge-tag d-flex fw-medium">
+                                        <span className="custom-badge-tag d-flex fw-medium">
                                             <span className="white-star me-1 fw-bold"><FaStar /></span> Recommend
-                                        </Badge>
+                                        </span>
                                     </>
-
                                 </div>
-
                                 <div>
-
                                     <>
                                         <div className="d-flex align-items-center gap-4 mt-2 flex-wrap fs-6">
                                             <span className="text-inside"><CiAt /> {job.company}</span>
@@ -201,8 +194,6 @@ const CompanysList = () => {
                                             <span><MdOutlineArticle className="me-1" />NP {job.postedOn.includes("days") ? "15 days" : "30 days"}</span>
                                         </div>
                                     </>
-
-
                                 </div>
 
                             </Col>
@@ -214,7 +205,7 @@ const CompanysList = () => {
                             {/* Apply Button */}
                             <Col md={3} className="text-end">
                                 <div className="d-flex justify-content-center align-items-center text-center flex-wrap">
-                                    <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
+                                    <Button className="mb-2 button-blue text-white px-4 py-2 fs-6"  style={{backgroundColor:'#1e88e5'}}>Apply Now</Button>
                                     <div className="text-muted text-inside">
                                         <p><PiCalendar className="me-1" /> Posted 2 days ago</p>
                                     </div>
