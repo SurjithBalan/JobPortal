@@ -21,7 +21,6 @@ function App() {
     <>
       <Router>
         <div>
-
           <Routes>
             <Route path="/" element={<UserScreen />} />
             <Route path="/companylogin" element={<CompanyLogin />} />

@@ -13,14 +13,10 @@ import { IoLanguageOutline } from "react-icons/io5";
 import CompanysList from './CompanysList'
 import BreadcrumbNav_recc_List from './BreadcrumbNav_recc_List'
 function RecomendedJobsDashborad() {
-
-
-
     const JobSearchBar = () => {
         return (
             <>
                 <Container className=" px-3 overflow-hidden mb-4">
-
                     {/* Search Box */}
                     <div className="search-box bg-primary rounded-4 p-4 shadow-sm w-100">
                         <div className='d-flex align-item-center justify-content-center py-2 pb-3'> <h2 className="text-white fs-3 fw-bold"> Recommend Jobs</h2></div>

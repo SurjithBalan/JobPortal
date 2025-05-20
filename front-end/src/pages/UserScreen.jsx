@@ -18,6 +18,7 @@ import Footer from '../components/Footer/Footer'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 import PostJob from '../components/postJob/postJob'
+import JobListingPage from '../components/Newjoblist/newJoblist'
 function UserScreen() {
   return (
     <Container fluid className='p-0' style={{
@@ -42,7 +43,8 @@ function UserScreen() {
       <Footer />
       {/* <HRCompanyJobListingPage /> */}
       {/* <RecomendedJobsDashborad /> */}
-      {/* <PostJob /> */}
+      {/* <PostJob />
+      <JobListingPage/> */}
     </Container>
   )
 }
