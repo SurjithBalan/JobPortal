@@ -1,0 +1,16 @@
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.drop_count{
+    padding: 0.3rem;
+    border-radius: 50px;
+    background-color: #1E88E5;
+    color: white;
+}
+.checkbox-dark input[type="checkbox"] {
+  border:1px solid #212121; /* darker grey checkbox */
+}
+.label-text{
+  text-align: left;
+}

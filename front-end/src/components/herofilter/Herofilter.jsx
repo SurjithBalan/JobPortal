@@ -635,11 +635,13 @@ export default function Herofilter() {
                       onChange={(e) => setDatePosted(e.target.value)}
                     >
                       <option value="">Select Date</option>
-                      {dateOptions.map((date, index) => (
-                        <option key={index} value={date}>
-                          {date}
-                        </option>
-                      ))}
+                     <option value="">Select Career Level </option>
+                      <option value="Entry Level">Entry Level</option>
+                      <option value="Junior Level">Junior Level</option>
+                      <option value="Mid Level">Mid Level</option>
+                      <option value="Senior level">Senior level</option>
+                      <option value="C-Suit">C-Suit</option>
+                    
                     </Form.Select>
                   </InputGroup>
                   <h6 className="fw-bold mb-3">Language</h6>
