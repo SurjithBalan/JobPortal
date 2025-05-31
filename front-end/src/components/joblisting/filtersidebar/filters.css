@@ -254,13 +254,13 @@ body {
     border-radius: 8px;
   }
   
-  .slider-track {
+  /* .slider-track {
     position: relative;
     height: 40px;
     display: flex;
     justify-content: space-between;
-    color: #1E88E5;
-  }
+    color: #DAE9EA;
+  } */
   
   .slider-track input[type="range"] {
     width: 100%;

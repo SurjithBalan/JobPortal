@@ -8,7 +8,6 @@ import "../companylogin/companylogin.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
 function UserNavbar() {
   const navigate = useNavigate();
 
@@ -47,9 +46,9 @@ function UserNavbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <Link className="nav-link text-white" to={"/Job_listing_page"}>
                   Job
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#">
