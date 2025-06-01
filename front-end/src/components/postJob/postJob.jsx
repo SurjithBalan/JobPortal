@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { Navbar, Container, Button, Nav, Breadcrumb, Image, Col, Row } from 'react-bootstrap';
 import './postjobLeftside.css'
 import PostJobForm from './postJobForm'
-import ApplicationStatisticsDashboard from './ApplicationStatistics'
+// import ApplicationStatisticsDashboard from './ApplicationStatistics'
 import skylarklogo from '../../assets/logo/Skylark3.jpeg'
 import profile from '../../assets/image/candidateImage.jpg'
 import { FaStar } from "react-icons/fa";
+
 import {
     FiGrid,
     FiUser,
@@ -83,8 +84,8 @@ const NavbarComponent = ({ setShowComponent }) => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Container className="mt-2">
-                <Breadcrumb>
+            <Container className="mt-2 d-flex justify-content-center">
+                <Breadcrumb className="custom-breadcrumb mb-0">
                     <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
                     <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item active>Post a Job</Breadcrumb.Item>
@@ -161,11 +162,9 @@ function PostJob() {
                         {/* <h5>&lt;RecommendedJobs component /&gt;</h5> */}
                         {showComponent ? <ApplicationStatisticsDashboard /> : <PostJobForm />}
                     </Col>
-
                 </Row>
             </Container>
         </>
-
     )
 }
 

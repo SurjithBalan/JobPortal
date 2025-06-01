@@ -3,3 +3,52 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+.custom-breadcrumb {
+    --bs-breadcrumb-divider: '•';
+    /* Bootstrap 5 variable */
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
+    gap: 10px;
+}
+
+/* Optional: spacing and cleaner look */
+.custom-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    content: '•';
+    color: #333;
+    padding: 0 12px;
+    font-weight: bold;
+}
+.breadcrumb-wrapper {
+    background-color: #f8f9fa;
+    min-height: 45px;
+    border-top: 1px solid #424242;
+    border-bottom: 0.5px solid #424242;
+    margin-top: 0.5rem;
+}
+
+.custom-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    font-weight: 400;
+    color: #424242;
+}
+
+.breadcrumb-current {
+    font-weight: 600;
+    color: #424242;
+}
+
+.breadcrumb-separator {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #424242;
+}

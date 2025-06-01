@@ -111,19 +111,19 @@
 }
 
 .button-blue {
-    background-color: #1e88e5;
-    border-radius: 1rem;
-    min-width: 0;
+    background-color: #1e88e5!important;
+    border-radius: 1rem!important;
+    min-width: 0!important;
 }
 
 .button-violet {
-    background-color: #7b1fa2;
-    border-radius: 1rem;
-    min-width: 0;
+    background-color: #7b1fa2!important;
+    border-radius: 1rem!important;
+    min-width: 0!important;
 }
 
 .button-violet:hover {
-    background-color: #6936f5;
+    background-color: #6936f5!important;
 }
 
 .overflowHider {
@@ -159,3 +159,12 @@
   .icon_color-clist {
     color: #43A047;
   }
+  .hide-scrollbar {
+  overflow-x: auto;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
+}

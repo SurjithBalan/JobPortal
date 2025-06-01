@@ -159,7 +159,7 @@ const CompanysList = () => {
 
     return (
         <div className="p-2 d-flex flex-column gap-3">
-            <FilterSection/>
+            <FilterSection />
             {jobs.map((job) => {
                 const isRecommended = job.tags?.includes("Recommend");
                 return (
@@ -167,7 +167,7 @@ const CompanysList = () => {
                         key={job.id}
                         className="p-3 shadow-sm border-0"
                         style={{ backgroundColor: job.bgColor, borderRadius: '16px' }}
-                    > 
+                    >
                         <Row className="align-items-center">
                             {/* Logo */}
                             <Col md={1} className="d-flex justify-content-center align-items-center text-center">
@@ -181,18 +181,19 @@ const CompanysList = () => {
                                     {isRecommended ? (
                                         <>
                                             <span className="fw-bold fs-6 ">{job.role}</span>
-                                            <Badge className="custom-badge-tag d-flex fw-medium">
+                                            <span className="custom-badge-tag d-flex fw-medium">
                                                 <span className="white-star me-1 fw-bold"><FaStar /></span> Recommend
-                                            </Badge>
+                                            </span>
                                         </>
 
                                     ) : (
-                                        <><span className="text-inside"> {job.company}</span>
-                                            <Badge className="custom-badge1 fw-small fs-6">Featured</Badge>
-                                            <Badge className="custom-badge2 fw-small fs-6">Full Time</Badge>
-                                            <Badge className="custom-badge3 fw-small fs-6">{job.applicants} Applicants</Badge>
-                                            <Badge className="custom-badge4 fw-small fs-6">{job.Open_Positions} Open Positions</Badge>
-                                        </>
+                                        <div className="d-flex flex-nowrap gap-2 hide-scrollbar">
+                                            <span className="text-inside text-nowrap">{job.company}</span>
+                                            <span className="custom-badge1 rounded-pill text-nowrap fw-small fs-6">Featured</span>
+                                            <span className="custom-badge2 rounded-pill text-nowrap fw-small fs-6">Full Time</span>
+                                            <span className="custom-badge3 rounded-pill text-nowrap fw-small fs-6">{job.applicants} Applicants</span>
+                                            <span className="custom-badge4 rounded-pill text-nowrap fw-small fs-6">{job.Open_Positions} Open Positions</span>
+                                        </div>
                                     )}
                                 </div>
 
@@ -231,16 +232,15 @@ const CompanysList = () => {
                             <Col md={2} className="text-end">
                                 <div className="d-flex justify-content-center align-items-center text-center flex-wrap">
                                     {isRecommended ? (
-                                        <Button className="mb-2 button-blue text-white px-4 py-2 fs-6" >Apply Now</Button>
+                                        <Button className="mb-2 button-blue text-white border-0 px-4 py-2 fs-6" >Apply Now</Button>
                                     ) : (
                                         <>
-                                            <Button className="mb-2 button-violet text-white px-4 py-2 fs-6">Apply Now</Button>
+                                            <Button className="mb-2 button-violet border-0 text-white px-4 py-2 fs-6">Apply Now</Button>
                                         </>
                                     )}
                                     {/* <Button variant="primary" className="mb-2">Apply Now</Button> */}
                                     {isRecommended ? (
                                         <div className="text-muted text-inside">
-
                                             <p><PiCalendar className="me-1" /> Posted 2 days ago</p>
                                         </div>
                                     ) : (
@@ -264,11 +264,11 @@ const CompanysList = () => {
                                     </div>
                                 </div>
                             </Col>
-                        </Row>                       
+                        </Row>
                     </div>
                 );
             })}
-          <CustomPagination/>
+            <CustomPagination />
         </div>
     );
 };

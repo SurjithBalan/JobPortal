@@ -17,8 +17,11 @@ import Footer from '../components/Footer/Footer'
 // import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
 import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
 import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
-import PostJob from '../components/postJob/postJob'
+// import PostJob from '../components/postJob/postJob'
 import JobListingPage from '../components/Newjoblist/newJoblist'
+import JobDetailsPage from '../components/JobDescription/jobDescription'
+import CandidateDashboardMain from '../components/CandidatesDashboard/candidateDashboardMain'
+import PostJob from '../components/postJob/newPostjob'
 function UserScreen() {
   return (
     <Container fluid className='p-0' style={{
@@ -43,8 +46,11 @@ function UserScreen() {
       <Footer />
       {/* <HRCompanyJobListingPage /> */}
       {/* <RecomendedJobsDashborad /> */}
-      {/* <PostJob />
-      <JobListingPage/> */}
+      {/* <PostJob /> */}
+      {/* <JobListingPage/> */}
+      <JobDetailsPage/>    
+      <CandidateDashboardMain/>
+      {/* <PostJob/> */}
     </Container>
   )
 }
