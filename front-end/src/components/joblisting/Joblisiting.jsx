@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import "../herofilter/herofilter.css";
+import "../joblisting/joblisting.css";
+import {
+  Container,
+  Card,
+  Row,
+  Col,
+  Badge,
+  Button,
+  InputGroup,
+  Form,
+} from "react-bootstrap";
+import { SlCalender } from "react-icons/sl";
+import { FaRupeeSign, FaMapMarkerAlt, FaSuitcase } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { TbCurrentLocation } from "react-icons/tb";
-import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiDocumentText } from "react-icons/hi";
-import { CiFilter } from "react-icons/ci";
+
 import { FaBuilding, FaBriefcase } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa";
 import { PiCurrencyInrDuotone } from "react-icons/pi";
@@ -19,9 +30,14 @@ import qualification from "../data/qualification.js";
 import industry from "../data/industry.js";
 import language from "../data/language.js";
 import functionality from "../data/functionality.js";
-import Filters from "../joblisting/filtersidebar/Filters.jsx";
+import FilterDropdown from "./filtersidebar/FilterDropdown.jsx";
+import LocationFilter from "./filtersidebar/LocationFilter.jsx";
+import JobAlertForm from "./filtersidebar/JobAlertForm.jsx";
+import FilterBar from "./filtersidebar/FilterBar.jsx";
+import Education from "../data/education.js";
+import Filters from "./filtersidebar/Filters.jsx";
 
-export default function Herofilter() {
+export default function Joblisiting() {
   const [jobs, setJobs] = useState(herojobs);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -40,54 +56,6 @@ export default function Herofilter() {
   const [languageFilter, setLanguageFilter] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
   const [careerLevel, setCareerLevel] = useState("");
-  const location = useLocation();
-  const [filterTitle, setFilterTitle] = useState("");
-  const [filterLocation, setFilterLocation] = useState("");
-  // Sidebar States
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-
-  //Salary Range fliter
-  const [range, setRange] = useState([10000, 50000]);
-
-  const handleSliderChange = (e) => {
-    const [min, max] = e.target.value.split(",").map(Number);
-    setRange([min, max]);
-  };
-
-  const handleMinChange = (e) => {
-    const value = Math.min(Number(e.target.value), range[1] - 1000);
-    setRange([value, range[1]]);
-  };
-
-  const handleMaxChange = (e) => {
-    const value = Math.max(Number(e.target.value), range[0] + 1000);
-    setRange([range[0], value]);
-  };
-  // Experience Range filter
-
-  const minExpLimit = 0;
-  const maxExpLimit = 20;
-
-  const [minExperience, setMinExperience] = useState(1);
-  const [maxExperience, setMaxExperience] = useState(10);
-
-  const handleminimumChange = (e) => {
-    const value = Math.min(Number(e.target.value), maxExperience - 1);
-    setMinExperience(value);
-  };
-
-  const handleMaximumChange = (e) => {
-    const value = Math.max(Number(e.target.value), minExperience + 1);
-    setMaxExperience(value);
-  };
-
-  const handleSlidChange = (e) => {
-    const [min, max] = e.target.value.split(",").map(Number);
-    setMinExperience(min);
-    setMaxExperience(max);
-  };
 
   // handle search input
   const handleFindClick = () => {
@@ -118,32 +86,9 @@ export default function Herofilter() {
     setSort(event.target.value);
   };
 
-  // hero page search input field
-  useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const title = query.get("functionality")?.toLowerCase() || "";
-    const loc = query.get("location")?.toLowerCase() || "";
-    setFilterTitle(title);
-    setFilterLocation(loc);
-  }, [location.search]);
-
   // Filter and Sort Jobs
   useEffect(() => {
     let updatedJobs = [...herojobs];
-
-    // Hero page search input field (from query params)
-
-    if (filterTitle) {
-      updatedJobs = updatedJobs.filter((job) =>
-        job.functionality.toLowerCase().includes(filterTitle.toLowerCase())
-      );
-    }
-
-    if (filterLocation) {
-      updatedJobs = updatedJobs.filter((job) =>
-        job.location.toLowerCase().includes(filterLocation.toLowerCase())
-      );
-    }
 
     if (search) {
       updatedJobs = updatedJobs.filter((job) =>
@@ -224,17 +169,6 @@ export default function Herofilter() {
       );
     }
 
-    // Experience Range
-    updatedJobs = updatedJobs.filter(
-      (job) =>
-        job.experienceMin >= minExperience && job.experienceMax <= maxExperience
-    );
-
-    // Salary Range
-    updatedJobs = updatedJobs.filter(
-      (job) => job.salary >= range[0] && job.salary <= range[1]
-    );
-
     // Sorting
     if (sort === "A-Z") {
       updatedJobs.sort((a, b) => a.title.localeCompare(b.title));
@@ -259,17 +193,11 @@ export default function Herofilter() {
     noticePeriod,
     datePosted,
     languageFilter,
-    minExperience,
-    maxExperience,
-    range,
     searchLocation,
-    careerLevel,
-    filterTitle,
-    filterLocation,
   ]);
 
   // pagination
-  const jobsPerPage = 14;
+  const jobsPerPage = 5;
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
 
@@ -287,20 +215,23 @@ export default function Herofilter() {
             <div className=" home-search-filter my-5">
               <p className="my-3">Home</p>
               <ul className="my-3">
-                <li>Search Filter</li>
+                <li>Job listing Page</li>
               </ul>
             </div>
           </Col>
         </Row>
 
-        <Row className="mt-4">
-          <Col xs={12}>
-            <div className="search-input">
+        <Row>
+          <Col md={12}>
+            <div className="feature-search-input mt-4">
+              <div className="text-white fw-bold my-2 d-flex justify-content-center">
+                <h2>SEARCH ONCE, EXPLORE ENDLESS JOB OPPORTUNITIES...</h2>
+              </div>
               <div className="container my-2 p-0 rounded-2">
                 <div className="bg-white p-3 rounded-2">
                   <Row className="g-2">
-                    {/* Job Title Input */}
-                    <Col xs={12} md={5}>
+                    {/* Job title input */}
+                    <Col xs={12} md={4}>
                       <div className="input-group">
                         <span className="input-group-text bg-transparent">
                           <MdOutlineWorkOutline />
@@ -315,8 +246,8 @@ export default function Herofilter() {
                       </div>
                     </Col>
 
-                    {/* Location Input */}
-                    <Col xs={12} md={5}>
+                    {/* Location input */}
+                    <Col xs={12} md={4}>
                       <div className="input-group">
                         <input
                           type="text"
@@ -331,11 +262,11 @@ export default function Herofilter() {
                       </div>
                     </Col>
 
-                    {/* Button */}
-                    <Col xs={12} md={2}>
+                    {/* Find Jobs button */}
+                    <Col xs={12} md={4}>
                       <button
                         onClick={handleFindClick}
-                        className=" btn-purple border-0 rounded-3 btn-shadow w-100 py-2"
+                        className=" btn-purple border-0 rounded-2 btn-shadow w-100 py-2"
                       >
                         Find Jobs
                       </button>
@@ -349,114 +280,125 @@ export default function Herofilter() {
 
         <Row>
           <Col md={3} className="my-4">
-            <Filters/>
+            <Filters />
           </Col>
           <Col md={9}>
             <div>
               {currentJobs.length > 0 ? (
                 currentJobs.map((job) => (
                   <Col xs={12} key={job.id}>
-                    <div className="shadow rounded-4 px-2 py-3 border-0 my-4">
-                      <Row className="align-items-center gx-3 gy-3">
-                        {/* Logo */}
-                        <Col xs={12} md={1} className="text-center ">
-                          <img
-                            src={job.logo}
-                            alt={job.company}
-                            className="hero-logo"
-                          />
-                        </Col>
+                    <div
+                      className={`joblisting_card mb-4 my-4 p-4 position-relative border  ${
+                        job.featured ? "border-primary" : ""
+                      }`}
+                    >
+                      {/* Heart Icon */}
+                      <div className="position-absolute top-0 end-0 p-3">
+                        <div
+                          className="bg-danger rounded-circle d-flex align-items-center justify-content-center"
+                          style={{ width: "40px", height: "40px" }}
+                        >
+                          <FiHeart color="white" />
+                        </div>
+                      </div>
 
-                        {/* Info */}
-                        <Col xs={12} md={2}>
-                          <div className="hero-company">
-                            <p className="mb-1 fw-medium ">{job.company}</p>
-                            <h6 className="text-muted  ">
-                              {job.functionality}
-                            </h6>
+                      <Row>
+                        {/* Left: Logo */}
+                        <Col
+                          md={2}
+                          className="d-flex align-items-start justify-content-center "
+                        >
+                          <div className="ribbon-container">
+                            <img
+                              src={job.logo}
+                              alt={job.company}
+                              className="img-fluid border border-secondary-subtle"
+                              style={{
+                                width: "90px",
+                                height: "90px",
+                                padding:"15px",
+                                objectFit: "contain",
+                              }}
+                            />
+                            {job.featured && <div className="ribbon">Featured</div>}
                           </div>
                         </Col>
 
-                        {/* Tags */}
-                        <Col
-                          xs={12}
-                          md={7}
-                          className="align-items-md-center align-items-center justify-content-center align-items-start"
-                        >
-                          <div className="d-flex flex-wrap gap-2">
-                            <div>
-                              <div className="d-flex gap-2 flex-wrap">
-                                <span className="hero-badge1">Featured</span>
-                                <span className="hero-badge2">Full Time</span>
-                                <span className="hero-badge3">
-                                  {job.applicants} Applicants
-                                </span>
-                                <span className="hero-badge4">
-                                  {job.Open_Positions} Open Positions
-                                </span>
-                              </div>
-                            </div>
-                            <div className="d-flex gap-2 flex-wrap">
-                              <span className="hero-sub-datas">
-                                <IoLocationOutline size={16} className="me-1" />
-                                {job.location}
+                        {/* Right: Info */}
+                        <Col md={10}>
+                          {/* Badges */}
+                          <div className="d-flex flex-wrap mb-2 gap-2">
+                            {job.badges.map((badge, index) => (
+                              <span
+                                key={index}
+                                className="px-3 py-1 border border-primary rounded-pill text-secondary"
+                              >
+                                {badge}
                               </span>
-                              <span className="hero-sub-datas">
-                                <HiDocumentText size={16} className="me-1" />
-                                {job.experience}
-                              </span>
-                              <span className="hero-sub-datas">
-                                <PiCurrencyInrDuotone
-                                  size={16}
-                                  className="me-1"
-                                />
-                                {job.salary}
-                              </span>
-                              <span className="hero-sub-datas">
-                                <FaNewspaper size={16} className="me-1" />
-                                NP 30 days
-                              </span>
-                            </div>
+                            ))}
                           </div>
-                        </Col>
 
-                        {/* CTA */}
-                        <Col
-                          xs={12}
-                          md={1}
-                          className="d-flex flex-column  align-items-md-center align-items-center justify-content-center text-md-end text-center"
-                        >
-                          <Button
-                            className="px-2 py-1 rounded-5  hero-apply-btn "
-                            style={{
-                              background: "#7b1fa2",
-                              border: "none",
-                              color: "white",
-                            }}
-                          >
-                            Apply Now
-                          </Button>
-                          <div className=" hero-posted-date  mt-2">
-                            Posted on {job.postedOn}
+                          {/* Title */}
+                          <h5 className="fw-bold">{job.functionality}</h5>
+                          <p className="text-primary mb-1">@ {job.company}</p>
+
+                          {/* Salary, Experience, Location */}
+                          <div className="d-flex flex-wrap gap-4 text-muted mb-3">
+                            <span>
+                              <FaRupeeSign className="me-1" color="#10A441" />
+                              {job.salary}
+                            </span>
+                            <span>
+                              <FaSuitcase className="me-1" color="#6C47FE" />
+                              {job.experience}
+                            </span>
+                            <span>
+                              <FaMapMarkerAlt className="me-1 text-danger" />
+                              {job.location}
+                            </span>
+                          </div>
+
+                          {/* Tags */}
+                          <div className="d-flex flex-wrap gap-2 mb-3">
+                            {job.tags.map((tag, index) => (
+                              <span
+                                key={index}
+                                className="px-3 py-1 bg-success bg-opacity-10 rounded-pill border border-success-subtle text-dark"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Meta Info */}
+                          <div className="d-flex flex-wrap gap-3 mb-4">
+                            <span className="bg-light px-1 py-1 rounded text-muted d-flex align-items-center">
+                              <SlCalender className="me-2" />
+                              {job.datePosted}
+                            </span>
+                            <span className="bg-light px-1 py-1 rounded text-muted">
+                              {job.positions}
+                            </span>
+                            <span className="bg-light px-1 py-1 rounded text-muted">
+                              Male / Female
+                            </span>
+                            <span className="bg-light px-1 py-1 rounded text-muted">
+                              IT Graduates
+                            </span>
+                            <span className="bg-light px-1 py-1 rounded text-muted">
+                              Day Shift
+                            </span>
                           </div>
                         </Col>
-                        <Col
-                          xs={12}
-                          md={1}
-                          className="d-flex flex-column my-0 py-0 align-items-md-center align-items-center justify-content-center align-items-start text-md-end text-center"
-                        >
-                          <div></div>
-                          <div className="d-flex flex-wrap gap-2">
-                            <div className="d-flex gap-2 flex-wrap bookmark_icon">
-                              <div className="icon_posistion">
-                                <span className="hero-sub-datas">
-                                  <MdBookmarkBorder
-                                    size={20}
-                                    className="icon_color"
-                                  />
-                                </span>
-                              </div>
-                            </div>
+                        <Col>
+                          {/* Button */}
+                          <div className="d-flex justify-content-center">
+                            <Button
+                              variant="primary"
+                              className="rounded-pill px-4"
+                            >
+                              View Job
+                            </Button>
                           </div>
                         </Col>
                       </Row>

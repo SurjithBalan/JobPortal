@@ -16,7 +16,6 @@ import Featurefilter from './components/featurefilter/Featurefilter';
 import Companyinformation from './components/companyloginform/Companyinformation';
 import RecomendedJobsDashborad from './components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
 import CandidatequickProfilePage from './components/CandidateLogin/CandidateProfile/quickProfile'
-import PostJob  from './components/postJob/newPostjob'
 function App() {  
   return (
     <>
@@ -41,7 +40,6 @@ function App() {
             <Route path='/HR_companyes' element={<HRCompanyJobListingPage/>}></Route>
             <Route path = '/reccommended_job_list' element={<RecomendedJobsDashborad/>}></Route>
             <Route path = '/CandidatequickProfilePage' element ={<CandidatequickProfilePage/>}></Route>
-            <Route path = '/joblist' element = {<PostJob/>}></Route>
           </Routes>         
         </div>
       </Router>
