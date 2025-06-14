@@ -140,7 +140,7 @@ const ApplicationStatisticsDashboard = () => {
 
             {/* Page Views & Notifications */}
             <Row className="mb-4">
-                <Col md={8}>
+                <Col md={6}>
                     <div className="shadow-sm border-0 mb-3">
                         <div>
                             <h6>Page Views</h6>
@@ -172,7 +172,7 @@ const ApplicationStatisticsDashboard = () => {
                     </div>
                 </Col>
 
-                <Col md={4}>
+                <Col md={6}>
                     <div className="bg-white p-3 rounded shadow-sm">
                         <h6 className="fw-bold mb-3">Notifications</h6>
                         {notifications.map((note, idx) => (

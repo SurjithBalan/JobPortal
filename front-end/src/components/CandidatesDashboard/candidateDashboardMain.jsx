@@ -23,6 +23,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { RiLockUnlockLine } from "react-icons/ri";
 import { LuSettings } from "react-icons/lu";
 import { } from 'react-icons/fi';
+import { PiUserCircleGear } from "react-icons/pi";
 import { PiBuildingOfficeFill } from "react-icons/pi";
 import { FaChevronDown } from 'react-icons/fa'
 import { PiSubtitlesLight } from "react-icons/pi";
@@ -32,11 +33,19 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { FaList, FaIndustry, FaUserTie, FaBuilding, FaBriefcase, FaGraduationCap, FaChartLine, FaRupeeSign, FaVenusMars, FaLaptopHouse, FaUsers, FaPhoneAlt, FaClock } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import ApplicationStatistics from './ApplicationStatistics';
-import CandidateProfile from './candidateProfilePage'
+import CandidateProfile from './candidateProfilePage';
+import AppliedJobs from './AppliedJobs';
+import InterviewSchedule from './InterviewSchedule'
+import ChattingPage from './MessageInbox'
+import Notification from './Notifications'
+import PrivacyControl from './PrivacyControl'
+import LogoutModal from './Lougout'
+import PricingPlans from './PremiumPackage'
+import FindRecruiter from './FindRecruiter'
+
 
 const BreadcrumbNav = () => {
     const location = useLocation();
-
     const pathnames = location.pathname
         .replace('/Candidate Dashboard', '')
         .split('/')
@@ -188,10 +197,10 @@ function CandidateDashboardMain() {
                         className="rounded p-3 mb-3 mb-md-0 shadow-sm"
                         style={{ overflowY: 'auto', backgroundColor: '#87C6F4', minHeight: '100vh' }}
                     >
-                        <div className=''> 
+                        <div className=''>
                             <ul className="list-unstyled m-0 g-5">
                                 <li
-                                    className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item  ${activeItem === 'Dashboard' ? 'active-item' : ''
+                                    className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item  ${activeItem === 'Dashboard' ? 'active-item' : ''
                                         }`}
                                     onClick={() => setActiveItem('Dashboard')}
                                 >
@@ -204,7 +213,7 @@ function CandidateDashboardMain() {
                                     <span>Dashboard</span>
                                 </li> */}
                                 <li
-                                    className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Premium Packages' ? 'active-item' : ''
+                                    className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Premium Packages' ? 'active-item' : ''
                                         }`}
                                     onClick={() => setActiveItem('Premium Packages')}
                                 >
@@ -215,55 +224,56 @@ function CandidateDashboardMain() {
                                     <GrDiamond size={20} className="me-2" />
                                     <span className='text-nowrap'>Premium Packages </span>
                                 </li> */}
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Candidate Profile' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Candidate Profile' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Candidate Profile')}>
                                     <CgProfile size={20} className="me-2" />
                                     <span className='text-nowrap'>Candidate Profile</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Applied Jobs' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Applied Jobs' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Applied Jobs')}>
                                     <PiApplePodcastsLogoLight size={20} className="me-2" />
                                     <span>Applied Jobs</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Interview Schedule' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Interview Schedule' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Interview Schedule')}>
                                     <PiCalendarDotsLight size={20} className="me-2" />
                                     <span className='text-nowrap'>Interview Schedule</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Message Inbox' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Message Inbox' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Message Inbox')}>
                                     <RiWechatLine size={20} className="me-2" />
                                     <span>Message Inbox</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Notification' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Notification' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Notification')}>
                                     <IoNotificationsOutline size={20} className="me-2" />
                                     <span>Notification</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Resume Builder' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Resume Builder' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Resume Builder')}>
                                     <CgFileDocument size={20} className="me-2" />
                                     <span>Resume Builder</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Privacy Control' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Privacy Control' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Privacy Control')}>
                                     <RiLockUnlockLine size={20} className="me-2" />
                                     <span>Privacy Control</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Settings' ? 'active-item' : ''
+                                
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Find Recruiters' ? 'active-item' : ''
                                     }`}
-                                    onClick={() => setActiveItem('Settings')}>
-                                    <LuSettings size={20} className="me-2" />
-                                    <span>Settings</span>
+                                    onClick={() => setActiveItem('Find Recruiters')}> 
+                                    <PiUserCircleGear size={20} className="me-2" />                                
+                                    <span>Find Recruiters</span>
                                 </li>
-                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-3 sidebar-item ${activeItem === 'Logout' ? 'active-item' : ''
+                                <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Logout' ? 'active-item' : ''
                                     }`}
                                     onClick={() => setActiveItem('Logout')}>
                                     <FiLogOut size={20} className="me-2" />
@@ -274,11 +284,18 @@ function CandidateDashboardMain() {
                     </Col>
                     {/* Right Column - Job Component */}
                     <Col xs={12} md={10} lg={10} className="d-flex justify-content-center text-center mt-0 ml-0">
-                        {activeItem === 'Candidate Profile' ? (
-                            <CandidateProfile />
-                        ) : (
-                            <RightSide />
-                        )}
+                        {activeItem === 'Dashboard' && <RightSide />}
+                        {activeItem === 'Candidate Profile' && <CandidateProfile />}
+                        {activeItem === 'Applied Jobs' && <AppliedJobs />}
+                        {activeItem === 'Interview Schedule' && <InterviewSchedule />}
+                        {activeItem === 'Message Inbox' && <ChattingPage />}
+                        {activeItem === 'Notification' && <Notification />}
+                        {activeItem === 'Privacy Control' && <PrivacyControl />}
+                        {activeItem === 'Logout' && <LogoutModal />}    
+                        {activeItem === 'Premium Packages' && <PricingPlans />}   
+                        {activeItem === 'Find Recruiters' && <FindRecruiter />}   
+                        
+                                        
                     </Col>
                 </Row>
             </Container >

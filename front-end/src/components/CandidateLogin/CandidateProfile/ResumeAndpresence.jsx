@@ -1,7 +1,15 @@
 import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 function ResumeAndpresence() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        // You can do form validation here before navigating
+        navigate('/CandidateDashboardMain'); // change '/next' to your actual route
+    };
+
     return (
         <Container>
             <div className="bg-light p-4 rounded">
@@ -41,7 +49,7 @@ function ResumeAndpresence() {
                         </Col>
                     </Row>
                     <div className="text-center mt-4">
-                        <Button variant="primary" size="lg">Save & Continue </Button>
+                        <Button variant="primary" size="lg" onClick={handleClick} style={{ backgroundColor: '#1e88e5' }} >Save & Continue </Button>
                     </div>
                 </Form>
             </div>

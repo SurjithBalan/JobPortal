@@ -27,10 +27,10 @@ function EducationalQualification() {
 
                     </Row>
                     <div className="text-center mt-4">
-                        <Button variant="primary" size="lg"> + add</Button>
+                        <Button variant="primary" size="lg" style={{ backgroundColor: '#1e88e5' }} > + add</Button>
                     </div>
                     <div className="text-center mt-4">
-                        <Button variant="primary" size="lg">Save & Next </Button>
+                        <Button variant="primary" size="lg" style={{ backgroundColor: '#1e88e5' }} >Save & Next </Button>
                     </div>
                 </Form>
             </div>
