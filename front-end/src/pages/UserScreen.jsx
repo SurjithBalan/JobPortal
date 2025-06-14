@@ -14,11 +14,7 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-// import BreadcrumbNavbarCompanyList from '../components/HRcompanyjoblist/BreadcrumbNavbarCompanyList'
-import HRCompanyJobListingPage from '../components/HRcompanyjoblist/HRCompanyJobs'
-import RecomendedJobsDashborad from '../components/recommend jobs/RecomendedJobsDashboard/RecomendedJobsDashborad'
-import PostJob from '../components/postJob/postJob'
-import JobListingPage from '../components/Newjoblist/newJoblist'
+
 function UserScreen() {
   return (
     <Container fluid className='p-0' style={{
@@ -41,10 +37,6 @@ function UserScreen() {
       <Testimonials />
       <FeedbackForm />
       <Footer />
-      {/* <HRCompanyJobListingPage /> */}
-      {/* <RecomendedJobsDashborad /> */}
-      {/* <PostJob />
-      <JobListingPage/> */}
     </Container>
   )
 }
