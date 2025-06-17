@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-items {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  padding-right: 30px;
+  text-align: center;
+  padding-left: 5px;
+  font-size: medium;
+  color: #424242;
+  font-size: 16px;
+}

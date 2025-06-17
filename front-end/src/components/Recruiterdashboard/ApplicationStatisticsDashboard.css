@@ -5,7 +5,11 @@
     background-color: #ccc;
     flex-shrink: 0;
 }
-
+.application_statistics{
+    border: 1px solid #1E88E5;
+    width: 0.8rem;
+    background-color: #1E88E5;
+}
 .action-btn {
     background-color: #f1f1f1 !important;
     border: none;
