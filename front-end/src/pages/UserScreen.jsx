@@ -14,7 +14,6 @@ import Testimonials from '../components/testimonial/Testimonials'
 import HrCompanies from '../components/hrcompanies/HrCompanies'
 import Recruiters from '../components/realrecruiters/Recruiters'
 import Footer from '../components/Footer/Footer'
-
 function UserScreen() {
   return (
     <Container fluid className='p-0' style={{
@@ -36,7 +35,7 @@ function UserScreen() {
       <About />
       <Testimonials />
       <FeedbackForm />
-      <Footer />
+      <Footer /> 
     </Container>
   )
 }

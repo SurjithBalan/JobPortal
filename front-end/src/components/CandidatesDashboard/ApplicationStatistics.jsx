@@ -24,7 +24,7 @@ const ApplicationStatistics = () => {
     const summary = [
         {
             count: 22,
-            label: 'Posted Jobs',
+            label: 'Applied Jobs',
             variant: 'primary',
             icon: <FiBriefcase size={24} />,
             bg: 'rgba(63, 81, 181, 0.15)', // Light purple tint
@@ -32,7 +32,7 @@ const ApplicationStatistics = () => {
         },
         {
             count: 684,
-            label: 'Applications',
+            label: 'Job Alerts',
             variant: 'danger',
             icon: <CgFileDocument size={24} />,
             bg: 'rgba(244, 67, 54, 0.15)', // Light red tint
@@ -40,7 +40,7 @@ const ApplicationStatistics = () => {
         },
         {
             count: 38,
-            label: 'Review',
+            label: 'Message',
             variant: 'warnng',
             icon: <RiWechatLine size={24} />,
             bg: 'rgba(76, 175, 80, 0.15)', // Light green tint
@@ -48,7 +48,7 @@ const ApplicationStatistics = () => {
         },
         {
             count: 22,
-            label: 'Shortlisted',
+            label: 'Shortlist',
             variant: 'success',
             icon: <IoCheckmarkDoneOutline size={24} />,
             bg: 'rgba(255, 193, 7, 0.15)', // Light yellow tint

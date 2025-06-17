@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.fontColorP{
+    color: #424242;
+}
+
+.stepper-line-wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.step-line {
+    width: 40px;
+    height: 2px;
+    background-color: #007bff;
+    flex-shrink: 0;
+}

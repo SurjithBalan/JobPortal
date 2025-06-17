@@ -22,7 +22,7 @@ function PersonalDetails() {
                         <Col md={6}><Form.Group><Form.Label>Key Skills</Form.Label><Form.Control placeholder="Enter" /></Form.Group></Col>
                     </Row>
                     <div className="text-center mt-4">
-                        <Button variant="primary" size="lg">Save & Next </Button>
+                        <Button variant="primary" size="lg" style={{ backgroundColor: '#1e88e5' }} >Save & Next </Button>
                     </div>
                 </Form>
             </div>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  gap: 6px;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.fontclr{
+  color:#424242
+}
+
+.calendar-cell {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.calendar-cell:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.active-day {
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.calendar-container {
+  max-width: 350px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  padding-top: 5px;
+}
+
+.calendar-cell {
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.calendar-cell.empty {
+  visibility: hidden;
+}
+
+.calendar-cell.active {
+  background-color: #007bff;
+  /* Blue background */
+  color: white;
+  /* White text color */
+  border-radius: 30%;
+  /* Fully rounded cell */
+  width: 40px;
+  /* Adjust size */
+  height: 40px;
+  /* Adjust size */
+  display: flex;
+  /* Center content */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  font-weight: bold;
+  /* Make text bold */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* Optional: add subtle shadow */
+}
+
+.interview-item {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dots {
+  font-size: 18px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  /* vertical ellipsis */
+}
+
+.interview-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.time-badge {
+  font-size: 0.80rem!important;
+  padding: 0.5rem!important;
+  border-radius: 8px!important;
+  min-width: 80px!important;
+  background-color: #1e88e5!important;
+}
+
+.dot {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-right: 4px;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.tag-accept {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.tag-reschedule {
+  background-color: #fff8dc;
+  color: #8a6d3b;
+}
+
+.tag-warning {
+  background-color: #ffe4b5;
+  color: #d35400;
+}
+
+.tag-danger {
+  background-color: #fddede;
+  color: #c62828;
+}
