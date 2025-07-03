@@ -6,25 +6,27 @@
 
 .login-wrapper-canidate-email {
     font-family: 'Poppins', sans-serif;
-    margin: 20px;
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+     
 }
 
 .login-box-canidate-email {
-    max-width: 75%;
-    width: 100%;
+    display: flex;
+    max-width: 80%;
     background-color: white;
-    /* border:solid red; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
     padding: 0;
+    border: 0.5px solid #1a70bb;
 }
 
 .left-side-canidate-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #1e88e5;
     text-align: center;
     padding: 2rem;
