@@ -72,7 +72,7 @@ export default function CompanyLogin() {
                 </Form.Group>
 
                 <div className="Login-button">
-                  <Link to={"/"}>
+                  <Link to={"/RecruiterDashboard"}>
                     <Button
                       className=" rounded-pill text-white "
                       style={{ backgroundColor: "#1e88e5" }}

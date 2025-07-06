@@ -5,19 +5,12 @@ import { TbCurrentLocation } from "react-icons/tb";
 import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiDocumentText } from "react-icons/hi";
-import { CiFilter } from "react-icons/ci";
-import { FaBuilding, FaBriefcase } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa";
 import { PiCurrencyInrDuotone } from "react-icons/pi";
 import { MdBookmarkBorder } from "react-icons/md";
 import UserNavbar from "../usernavbar/UserNavbar";
 import Pagination from "../herofilter/Pagination.jsx";
 import herojobs from "../data/herojobs";
-import dateOptions from "../data/dateoptions.js";
-import qualification from "../data/qualification.js";
-import industry from "../data/industry.js";
-import language from "../data/language.js";
-import functionality from "../data/functionality.js";
 import Filters from "../joblisting/filtersidebar/Filters.jsx";
 
 export default function Featurefilter() {
