@@ -10,9 +10,7 @@ import { FaStar } from "react-icons/fa";
 import { PiSignpostBold } from "react-icons/pi";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { TfiLocationArrow } from "react-icons/tfi";
-import {
-    FiGrid, FiFileText, FiHeart, FiBell, FiMessageSquare, FiLogOut, FiMenu, FiEdit, FiTarget, FiCheckCircle, FiPlus, FiMapPin, FiBriefcase, FiPhone
-} from 'react-icons/fi';
+import { FiGrid, FiFileText, FiHeart, FiBell, FiMessageSquare, FiLogOut, FiMenu, FiEdit, FiTarget, FiCheckCircle, FiPlus, FiMapPin, FiBriefcase, FiPhone } from 'react-icons/fi';
 import { GrDiamond } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import { PiApplePodcastsLogoLight } from "react-icons/pi";
@@ -43,73 +41,30 @@ import LogoutModal from './Lougout'
 import PricingPlans from './PremiumPackage'
 import FindRecruiter from './FindRecruiter'
 
-
-const BreadcrumbNav = () => {
-    const location = useLocation();
-    const pathnames = location.pathname
-        .replace('/Candidate Dashboard', '')
-        .split('/')
-        .filter((x) => x);
-
-    const formatLabel = (str) =>
-        str.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-
-    const renderBreadcrumbItems = () => {
-        const items = [];
-
-        // Static: Home
-        items.push(
-            <Link key="home" to="/" className="breadcrumb-link">
-                Home
-            </Link>
-        );
-
-        // Static: HR Company
-        items.push(
-            <Link key="hr" to="/Candidate Dashboard" className="breadcrumb-link">
-                Candidate Dashboard
-            </Link>
-        );
-
-        // Dynamic
-        pathnames.forEach((value, index) => {
-            const to = `/Candidate Dashboard/${pathnames.slice(0, index + 1).join('/')}`;
-            const isLast = index === pathnames.length - 1;
-
-            items.push(
-                isLast ? (
-                    <span key={to} className="breadcrumb-current">
-                        {formatLabel(value)}
-                    </span>
-                ) : (
-                    <Link key={to} to={to} className="breadcrumb-link">
-                        {formatLabel(value)}
-                    </Link>
-                )
-            );
-        });
-
-        // Insert bullet separators
-        return items.flatMap((item, idx) => {
-            if (idx === 0) return [item];
-            return [
-                <span key={`sep-${idx}`} className="breadcrumb-separator">•</span>,
-                item,
-            ];
-        });
+const BreadcrumbNav = ({ activeItem }) => {
+    // Format the activeItem string (e.g., 'AdminAccess' -> 'Admin Access')
+    const formatItem = (item) => {
+        return item?.replace(/([A-Z])/g, ' $1').trim();
     };
 
     return (
-        <div className="breadcrumb-wrapper mb-2 mt-0">
-            <Container fluid className="d-flex align-items-center">
-                <nav className="custom-breadcrumb">{renderBreadcrumbItems()}</nav>
-            </Container>
+        <div className="text-start mt-3 ms-3">
+            <Breadcrumb className="custom-breadcrumb">
+                <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }} >
+                    Home
+                </Breadcrumb.Item>
+
+                {activeItem && (
+                    <Breadcrumb.Item active className="text-capitalize">
+                        {formatItem(activeItem)}
+                    </Breadcrumb.Item>
+                )}
+            </Breadcrumb>
         </div>
     );
 };
 
-
-const NavbarComponent = ({ setShowComponent }) => {
+const NavbarComponent = () => {
     return (
         <>
             <Navbar expand="lg" style={{ backgroundColor: '#1e88e5', height: 'auto' }}>
@@ -139,16 +94,6 @@ const NavbarComponent = ({ setShowComponent }) => {
                     {/* Right: Post Job, Bell, Profile */}
                     <Navbar.Collapse id="navbar-content" className="justify-content-end">
                         <Nav className="d-flex align-items-center gap-5">
-                            {/* <Button
-                            variant="light"
-                            className="fw-semibold text-primary bg-white px-3 py-2"
-                            onClick={() => setShowComponent(prev => !prev)}
-                            style={{ minWidth: 'auto' }}
-                        >
-                            Post Job
-                        </Button> */}
-
-                            {/* Notification Bell - Hidden on small screens */}
                             <div className="d-none d-md-flex">
                                 <FiBell size={35} color="#fff" style={{ cursor: 'pointer' }} />
                             </div>
@@ -178,7 +123,6 @@ const RightSide = () => {
     return (
         <ApplicationStatistics />
     );
-
 }
 
 function CandidateDashboardMain() {
@@ -186,7 +130,7 @@ function CandidateDashboardMain() {
     return (
         <>
             <NavbarComponent />
-            <BreadcrumbNav />
+            <BreadcrumbNav activeItem={activeItem} />
             <Container fluid className=" px-3 m-3" style={{ overflowX: 'hidden' }}>
                 <Row>
                     {/* Left Sidebar - Filters */}
@@ -266,11 +210,11 @@ function CandidateDashboardMain() {
                                     <RiLockUnlockLine size={20} className="me-2" />
                                     <span>Privacy Control</span>
                                 </li>
-                                
+
                                 <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Find Recruiters' ? 'active-item' : ''
                                     }`}
-                                    onClick={() => setActiveItem('Find Recruiters')}> 
-                                    <PiUserCircleGear size={20} className="me-2" />                                
+                                    onClick={() => setActiveItem('Find Recruiters')}>
+                                    <PiUserCircleGear size={20} className="me-2" />
                                     <span>Find Recruiters</span>
                                 </li>
                                 <li className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-3 mb-4 sidebar-item ${activeItem === 'Logout' ? 'active-item' : ''
@@ -291,11 +235,9 @@ function CandidateDashboardMain() {
                         {activeItem === 'Message Inbox' && <ChattingPage />}
                         {activeItem === 'Notification' && <Notification />}
                         {activeItem === 'Privacy Control' && <PrivacyControl />}
-                        {activeItem === 'Logout' && <LogoutModal />}    
-                        {activeItem === 'Premium Packages' && <PricingPlans />}   
-                        {activeItem === 'Find Recruiters' && <FindRecruiter />}   
-                        
-                                        
+                        {activeItem === 'Logout' && <LogoutModal />}
+                        {activeItem === 'Premium Packages' && <PricingPlans />}
+                        {activeItem === 'Find Recruiters' && <FindRecruiter />}
                     </Col>
                 </Row>
             </Container >

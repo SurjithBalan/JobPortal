@@ -18,6 +18,7 @@ import RecomendedJobsDashborad from './components/recommend jobs/RecomendedJobsD
 import CandidatequickProfilePage from './components/CandidateLogin/CandidateProfile/quickProfile'
 import CandidateDashboardMain from './components/CandidatesDashboard/candidateDashboardMain'
 import JobDetailsPage from './components/JobDescription/jobDescription'
+import HRDashboardMain from './components/HRDashboard/HRDashboardMain'
 function App() {  
   return (
     <>
@@ -44,6 +45,7 @@ function App() {
             <Route path = '/CandidatequickProfilePage' element ={<CandidatequickProfilePage/>}></Route>
             <Route path = '/CandidateDashboardMain' element = {<CandidateDashboardMain/>}></Route>
             <Route path = '/jobdescription' element ={<JobDetailsPage/>}></Route>
+            <Route path = '/Hr' element ={<HRDashboardMain/>}></Route>            
           </Routes>         
         </div>
       </Router>

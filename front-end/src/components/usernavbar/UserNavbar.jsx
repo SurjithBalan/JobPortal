@@ -7,10 +7,8 @@ import { MdCorporateFare } from "react-icons/md";
 import "../companylogin/companylogin.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 function UserNavbar() {
   const navigate = useNavigate();
-
   return (
     <>
       <nav
@@ -62,6 +60,13 @@ function UserNavbar() {
                 <a href="" className="nav-link text-white ">
                   Contact US
                 </a>
+              </li>
+
+              {/* Hr Dashboard is temprorary routing */}
+              <li className="nav-item">
+                <Link to="/hr" className="nav-link text-white">
+                  HR Dashboard
+                </Link>
               </li>
             </ul>
             <div className="btn-login d-flex justify-content-center flex-md-row align-items-center flex-column ">
@@ -127,5 +132,4 @@ function UserNavbar() {
     </>
   );
 }
-
 export default UserNavbar;
