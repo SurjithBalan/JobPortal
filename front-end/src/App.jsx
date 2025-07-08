@@ -20,6 +20,7 @@ import Joblisiting from './components/joblisting/Joblisiting';
 import RecruiterDashboard from './components/Recruiterdashboard/RecruiterDashboard';
 import CandidateDashboardMain from './components/CandidatesDashboard/candidateDashboardMain'
 import JobDetailsPage from './components/JobDescription/jobDescription'
+import HrComapanyDashboard from './components/HrCompanyDashboard/HrComapanyDashboard';
 function App() {  
   return (
     <>
@@ -48,6 +49,7 @@ function App() {
             <Route path = '/RecruiterDashboard' element ={<RecruiterDashboard/>}></Route>
             <Route path = '/CandidateDashboardMain' element = {<CandidateDashboardMain/>}></Route>
             <Route path = '/jobdescription' element ={<JobDetailsPage/>}></Route>
+            <Route path='/HrCompanyDashboard' element ={<HrComapanyDashboard/>}></Route>
           </Routes>         
         </div>
       </Router>

@@ -159,10 +159,10 @@ export default function ShortlistedCandidate() {
                         </Col>
                         <Col>
                           {/* Button */}
-                          <div className="d-flex justify-content-center ">
+                          <div className="d-flex flex-wrap justify-content-center gap-3">
                             <Button
                               variant="primary"
-                              className="rounded-pill px-3 shadow-none mx-3"
+                              className="rounded-pill px-3 shadow-none"
                             >
                               View Resume
                             </Button>
@@ -219,7 +219,7 @@ export default function ShortlistedCandidate() {
                 <Form.Control
                   placeholder=""
                   rows={5}
-                  style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   className="border   shadow-none"
                 />
               </Form.Group>
@@ -231,7 +231,7 @@ export default function ShortlistedCandidate() {
                 <Form.Label className="bold"> Location</Form.Label>
                 <Form.Control
                   placeholder=""
-                   style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   rows={5}
                   className=" shadow-none"
                 />
@@ -244,7 +244,7 @@ export default function ShortlistedCandidate() {
                 <Form.Label className="bold"> Company Name</Form.Label>
                 <Form.Control
                   placeholder=""
-                   style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   rows={5}
                   className=" shadow-none"
                 />
@@ -257,7 +257,7 @@ export default function ShortlistedCandidate() {
               >
                 <Form.Label className="bold"> Role</Form.Label>
                 <Form.Control
-                 style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   placeholder=""
                   rows={5}
                   className=" shadow-none"
@@ -270,7 +270,7 @@ export default function ShortlistedCandidate() {
               >
                 <Form.Label className="bold"> Salary</Form.Label>
                 <Form.Control
-                 style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   placeholder=""
                   rows={5}
                   className=" shadow-none"
@@ -283,7 +283,7 @@ export default function ShortlistedCandidate() {
               >
                 <Form.Label> Message Note</Form.Label>
                 <Form.Control
-                 style={{backgroundColor:'#F2F2F2'}}
+                  style={{ backgroundColor: "#F2F2F2" }}
                   placeholder=""
                   rows={5}
                   className=" shadow-none"
@@ -305,14 +305,21 @@ export default function ShortlistedCandidate() {
               <Form.Label>Time</Form.Label>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["MobileTimePicker"]}>
-                  <MobileTimePicker sx={{ width: "50%", backgroundColor: "#F2F2F2" }} defaultValue={dayjs("2022-04-17T15:30")} />
+                  <MobileTimePicker
+                    sx={{ width: "50%", backgroundColor: "#F2F2F2" }}
+                    defaultValue={dayjs("2022-04-17T15:30")}
+                  />
                 </DemoContainer>
               </LocalizationProvider>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary " className="rounded-5" onClick={handleClose}>
+          <Button
+            variant="secondary "
+            className="rounded-5"
+            onClick={handleClose}
+          >
             Close
           </Button>
           <Button className="rounded-5" variant="primary" onClick={handleClose}>

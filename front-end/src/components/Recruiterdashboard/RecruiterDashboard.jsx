@@ -17,135 +17,80 @@ import RecruiterProfile from "./RecruiterProfile";
 import ManageJobs from "./ManageJobs";
 import AppliedCandidate from "./AppliedCandidate";
 import ShortlistedCandidate from "./ShortlistedCandidate";
+import LogOut from "./LogOut";
+import RecuiterMessageinbox from "./RecuiterMessageinbox";
+import JobEditForm from "./JobEditForm";
 export default function RecruiterDashboard() {
   const [activeItem, setActiveItem] = useState("Dashboard");
+   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Toggle sidebar
   return (
     <>
       <Dashboardnavbar />
       <Breadcrums />
-      <Container fluid style={{ overflowX: "hidden" }}>
-        <Row>
-          {/* Left Sidebar - Filters */}
-          <Col
-            xs={12}
-            md={2}
-            lg={2}
-            className="recruiter_sidebar rounded p-2 mb-3 mb-md-0 shadow-sm"
-          >
-            <div className="">
-              <ul className="list-unstyled m-0 g-5">
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item  ${
-                    activeItem === "Dashboard" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Dashboard")}
-                >
-                  <FiMenu size={20} className="me-2" />
-                  <span>Dashboard</span>
-                </li>
+     <Container fluid style={{ overflowX: "hidden" }}>
+      {/* Toggle Header - Left Aligned */}
+      <div className="d-md-none p-2 toggle-header rounded-2 d-flex justify-content-between align-items-center">
+        <FiMenu
+          size={24}
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          style={{ cursor: "pointer", color: "#000" }}
+        />
+        <h6 className="m-0 text-dark ms-2"> Dashboard</h6>
+      </div>
 
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1  mb-3 sidebar-item ${
-                    activeItem === "RecruiterProfile" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("RecruiterProfile")}
-                >
-                  <GoPerson size={20} className="me-2" />
-                  <span className="text-nowrap">Recruiter Profile</span>
-                </li>
+      <Row>
+        {/* Sidebar */}
+        <Col
+          xs={12}
+          md={2}
+          lg={2}
+          className={`recruiter_sidebar rounded p-2 mb-3 mb-md-0 shadow-sm  ${isSidebarOpen ? 'd-block' : 'd-none'} d-md-block`} style={{backgroundColor:"#87C6F4"}}
+        >
+          <ul className="list-unstyled m-0">
+            {[
+              ["Dashboard", <FiMenu size={20} />],
+              ["RecruiterProfile", <GoPerson size={20} />],
+              ["Post a Job", <PiSignpostBold size={20} />],
+              ["Edit a Job", <MdOutlineModeEdit size={20} />],
+              ["Interview Schedule", <IoCalendarOutline size={20} />],
+              ["Manage Jobs", <RiWechatLine size={20} />],
+              ["Applied Candidates", <PiApplePodcastsLogo size={20} />],
+              ["Shortlisted Candidates", <RiCheckDoubleFill size={20} />],
+              ["Message Inbox", <RiWechatLine size={20} />],
+              ["Logout", <FiLogOut size={20} />],
+            ].map(([label, icon]) => (
+              <li
+                key={label}
+                className={`sidebar-item py-2 px-1 mb-3 d-flex align-items-center rounded ${
+                  activeItem === label ? "active-item" : ""
+                }`}
+                onClick={() => {
+                  setActiveItem(label);
+                  setIsSidebarOpen(false); // Auto-close on mobile
+                }}
+              >
+                {icon}
+                <span className="ms-2 text-nowrap">{label}</span>
+              </li>
+            ))}
+          </ul>
+        </Col>
 
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Post a Job" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Post a Job")}
-                >
-                  <PiSignpostBold size={20} className="me-2" />
-                  <span className="text-nowrap">Post a Job</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Applied Jobs" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Applied Jobs")}
-                >
-                  <MdOutlineModeEdit size={20} className="me-2" />
-                  <span>Edit a Job</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Interview Schedule" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Interview Schedule")}
-                >
-                  <IoCalendarOutline size={20} className="me-2" />
-                  <span className="text-nowrap ">Interview Schedule</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Manage Jobs" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Manage Jobs")}
-                >
-                  <RiWechatLine size={20} className="me-2" />
-                  <span>Manage Jobs</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Applied Candidates" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Applied Candidates")}
-                >
-                  <PiApplePodcastsLogo size={20} className="me-2" />
-                  <span className="text-nowrap small">Applied Candidates</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Shortlisted Candidates" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Shortlisted Candidates")}
-                >
-                  <RiCheckDoubleFill size={20} className="me-2" />
-                  <span className=" ">Shortlisted Candidates</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Privacy Control" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Privacy Control")}
-                >
-                  <RiWechatLine size={20} className="me-2" />
-                  <span>Message Inbox</span>
-                </li>
-                <li
-                  className={`fontColor424242 fw-normal d-flex align-items-center rounded py-2 px-1 mb-3 sidebar-item ${
-                    activeItem === "Settings" ? "active-item" : ""
-                  }`}
-                  onClick={() => setActiveItem("Settings")}
-                >
-                  <FiLogOut size={20} className="me-2" />
-                  <span>Logout</span>
-                </li>
-              </ul>
-            </div>
-          </Col>
-          {/* Right Column - Job Component */}
-          <Col
-            xs={12}
-            md={10}
-            lg={10}
-            className="recruiter_right d-flex justify-content-center text-center mt-0 ml-0 "
-          >
-            {activeItem === "Dashboard" && (<ApplicationStatisticsDashboard/>) }
-            {/* Recruiter Profile page */}
-              {activeItem === "RecruiterProfile" && (<RecruiterProfile/>) }
-            {activeItem === "Post a Job" && (<PostJobForm />)}
-            {activeItem === "Manage Jobs"&& (<ManageJobs/>)}
-            {activeItem === "Applied Candidates"&&(<AppliedCandidate/>)}
-            {activeItem === "Shortlisted Candidates" && (<ShortlistedCandidate/>)}
-          </Col>
-        </Row>
-      </Container>
+        {/* Main Content */}
+        <Col xs={12} md={10} lg={10} className="recruiter_right d-flex justify-content-center text-center mt-0">
+          {activeItem === "Dashboard" && <ApplicationStatisticsDashboard />}
+          {activeItem === "RecruiterProfile" && <RecruiterProfile />}
+          {activeItem === "Post a Job" && <PostJobForm />}
+          {activeItem === "Edit a Job" && <JobEditForm />}
+          {/* {activeItem === "Interview Schedule" && <InterviewSchedule />} */}
+          {activeItem === "Manage Jobs" && <ManageJobs />}
+          {activeItem === "Applied Candidates" && <AppliedCandidate />}
+          {activeItem === "Shortlisted Candidates" && <ShortlistedCandidate />}
+          {activeItem === "Message Inbox" && <RecuiterMessageinbox />}
+          {activeItem === "Logout" && <LogOut />}
+        </Col>
+      </Row>
+    </Container>
     </>
   );
 }

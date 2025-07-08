@@ -8,13 +8,7 @@ import {
   Table,
   Badge,
 } from "react-bootstrap";
-import {
-  FaPlus,
-  FaDownload,
-  FaEnvelope,
-  FaUndo,
-  FaTimes,
-} from "react-icons/fa";
+
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -33,9 +27,9 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { FiBriefcase, FiEdit, FiStar, FiBookmark } from "react-icons/fi";
+import { FiBriefcase } from "react-icons/fi";
 import "./ApplicationStatisticsDashboard.css";
 import profile from "../../assets/image/candidateImage.jpg";
 import { Avatar } from "@mui/material";
@@ -43,7 +37,6 @@ import { CiLocationOn } from "react-icons/ci";
 import { SiGoogleforms } from "react-icons/si";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
-import { MdOutlinePendingActions } from "react-icons/md";
 const chartData = {
   labels: ["Apr 30", "May 1", "May 2", "May 3", "May 4", "May 5"],
   datasets: [
@@ -89,11 +82,11 @@ const ApplicationStatisticsDashboard = () => {
       bg: "#FB85001A", // Light red tint
       iconColor: "#FB8500",
     },
-     {
+    {
       count: 2,
       label: "Shortlisted",
       variant: "success",
-      icon: < IoCheckmarkDoneSharp size={24} />,
+      icon: <IoCheckmarkDoneSharp size={24} />,
       bg: "#43A0471A", // Light yellow tint
       iconColor: "#43A047",
     },
@@ -101,12 +94,10 @@ const ApplicationStatisticsDashboard = () => {
       count: 3,
       label: "Profiles on Process",
       variant: "warning",
-      icon: <FaRegEdit  size={30} />,
+      icon: <FaRegEdit size={30} />,
       bg: "#FFD4001A", // Light green tint
       iconColor: "#FFD400",
     },
-   
-    
   ];
 
   const notifications = [
@@ -159,7 +150,7 @@ const ApplicationStatisticsDashboard = () => {
       <Row className="mb-4">
         {summary.map((item, idx) => (
           <Col xs={6} md={3} key={idx} className="mb-3">
-            <div className="d-flex align-items-center p-2 rounded shadow-sm bg-white gap-3 h-100">
+            <div className="d-flex align-items-center summary-card p-3 rounded shadow-sm bg-white gap-3 h-100">
               <div
                 className="d-flex align-items-center justify-content-center rounded "
                 style={{
@@ -185,11 +176,13 @@ const ApplicationStatisticsDashboard = () => {
         <Col md={7}>
           <div className="shadow-sm border-0 mb-3">
             <div>
-              <div className="d-flex justify-content-start bold "><h6>Job Views</h6></div>
+              <div className="d-flex justify-content-start bold ">
+                <h6>Job Views</h6>
+              </div>
               {/* Placeholder for chart */}
               <Line data={chartData} options={chartOptions} height={200} />
-              <Row className="my-4 ">
-                <Col xs={6} className="mb-4">
+              <Row className="my-4 chart-dropdowns">
+                <Col xs={12} md={6} className="mb-3">
                   <Dropdown>
                     <Dropdown.Toggle
                       variant="light"
@@ -202,7 +195,7 @@ const ApplicationStatisticsDashboard = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </Col>
-                <Col xs={6}>
+                <Col xs={12} md={6}>
                   <Dropdown>
                     <Dropdown.Toggle
                       variant="light"
@@ -224,7 +217,10 @@ const ApplicationStatisticsDashboard = () => {
           <div className="bg-white p-3 rounded shadow-sm">
             <h6 className="fw-bold mb-3">Notifications</h6>
             {notifications.map((note, idx) => (
-              <div key={idx} className="d-flex align-items-start gap-3 mb-3">
+              <div
+                key={idx}
+                className="d-flex align-items-start gap-3 mb-3 notification-item"
+              >
                 {/* Icon */}
                 <div
                   className="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
@@ -243,13 +239,13 @@ const ApplicationStatisticsDashboard = () => {
                   style={{ fontSize: "0.95rem", lineHeight: "1.4" }}
                 >
                   {note.includes("Social media Marketing") ? (
-                    <div><p className="text-start px-4 mb-0">
-
-                      A meeting is cancelled on your job
-                      <strong> Social media Marketing </strong>
-                      by <strong>candidate.</strong>
-                    </p>
-                     <p className="text-muted text-start ms-4">1 Day ago</p>
+                    <div>
+                      <p className="text-start px-4 mb-0">
+                        A meeting is cancelled on your job
+                        <strong> Social media Marketing </strong>
+                        by <strong>candidate.</strong>
+                      </p>
+                      <p className="text-muted text-start ms-4">1 Day ago</p>
                     </div>
                   ) : note.includes("View Profile") ? (
                     <>
@@ -261,12 +257,11 @@ const ApplicationStatisticsDashboard = () => {
                       >
                         View Profile
                       </a>
-                       <p className="text-muted text-start ms-3">1 Day ago</p>
+                      <p className="text-muted text-start ms-3">1 Day ago</p>
                     </>
                   ) : (
                     <>{note}</>
                   )}
-               
                 </div>
               </div>
             ))}
@@ -277,8 +272,10 @@ const ApplicationStatisticsDashboard = () => {
       {/* Recent Applicants */}
       {/* <Row className="mb-4"> </Row> */}
       <div className="bg-white p-4 rounded shadow-sm">
-        <div className="d-flex justify-content-start"><h5 className="fw-bold mb-4">Recent Applicants</h5></div>
-         <Divider className="mb-5" />
+        <div className="d-flex justify-content-start">
+          <h5 className="fw-bold mb-4">Recent Applicants</h5>
+        </div>
+        <Divider className="mb-5" />
         {/* Header Row */}
         <Row className="text-muted fw-semibold mb-3 d-none d-md-flex">
           <Col xs={12} md={4}>
@@ -288,7 +285,7 @@ const ApplicationStatisticsDashboard = () => {
             Location
           </Col>
           <Col xs={12} md={2}>
-           Applied For
+            Applied For
           </Col>
           <Col xs={12} md={4}>
             Applied Date
@@ -299,7 +296,7 @@ const ApplicationStatisticsDashboard = () => {
         {applicants.map((applicant, idx) => (
           <Row
             key={idx}
-            className="align-items-center mb-4 gy-3 flex-column flex-md-row"
+            className="align-items-center mb-4 g-3 flex-column flex-md-row recent-applicant"
           >
             {/* Candidate Info */}
             <Col xs={12} md={4}>
@@ -318,19 +315,18 @@ const ApplicationStatisticsDashboard = () => {
                   <div className="text-primary small d-flex justify-content-start">
                     {applicant.role}
                   </div>
-                 
                 </div>
               </div>
             </Col>
 
             {/* Status */}
             <Col xs={12} md={2}>
-               <div className="text-muted small d-flex justify-content-start">
-                    <i className="bi bi-geo-alt-fill me-1">
-                      <CiLocationOn fill="red" />
-                    </i>
-                    {applicant.location}
-                  </div>
+              <div className="text-muted small d-flex justify-content-start">
+                <i className="bi bi-geo-alt-fill me-1">
+                  <CiLocationOn fill="red" />
+                </i>
+                {applicant.location}
+              </div>
             </Col>
 
             {/* Date */}

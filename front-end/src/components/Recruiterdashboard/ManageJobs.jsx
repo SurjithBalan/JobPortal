@@ -99,53 +99,62 @@ export default function ManageJobs() {
 
   return (
     <>
-      <Container>
+      <Container fluid>
         <Row>
-          <Col md={12}>
-            <div>
-              {currentJobs.length > 0 ? (
-                currentJobs.map((job) => (
+          <Col xs={12}>
+            {currentJobs.length > 0 ? (
+              <Row className="gx-3 gy-4">
+                {currentJobs.map((job) => (
                   <Col xs={12} key={job.id}>
                     <div
-                      className={`joblisting_card mb-4 my-4 p-4 position-relative border  ${
+                      className={`joblisting_card p-3 p-md-4 border position-relative ${
                         job.featured ? "border-primary" : ""
                       }`}
                     >
-                      {/* Edit Icon */}
-                      <div className="position-absolute top-0 end-0  p-3 mx-4">
-                        <div>
-                          <FormControlLabel
-                            control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-                          />
-                        </div>
-                        <div className="manage-edit">
-                          <MdOutlineEdit
-                            size={25}
-                            className=" p-1 rounded-circle border"
-                            style={{
-                              transform: "translate(50%, -50%)",
-                              color: "#1e88e5",
-                              backgroundColor: "#e9f3fc",
-                            }}
-                          />
-                        </div>
+                      {/* Icons Top-Right */}
+                      <div
+                        className="position-absolute d-flex align-items-center edit-switch-container"
+                        style={{ top: "1rem", right: "1rem", gap: "0.5rem" }}
+                      >
+                        <FormControlLabel
+                          control={
+                            <IOSSwitch
+                              sx={{ m: 0 }}
+                              defaultChecked
+                              size="small"
+                            />
+                          }
+                          label=""
+                          sx={{ m: 0 }}
+                        />
+                        <MdOutlineEdit
+                          size={20}
+                          className="p-1 rounded-circle border"
+                          style={{
+                            color: "#1e88e5",
+                            backgroundColor: "#e9f3fc",
+                            width: "28px",
+                            height: "28px",
+                          }}
+                        />
                       </div>
 
                       <Row>
-                        {/* Left: Logo */}
+                        {/* Logo */}
                         <Col
+                          xs={12}
                           md={2}
-                          className="d-flex align-items-start justify-content-center "
+                          className="d-flex justify-content-center mb-3 mb-md-0"
                         >
-                          <div className="ribbon-container">
+                          <div className="ribbon-container text-center">
                             <img
                               src={job.logo}
                               alt={job.company}
                               className="img-fluid border border-secondary-subtle"
                               style={{
-                                width: "90px",
-                                height: "90px",
-                                padding: "15px",
+                                width: "70px",
+                                height: "70px",
+                                padding: "10px",
                                 objectFit: "contain",
                               }}
                             />
@@ -155,14 +164,14 @@ export default function ManageJobs() {
                           </div>
                         </Col>
 
-                        {/* Right: Info */}
-                        <Col md={10}>
+                        {/* Job Info */}
+                        <Col xs={12} md={10}>
                           {/* Badges */}
                           <div className="d-flex flex-wrap mb-2 gap-2">
                             {job.badges.map((badge, index) => (
                               <span
                                 key={index}
-                                className="px-1 py-0 border border-primary rounded-3 text-secondary"
+                                className="px-2 py-1 border border-primary rounded-3 text-secondary fs-8"
                               >
                                 {badge}
                               </span>
@@ -170,15 +179,15 @@ export default function ManageJobs() {
                           </div>
 
                           {/* Title */}
-                          <h5 className="fw-bold text-start">
+                          <h6 className="fw-bold text-start fs-6 fs-md-5 mb-1">
                             {job.functionality}
-                          </h5>
-                          <p className="text-primary mb-1 text-start">
+                          </h6>
+                          <p className="text-primary mb-2 text-start fs-7">
                             @ {job.company}
                           </p>
 
-                          {/* Salary, Experience, Location */}
-                          <div className="d-flex flex-wrap gap-4 text-muted mb-3">
+                          {/* Salary, Exp, Location */}
+                          <div className="d-flex flex-wrap gap-3 text-muted mb-3 fs-8">
                             <span>
                               <FaRupeeSign className="me-1" color="#10A441" />
                               {job.salary}
@@ -198,7 +207,7 @@ export default function ManageJobs() {
                             {job.tags.map((tag, index) => (
                               <span
                                 key={index}
-                                className="px-3 py-1 bg-success bg-opacity-10 rounded-pill border border-success-subtle text-dark"
+                                className="px-2 py-1 bg-success bg-opacity-10 rounded-pill border border-success-subtle text-dark fs-8"
                               >
                                 {tag}
                               </span>
@@ -206,31 +215,30 @@ export default function ManageJobs() {
                           </div>
 
                           {/* Meta Info */}
-                          <div className="d-flex flex-wrap gap-3 mb-4">
-                            <span className="bg-light px-1 py-1 rounded text-muted d-flex align-items-center">
+                          <div className="d-flex flex-wrap gap-2 mb-4 text-muted fs-8">
+                            <span className="bg-light px-2 py-1 rounded d-flex align-items-center">
                               <SlCalender className="me-2" />
                               {job.datePosted}
                             </span>
-                            <span className="bg-light px-1 py-1 rounded text-muted">
+                            <span className="bg-light px-2 py-1 rounded">
                               {job.positions}
                             </span>
-                            <span className="bg-light px-1 py-1 rounded text-muted">
+                            <span className="bg-light px-2 py-1 rounded">
                               Male / Female
                             </span>
-                            <span className="bg-light px-1 py-1 rounded text-muted">
+                            <span className="bg-light px-2 py-1 rounded">
                               IT Graduates
                             </span>
-                            <span className="bg-light px-1 py-1 rounded text-muted">
+                            <span className="bg-light fs-8 px-2 py-1 rounded">
                               Day Shift
                             </span>
                           </div>
-                        </Col>
-                        <Col>
+
                           {/* Button */}
-                          <div className="d-flex justify-content-center">
+                          <div className="d-flex justify-content-center justify-content-md-start">
                             <Button
                               variant="primary"
-                              className="rounded-pill px-4"
+                              className="rounded-pill px-4 py-1 px-3 fs-8"
                             >
                               View Job
                             </Button>
@@ -239,15 +247,17 @@ export default function ManageJobs() {
                       </Row>
                     </div>
                   </Col>
-                ))
-              ) : (
-                <p>No job Found </p>
-              )}
-            </div>
+                ))}
+              </Row>
+            ) : (
+              <p className="text-center fs-6 mt-5">No job found</p>
+            )}
           </Col>
         </Row>
+
+        {/* Pagination */}
         <Row>
-          <Col md={12}>
+          <Col md={12} className="d-flex justify-content-center mt-4">
             <Pagination
               jobsPerPage={jobsPerPage}
               totalJobs={jobs.length}

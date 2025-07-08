@@ -51,12 +51,12 @@ function UserNavbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <Link className="nav-link text-white" to={"/HrCompanyDashboard"}>
                   Featured{" "}
                   <span>
                     <FaStar color="#FFA900" />
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a href="" className="nav-link text-white ">

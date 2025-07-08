@@ -10,7 +10,7 @@
 
 .recruiter_sidebar{
     overflow-y: hidden;
-    height: 100%;
+    height: 150%;
     background-color: #87C6F4;
 }
 .recruiter_right{
@@ -43,6 +43,38 @@
 .inputGroupbg {
     background-color: #f2f2f2 !important;
 }
+/* Toggle Header Background */
+.toggle-header {
+  background-color: #87C6F4;
+}
+
+/* Sidebar Item */
+.sidebar-item {
+  cursor: pointer;
+  color: #424242;
+  transition: background 0.2s ease;
+}
+
+/* On Hover */
+.sidebar-item:hover {
+  background-color: #e0f3ff;
+}
+
+/* Active State */
+.active-item {
+  background-color: #ffffff;
+  color: black !important;
+}
+
+.active-item span {
+  color: black !important;
+}
+
+/* Fix layout spacing on small screens */
+.sidebar-col {
+  background-color: #87C6F4;
+}
+
 
 @media (max-width: 768px) {
 
@@ -52,30 +84,4 @@
         margin: 0 !important;
         padding: 0 !important;
     }
-}
-
-/* Toggle Header Bar */
-.toggle-header {
-  background-color: #87C6F4;
-}
-
-/* Sidebar Items */
-.sidebar-item {
-  cursor: pointer;
-  transition: background 0.2s;
-  color: #424242;
-}
-
-.sidebar-item:hover {
-  background-color: #f1f1f1;
-}
-
-/* Active Item - Black Text */
-.active-item {
-  background-color: #87C6F4;
-  color: black !important;
-}
-
-.active-item span {
-  color: black !important;
 }
