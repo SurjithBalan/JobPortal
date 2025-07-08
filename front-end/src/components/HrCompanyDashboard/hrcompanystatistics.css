@@ -1,0 +1,48 @@
+
+@media (max-width: 576px) {
+  .summary-card {
+    height: auto !important; 
+    padding: 0.75rem !important;
+  }
+
+  .summary-card .icon-wrapper {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .summary-card p {
+    font-size: 0.8rem !important;
+  }
+
+  .summary-card h5 {
+    font-size: 1.1rem !important;
+  }
+
+  .recent-job-card {
+    padding: 1rem !important;
+  }
+
+  .recent-job-card h6 {
+    font-size: 1rem !important;
+  }
+
+  .recent-job-card p {
+    font-size: 0.8rem !important;
+  }
+
+  /* Reduce icon sizes in cards */
+  .recent-job-card svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Adjust the gap between icon buttons */
+  .action-buttons {
+    gap: 0.5rem !important;
+  }
+
+  /* Chart height smaller on mobile */
+   .line-chart {
+    height: 200px !important;
+  }
+}

@@ -1,0 +1,72 @@
+.joblisting_card {
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.icon-group span svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 576px) {
+  .joblisting_card {
+    padding: 1rem !important;
+  }
+
+  .joblisting_card h5 {
+    font-size: 1rem;
+  }
+
+  .joblisting_card p,
+  .joblisting_card span,
+  .joblisting_card .badge {
+    font-size: 0.8rem;
+  }
+
+  .joblisting_card .icon-group {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .joblisting_card .form-select {
+    width: 100% !important;
+    font-size: 0.85rem;
+  }
+
+  .ribbon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ribbon-container .border {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 5px !important;
+  }
+
+  .ribbon-container .MuiAvatar-root {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .joblisting_card h5 {
+    font-size: 0.95rem;
+  }
+  .joblisting_card p,
+  .joblisting_card span {
+    font-size: 0.75rem;
+  }
+}
