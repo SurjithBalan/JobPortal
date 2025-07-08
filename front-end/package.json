@@ -16,8 +16,14 @@
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "@mui/styled-engine-sc": "^7.1.0",
+
+    "@mui/x-charts": "^8.5.0",
+    "@mui/x-data-grid": "^8.5.3",
+    "@mui/x-date-pickers": "^8.5.1",
+
     "@mui/x-charts": "^8.7.0",
     "@mui/x-date-pickers": "^8.7.0",
+
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.9",
     "dayjs": "^1.11.13",
@@ -40,6 +46,7 @@
     "recharts": "^2.15.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.18",
+    "uuid": "^11.1.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {

@@ -2,15 +2,14 @@ import { useState } from "react";
 import Pagination from "../herofilter/Pagination.jsx";
 import herojobs from "../data/herojobs";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import { SlCalender } from "react-icons/sl";
 import { FaRupeeSign, FaMapMarkerAlt, FaSuitcase } from "react-icons/fa";
-import { MdOutlineEdit } from "react-icons/md";
 import candidate from "../../assets/image/candidateProfileImage.png";
 import { Avatar } from "@mui/material";
 import { GiSandsOfTime } from "react-icons/gi";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { BsPinAngle } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
+import "./appliedcandidate.css";
 export default function AppliedCandidate() {
   const [jobs, setJobs] = useState(herojobs);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,42 +38,28 @@ export default function AppliedCandidate() {
                   >
                     <Row>
                       <Col md={12}>
-                        <div className="d-flex justify-content-end mb-3 ">
-                          <div className="mx-3">
-                            {" "}
-                            <span>
-                              <BiMessageRoundedDetail
-                                fill="#1E88E5"
-                                size={20}
-                              />
-                            </span>
-                          </div>
-                          <div className="mx-3">
-                            {" "}
-                            <span>
-                              <BsPinAngle fill="#1E88E5" size={20} />
-                            </span>
-                          </div>
-                          <div className="mx-3">
-                            {" "}
-                            <span>
-                              <FaEye fill="#1E88E5" size={20} />
-                            </span>
-                          </div>
-                          <div className="d-flex justify-content-end">
-                            <Form.Select
-                              aria-label="Default select example"
-                              size="sm"
-                              style={{ width: 140 }}
-                              className=" shadow-none"
-                            >
-                              <option>Status</option>
-                              <option value="1">Not shortlisted</option>
-                              <option value="2">Irrelevant</option>
-                              <option value="3">On Hold</option>
-                              <option value="4">Under Review</option>
-                            </Form.Select>
-                          </div>
+                        <div className="icon-group mb-3">
+                          <span>
+                            <BiMessageRoundedDetail fill="#1E88E5" size={20} />
+                          </span>
+                          <span>
+                            <BsPinAngle fill="#1E88E5" size={20} />
+                          </span>
+                          <span>
+                            <FaEye fill="#1E88E5" size={20} />
+                          </span>
+                          <Form.Select
+                            aria-label="Select status"
+                            size="sm"
+                            className="shadow-none"
+                            style={{ width: "140px" }}
+                          >
+                            <option>Status</option>
+                            <option value="1">Not shortlisted</option>
+                            <option value="2">Irrelevant</option>
+                            <option value="3">On Hold</option>
+                            <option value="4">Under Review</option>
+                          </Form.Select>
                         </div>
                       </Col>
                     </Row>
@@ -122,7 +107,7 @@ export default function AppliedCandidate() {
                           {job.functionality}
                         </h5>
                         <p className="text-primary mb-1 text-start">
-                           {job.company}
+                          {job.company}
                         </p>
 
                         {/* Salary, Experience, Location */}

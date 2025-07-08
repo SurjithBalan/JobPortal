@@ -91,19 +91,17 @@ export default function RecruiterProfile() {
     <>
       <Container fluid>
         <Row>
-          <Col md={5}>
+          <Col lg={5} xs={12} className="mb-4">
             {/* Profile Sidebar */}
-            <div className="lg:col-span-1 bg-white shadow-sm rounded-xl my-4">
-              <div className="d-flex align-items-center  justify-content-center">
-                <div className="mx-3 d-flex  position-relative me-3">
-                  {" "}
+            <div className="bg-white shadow-sm rounded-xl p-3">
+              <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+                <div className="mx-3 mb-3 mb-md-0">
                   <Avatar sx={{ width: 100, height: 130 }} src={profile} />
                 </div>
-
-                <div className=" text-start pt-3 position-relative ">
+                <div className="text-center text-md-start position-relative w-100">
                   <MdOutlineEdit
                     size={25}
-                    className="position-absolute  top-0  end-0 p-1 rounded-circle border"
+                    className="position-absolute top-0 end-0 p-1 rounded-circle border"
                     style={{
                       transform: "translate(50%, -50%)",
                       color: "#1e88e5",
@@ -111,35 +109,35 @@ export default function RecruiterProfile() {
                     }}
                   />
                   <h5 className="mt-3 font-semibold">Amanda Collins</h5>
-                  <div className="flex items-center justify-center gap-1 text-yellow-500">
+                  <div className="d-flex justify-content-center justify-content-md-start gap-1 text-yellow-500">
                     {[...Array(4)].map((_, i) => (
                       <FaStar key={i} fill="#FFA900" size={16} />
                     ))}
                     <FaStar size={16} />
                   </div>
-                  <p className=" mb-0 text-gray-600 ">Web Developer</p>
-                  <p className=" mb-0 small text-gray-500">Skylark</p>
+                  <p className="mb-0 text-gray-600">Web Developer</p>
+                  <p className="mb-0 small text-gray-500">Skylark</p>
                   <p className="mb-0 small text-gray-400">
                     April 2025 - Present • 0 Yrs 1 Mts
                   </p>
                   <p className="mb-0 small text-gray-500">Chennai</p>
                 </div>
               </div>
-               <div className="mt-3 space-y-2 w-full">
-                <Divider sx={{ width: "90%" }} className="mb-3 mx-3" />
-                <div className="flex items-center justify-center gap-2 small">
+              <div className="mt-3">
+                <Divider sx={{ width: "100%" }} className="mb-3" />
+                <div className="d-flex justify-content-center gap-2 small">
                   <BsStars
                     size={20}
                     className="me-1"
                     style={{ color: "#ffa900" }}
                   />
-                  <span className="colortone">Joined on : </span>
-                  <span className="colortone">20 November 2024 </span>
+                  <span className="colortone">Joined on:</span>
+                  <span className="colortone">20 November 2024</span>
                 </div>
               </div>
-              <Row className="mb-2 text-start d-flex align-items-center mt-3 p-1">
-                <Divider sx={{ width: "90%" }} className="mb-3 mx-3" />
-                <Col xs={12} md={6} className="mb-2 mb-md-0">
+              <Divider sx={{ width: "100%" }} className="my-3" />
+              <Row className="text-start align-items-center">
+                <Col xs={12} md={6} className="mb-2">
                   <HiOutlinePhone
                     size={20}
                     className="me-1"
@@ -147,11 +145,7 @@ export default function RecruiterProfile() {
                   />
                   <span className="colortone small">+91 8734272845</span>
                 </Col>
-                <Col
-                  xs={12}
-                  md={6}
-                  className="mb-2 mb-md-0 text-end text-nowrap"
-                >
+                <Col xs={12} md={6} className="mb-2 text-md-end">
                   <CiMail
                     size={20}
                     className="me-1"
@@ -160,119 +154,107 @@ export default function RecruiterProfile() {
                   <span className="colortone small">zacknike@gmail.com</span>
                 </Col>
               </Row>
-              <Divider sx={{ width: "90%" }} className="mb-3 mx-3" />
+              <Divider sx={{ width: "100%" }} className="my-3" />
               <Row className="small mb-2">
                 <Col xs={12}>
                   <IoIosPeople size={16} fill="#FF5B5B" /> 200-500 employees
                 </Col>
               </Row>
-              <div className="mt-4 space-y-2 w-full">
-                <Divider sx={{ width: "90%" }} className="mb-3 mx-3" />
-                <div className="flex items-center justify-center gap-2 small">
-                  <BsStars
-                    size={20}
-                    className="me-1"
-                    style={{ color: "#ffa900" }}
-                  />
-                  <span className="colortone">Profile last updated on : </span>
-                  <span className="colortone">25 April 2025</span>
-                </div>
+              <Divider sx={{ width: "100%" }} className="my-3" />
+              <div className="d-flex justify-content-center gap-2 small">
+                <BsStars
+                  size={20}
+                  className="me-1"
+                  style={{ color: "#ffa900" }}
+                />
+                <span className="colortone">Profile last updated on:</span>
+                <span className="colortone">25 April 2025</span>
               </div>
 
               {/* Profile Score */}
-              <div className="bg-light border-0 mt-3">
-                <div className="p-3">
-                  <Row className="align-items-center">
-                    <Col xs={2} className="">
+              <div className="bg-light border-0 mt-4 p-3">
+                <Row className="align-items-center">
+                  <Col xs={12} sm={3} className="mb-3 mb-sm-0 text-center">
+                    <div
+                      style={{
+                        position: "relative",
+                        width: 60,
+                        height: 60,
+                        margin: "0 auto",
+                      }}
+                    >
+                      <CircularProgressbar
+                        value={percentage}
+                        styles={buildStyles({
+                          pathColor: "#28a745",
+                          textColor: "#28a745",
+                          trailColor: "#d6d6d6",
+                          textSize: "24px",
+                        })}
+                      />
                       <div
-                        style={{ position: "relative", width: 60, height: 60 }}
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          fontSize: "20px",
+                          color: "#28a745",
+                        }}
                       >
-                        <CircularProgressbar
-                          value={percentage}
-                          styles={buildStyles({
-                            pathColor: "#28a745",
-                            textColor: "#28a745",
-                            trailColor: "#d6d6d6",
-                            textSize: "24px", // Adjust text size
-                          })}
-                        />
-                        {/* Manually center the text */}
-                        <div
-                          style={{
-                            position: "absolute",
-                            top: "50%",
-                            left: "50%",
-                            transform: "translate(-50%, -50%)",
-                            fontSize: "20px",
-                            color: "#28a745",
-                          }}
+                        {percentage}%
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={12} sm={9}>
+                    <div className="fw-bold text-start colortone">
+                      Profile Score
+                    </div>
+                    <div className="text-start">
+                      <small className="text-muted colortone">
+                        Complete recruiter profiles attract more qualified
+                        candidates!!
+                      </small>
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <h6 className="mt-4 text-start bold">
+                      Complete Your Profile
+                    </h6>
+                    <ul className="p-0">
+                      {tasks.map((task, index) => (
+                        <li
+                          key={index}
+                          className="d-flex align-items-center justify-content-between py-1"
                         >
-                          {percentage}%
-                        </div>
-                      </div>
-                    </Col>
-                    <Col xs={1}></Col> {/* Spacer column */}
-                    <Col xs={9}>
-                      <div className="fw-bold text-start colortone ">
-                        Profile Score
-                      </div>
-                      <div className="text-start">
-                        <small className="text-muted colortone">
-                          Complete recruiter profiles attract more qualified
-                          candidates!!
-                        </small>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <h6 className="mt-4 text-start bold">
-                        Complete Your Profile
-                      </h6>
-                      <div className="  w-full ">
-                        <ul className="p-0">
-                          {tasks.map((task, index) => (
-                            <li
-                              key={index}
-                              className="d-flex align-items-center justify-content-between py-1"
+                          <div className="d-flex align-items-center">
+                            {task.completed ? (
+                              <CheckCircle fill="#5CC781" />
+                            ) : (
+                              <Circle style={{ color: "#5CC781" }} />
+                            )}
+                            <span
+                              className={`mx-2 ${
+                                task.completed ? "text-success" : "text-black"
+                              }`}
                             >
-                              <div className="flex items-center">
-                                {task.completed ? (
-                                  <CheckCircle
-                                    fill=" #5CC781"
-                                    style={{ color: "white" }}
-                                    className=" "
-                                  />
-                                ) : (
-                                  <Circle
-                                    style={{ color: "#5CC781" }}
-                                    className=" w-5 h-5"
-                                  />
-                                )}
-                                <span
-                                  className={`mx-2 ${
-                                    task.completed
-                                      ? "text-success"
-                                      : "text-black"
-                                  }`}
-                                >
-                                  {task.label}
-                                </span>
-                              </div>
-                              <FaChevronRight className="text-muted" />
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
+                              {task.label}
+                            </span>
+                          </div>
+                          <FaChevronRight className="text-muted" />
+                        </li>
+                      ))}
+                    </ul>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
-          <Col md={7}>
+          <Col xs={12} md={7}>
             {/* Profile Details */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className=" space-y-6">
               {[
                 {
                   title: "About",
@@ -379,7 +361,10 @@ export default function RecruiterProfile() {
                           teams:
                         </p>
                         <ul className="text-start">
-                          <li><FaSquareCheck fill="#05ef6e" /> Mid-level (3–6 years)</li>
+                          <li>
+                            <FaSquareCheck fill="#05ef6e" /> Mid-level (3–6
+                            years)
+                          </li>
                         </ul>
                       </div>
                     </>
@@ -413,105 +398,88 @@ export default function RecruiterProfile() {
           </Col>
         </Row>
 
-        <Row className="" style={{ margin: '0 -10px' }}>
-          <h6 className="text-start">Recently Posted Jobs</h6>
-          <Slider {...settings}>
-            {herojobs.map((job) => (
-              <div key={job.id} style={{ padding: "0 10px" }}>
-                <div className="recent-job rounded-4 border shadowsm p-1">
-                  <Row className="align-items-center gx-3 gy-3 ">
-                    {/* Logo */}
-                    <Col xs={12} md={1} className="text-center ">
-                   <div  className="border border-light  ">
-                       <img
-                        src={job.logo}
-                        alt={job.company}
-                        className="w-100"
-                      />
-                   </div>
-                    </Col>
-
-                    {/* Info */}
-                    <Col xs={12} md={3}>
-                      <div className="hero-company p-3 text-start">
-                        <p className="mb-1  text-muted small">{job.company}</p>
-                        <h6 className="  fw-small">{job.functionality}</h6>
-                      </div>
-                    </Col>
-
-                    {/* Tags */}
-                    <Col
-                      xs={12}
-                      md={3}
-                      className="align-items-md-center align-items-center justify-content-center align-items-start"
-                    >
-                      <div className="d-flex flex-wrap gap-2">
-                        <div>
-                          <div className="d-flex gap-2 flex-wrap justify-content-center">
-                            <span className="hero-sub-datas small">
-                              <IoLocationOutline color="#E53935" size={16} className="me-1" />
-                              {job.location}
-                            </span>
-                          
-                             <span className="hero-sub-datas small">
-                          <HiDocumentText color="#1E88E5" size={16} className="me-1" />
-                          {job.experience}
-                        </span>
-                          </div>
+        <Row className="mt-4">
+          <Col xs={12}>
+            <h6 className="text-start">Recently Posted Jobs</h6>
+            <Slider {...settings}>
+              {herojobs.map((job) => (
+                <div key={job.id} className="px-2">
+                  <div className="recent-job rounded-4 border shadowsm p-3">
+                    <Row className="align-items-center gx-2 gy-2">
+                      <Col xs={12} md={1} className="text-center mb-2 mb-md-0">
+                        <div className="border border-light">
+                          <img
+                            src={job.logo}
+                            alt={job.company}
+                            className="img-fluid"
+                          />
                         </div>
-                      </div>
-                    </Col>
-                    <Col xs={12} md={3}>
-                      <div className="d-flex gap-2 flex-wrap justify-content-center ">
-                         <span className="hero-sub-datas small">
-                              <PiCurrencyInrDuotone color="#10A441"
-                                size={16}
-                                className="me-1"
-                              />
-                              {job.salary}
-                            </span>
-
-                        <span className="hero-sub-datas small">
-                          <FaNewspaper color="#3A0CA3" size={16} className="me-1" />
-                          {job.postedOn}
-                        </span>
-                      </div>
-                    </Col>
-
-                    {/* CTA */}
-                    <Col
-                      xs={12}
-                      md={1}
-                      className="d-flex flex-column  align-items-md-center align-items-center justify-content-center text-md-end text-center"
-                    >
-                      <div className="d-flex flex-wrap mb-3 ">
-                        <div className="d-flex gap-2 flex-wrap bookmark_icon">
-                          <div className="icon_posistion">
-                            <span className="hero-sub-datas">
-                              <MdBookmarkBorder
-                                size={20}
-                                className="icon_color"
-                              />
-                            </span>
-                          </div>
+                      </Col>
+                      <Col xs={12} md={3} className="text-start">
+                        <p className="mb-1 text-muted small">{job.company}</p>
+                        <h6 className="fw-normal small">{job.functionality}</h6>
+                      </Col>
+                      <Col xs={12} md={3} className="text-start">
+                        <div className="d-flex flex-wrap gap-2">
+                          <span className="hero-sub-datas small">
+                            <IoLocationOutline
+                              color="#E53935"
+                              size={16}
+                              className="me-1"
+                            />
+                            {job.location}
+                          </span>
+                          <span className="hero-sub-datas small">
+                            <HiDocumentText
+                              color="#1E88E5"
+                              size={16}
+                              className="me-1"
+                            />
+                            {job.experience}
+                          </span>
                         </div>
-                      </div>
-                      <Button
-                        className="px-1 py-1 rounded-5  hero-apply-btn small"
-                        style={{
-                          background: "#7b1fa2",
-                          border: "none",
-                          color: "white",
-                        }}
-                      >
-                        View Job
-                      </Button>
-                    </Col>
-                  </Row>
+                      </Col>
+                      <Col xs={12} md={3} className="text-start">
+                        <div className="d-flex flex-wrap gap-2">
+                          <span className="hero-sub-datas small">
+                            <PiCurrencyInrDuotone
+                              color="#10A441"
+                              size={16}
+                              className="me-1"
+                            />
+                            {job.salary}
+                          </span>
+                          <span className="hero-sub-datas small">
+                            <FaNewspaper
+                              color="#3A0CA3"
+                              size={16}
+                              className="me-1"
+                            />
+                            {job.postedOn}
+                          </span>
+                        </div>
+                      </Col>
+                      <Col xs={12} md={2} className="text-center text-md-end">
+                        <div className="d-flex justify-content-center justify-content-md-end mb-2">
+                          <MdBookmarkBorder size={20} className="icon_color" />
+                        </div>
+                        <Button
+                          className="p-1 py-1 rounded-5 hero-apply-btn small"
+                          style={{
+                            background: "#7b1fa2",
+                            border: "none",
+                            color: "white",
+                          }}
+                        >
+                          View Job
+                        </Button>
+                      </Col>
+                    </Row>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </Col>
         </Row>
       </Container>
     </>

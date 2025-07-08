@@ -9,7 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 export default function Dashboardnavbar({ setShowComponent }) {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: "#1e88e5", }} className=" fixed-top">
+    <Navbar expand="lg" style={{ backgroundColor: "#1e88e5", }} className="sticky-top">
       {/* Full width container */}
       <Container
         fluid
