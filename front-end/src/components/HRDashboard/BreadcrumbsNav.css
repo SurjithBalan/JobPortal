@@ -1,0 +1,15 @@
+.custom-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    content: "•";
+    color: #424242;
+    padding: 0 8px;
+}
+
+.custom-breadcrumb .breadcrumb-item {
+    font-weight: 500;
+    color: #424242;
+}
+.custom-breadcrumb .breadcrumb-item a {
+  text-decoration: none !important;  /* removes underline */
+  color: #424242;                    /* optional: same as other text */
+  font-weight: 500;                  /* match the font style */
+}

@@ -29,5 +29,4 @@ function PersonalInfo() {
         </Container>
     )
 }
-
 export default PersonalInfo

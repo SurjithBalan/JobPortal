@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.masterdata-page h5 {
+    font-size: 1.1rem;
+}
+
+.add-new-btn {
+    font-size: 0.875rem;
+    padding: 4px 10px;
+    border-color: #6f42c1;
+    color: #6f42c1;
+}
+
+.add-new-btn:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.icon-action {
+    color: #424242;
+    cursor: pointer;
+}
+
+.icon-action:hover {
+    opacity: 0.75;
+}

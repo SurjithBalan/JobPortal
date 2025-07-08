@@ -35,7 +35,7 @@ function UserScreen() {
       <About />
       <Testimonials />
       <FeedbackForm />
-      <Footer /> 
+      <Footer />      
     </Container>
   )
 }

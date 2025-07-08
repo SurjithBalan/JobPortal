@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.admin-header-table th {
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* ✅ Section box styles */
+.admin-section-table td {
+    border: none !important;
+}
+
+.section-header-aa {
+    background-color: #f8f9fa;
+}
+
+.section-title-aa {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+}
+
+
+/* ✅ Checkbox styling */
+.admin-section-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6f42c1;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6f42c1;
+}

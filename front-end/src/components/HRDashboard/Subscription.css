@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.custom-switch .form-check-input:checked {
+  background-color: #34c759 !important;
+  /* green */
+
+}
+
+.custom-switch .form-check-input:not(:checked) {
+  background-color: #e53935 !important;
+  /* red */
+
+}
+
+.custom-card-subs {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  background-color: #fff;
+}
+
+.header-row-subs {
+  background-color: #e0e0e0;
+  font-weight: 600;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.header-col-subs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.data-row-subs {
+  border-top: 1px solid #e0e0e0;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.data-col-subs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.no-thead-border thead th {
+  border-top: none !important;
+  border-bottom: none !important;
+}
