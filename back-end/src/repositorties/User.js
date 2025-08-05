@@ -1,48 +1,33 @@
-const { pool } = require('../config/db');
+const pool = require('../config/db');
 
 class User {
-    static async findByGoogleId(googleId) {
-        try {
-            console.log(`Attempting to find user with googleId: ${googleId}`);
-            const rawResult = await pool.execute('SELECT * FROM candidates WHERE googleId = ?', [googleId]);
-            console.log('Raw result from findByGoogleId:', rawResult);
+  static async findByGoogleId(googleId) {
+    try {
+      const [rows] = await pool.execute(
+        'SELECT * FROM candidates WHERE googleId = ?',
+        [googleId.toString()] // ensure it's a string
+      );
 
-            // Ensure rawResult is an array and has at least two elements
-            if (!Array.isArray(rawResult) || rawResult.length < 1) {
-                console.error("findByGoogleId: pool.execute did not return an array or expected structure.");
-                return null; // Or throw a specific error
-            }
-
-            const [rows] = rawResult; // Safely destructure after checks
-            console.log('Rows found by findByGoogleId:', rows);
-
-            return rows[0];
-        } catch (error) {
-            console.error(`Error in findByGoogleId for googleId ${googleId}:`, error);
-            // Re-throw or handle appropriately
-            throw error;
-        }
+      return rows.length > 0 ? rows[0] : undefined;
+    } catch (err) {
+      console.error('❌ Error in findByGoogleId:', err);
+      return undefined;
     }
+  }
 
-    static async createUser(googleId, email, name, imageUrl) {
-        try {
-            console.log(`Attempting to create user: ${email}`);
-            const [result] = await pool.execute(
-                'INSERT INTO candidates (googleId, email, name, imageUrl) VALUES (?, ?, ?, ?)',
-                [googleId, email, name, imageUrl]
-            );
-            console.log('Insert result:', result);
+  static async createUser(email, name, googleId) {
+    try {
+      const [result] = await pool.execute(
+        'INSERT INTO candidates (email, name, googleId) VALUES (?, ?, ?)',
+        [email, name, googleId.toString()] // ensure it's a string
+      );
 
-            // Fetch the newly created user using the insertId
-            const [newUserRows] = await pool.execute('SELECT * FROM candidates WHERE id = ?', [result.insertId]);
-            console.log('Newly created user rows:', newUserRows);
-
-            return newUserRows[0];
-        } catch (error) {
-            console.error(`Error in createUser for email ${email}:`, error);
-            throw error;
-        }
+      return result; // Do not destructure to rows, this is correct for INSERT
+    } catch (err) {
+      console.error(`❌ Error in createUser for email ${email}:`, err);
+      throw err;
     }
+  }
 }
 
 module.exports = User;
