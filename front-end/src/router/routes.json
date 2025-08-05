@@ -1,0 +1,22 @@
+{
+  "home": "/",
+  "login": "/login",
+  "companyLogin": "/company-login",
+  "companyPassword": "/company-password",
+  "companySentMail": "/company-sent-mail",
+  "resetPassword": "/reset-password",
+  "CandidateLogin": "/candidate-login",
+  "CandidateLogin_otp": "/candidate-otp",
+  "Candidate_resentOtp_login": "/candidate-resent-otp",
+  "VerifyOTP": "/verify-otp",
+  "heroSearchFilter": "/hero-search-filter",
+  "hrCompanyPage": "/hr-company-jobs",
+  "featureFilter": "/feature-filter",
+  "companyRegisterForm": "/company-register",
+  "Recommended_jobs_Dashboard": "/recommended-jobs",
+  "CandidatequickProfilePage": "/candidate-quick-profile",
+  "Job_listing_page": "/job-listing",
+  "profile": "/profile",
+  "dashboard": "/dashboard",
+  "notFound": "*"
+}

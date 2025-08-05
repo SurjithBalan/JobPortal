@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/image/skylarklogo.png";
 import "../usernavbar/usernavbar.css";
 import { FaStar } from "react-icons/fa";
@@ -7,10 +6,15 @@ import { MdCorporateFare } from "react-icons/md";
 import "../companylogin/companylogin.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useSelector } from "react-redux";
 
 
 function UserNavbar() {
   const navigate = useNavigate();
+  const isAuthenticated = Cookies.get("XSRF-TOKEN") !== undefined;
+  const user = useSelector((state) => state.user.user);
+  console.log("user : ", user);
 
   return (
     <>
@@ -65,7 +69,7 @@ function UserNavbar() {
                 </a>
               </li>
             </ul>
-            <div className="btn-login d-flex justify-content-center flex-md-row align-items-center flex-column ">
+           {isAuthenticated === false && <div className="btn-login d-flex justify-content-center flex-md-row align-items-center flex-column ">
               <Link to={"/companylogin"}>
                 <button
                   // onClick={companyOpen}
@@ -89,6 +93,27 @@ function UserNavbar() {
                   CandidateLogin
                 </button>
               </Link>
+            </div>}
+            <div>
+              {isAuthenticated && (
+                <div className=" d-flex justify-content-center flex-md-row align-items-center flex-column ">
+                      <span className="m-2">
+                        <img
+                          src={user && user.imageUrl ? user.imageUrl : "default-avatar.png"}
+                          alt="User Avatar"
+                          style={{
+                            width: "32px",
+                            height: "32px",
+                            borderRadius: "50%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </span>
+                      <span className="ms-2">
+                         {user && user.name ? user.name : "User"}
+                      </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

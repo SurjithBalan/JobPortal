@@ -7,43 +7,11 @@ import { FcGoogle } from "react-icons/fc";
 import * as Yup from 'yup';
 import axios from 'axios';
 import { BASE_URL } from '../../utils/api';
+import GoogleLoginButton from '../google-button/GoogleLoginButton';
 
 function UserCrediential() {
   const navigate = useNavigate();
   const [apiError, setApiError] = useState('');
-
-  useEffect(() => {
-    /* global google */
-    window.google?.accounts.id.initialize({
-      client_id: 'YOUR_GOOGLE_CLIENT_ID', // Replace this with your actual Google Client ID
-      callback: handleGoogleLogin,
-    });
-
-    window.google?.accounts.id.renderButton(
-      document.getElementById('google-login-button'),
-      { theme: 'outline', size: 'large', width: '100%' }
-    );
-  }, []);
-
-  const handleGoogleLogin = async (response) => {
-    try {
-      const token = response.credential;
-      console.log('Google token:', token);
-
-      // Send the token to your backend
-      const res = await axios.post(`${BASE_URL}/candidate/google-login`, { token });
-
-      if (res.status === 200) {
-        console.log('Login successful:', res.data);
-        navigate('/CandidateLogin_otp');
-      } else {
-        setApiError(res.data.message || 'Google login failed');
-      }
-    } catch (error) {
-      console.error('Google login error:', error);
-      setApiError('Google login failed. Please try again.');
-    }
-  };
 
   const formik = useFormik({
     initialValues: { email: '' },
@@ -65,11 +33,15 @@ function UserCrediential() {
     },
   });
 
+   const onLoginSuccess = () => { 
+    navigate('/');
+   }
+
   return (
     <Container className='crediential-conatiner'>
       <div className="crediential-topsection">
         <h5 className='cred-title'>Candidate Login</h5>
-        <div id="google-login-button" className="mb-3" />
+           <GoogleLoginButton onLoginSuccess={onLoginSuccess}/>
         <p className="small text-muted">----- Or -----</p>
 
         {apiError && (
