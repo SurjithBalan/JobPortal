@@ -1,0 +1,57 @@
+
+.login-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-box{
+    display: flex;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    align-items: center;
+}
+
+.login-left-side{
+    height: 100%;
+    width: 50%;
+    background-color: #1e88e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-right-side{
+    height: 100%;
+    width: 50%;
+    padding: 2%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* crediential css */
+
+.crediential-conatiner{
+    height: 60%;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.crediential-topsection{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cred-title{
+    font-size: 18px;
+    font-weight: 600;
+}

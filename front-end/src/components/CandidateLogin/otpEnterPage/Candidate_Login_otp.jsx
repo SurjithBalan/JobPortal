@@ -56,7 +56,7 @@ const CandidateLogin_otp = () => {
                             <Col md={6} className="d-flex flex-column justify-content-center align-items-center gap-3 right-side-canidate-otp">
                                 <h3 className="fw-bold mb-3 fs-2" style={{ color: '#1e88e5' }}>Candidate Login</h3>
                                 <div className="d-flex gap-3 mb-2 social-icons">
-                                    <FaGoogle size={20} style={{ color: '#DB4437' }} />
+                                    {/* <FaGoogle size={20} style={{ color: '#DB4437' }} /> */}
                                     {/* <FaLinkedin size={20} />
                                 <FaGithub size={20} /> */}
                                 </div>
