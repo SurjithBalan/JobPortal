@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.textColor-jobdesc {
+    color: #424242;
+}
+
+.tickmark-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tickmark-list li {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #333;
+}
+.Onsite-badge{
+    background-color: #e1d123!important;
+}
+
+.tickmark-icon-wrapper {
+    background-color: #e3f5ea;
+    /* soft green background */
+    color: #43a047;
+    /* Tailwind's green-500 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+}
+
+.tickmark-icon {
+    font-size: 12px;
+}

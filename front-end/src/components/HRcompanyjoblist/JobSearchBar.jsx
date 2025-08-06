@@ -53,7 +53,7 @@ const JobSearchBar = () => {
         <>
             <Container className="py-4 px-3 overflow-hidden">
                 {/* Search Box */}
-                <div className="search-box bg-primary rounded-4 p-4 shadow-sm w-100">
+                <div className="search-box rounded-4 p-4 shadow-sm w-100">
                     <Row className="align-items-center p-2 g-0 bg-white rounded-3" >
 
                         <Col xs={12} md={5} className="rounded-0">

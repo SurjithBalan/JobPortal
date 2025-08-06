@@ -1,0 +1,61 @@
+.avatar-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #ccc;
+    flex-shrink: 0;
+}
+.application_statistics{
+    border: 1px solid #1E88E5;
+    width: 0.8rem;
+    background-color: #1E88E5;
+}
+.action-btn {
+    background-color: #f1f1f1 !important;
+    border: none;
+    width: 36px;
+    min-width:40px ;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.action-btn:hover {
+    background-color: #e2e2e2 !important;
+}
+
+@media (max-width: 768px) {
+  .summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .summary-card h5 {
+    font-size: 1.2rem;
+  }
+
+  .chart-dropdowns .dropdown {
+    margin-bottom: 1rem;
+  }
+
+  .notification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-item .text-muted {
+    margin-left: 2rem;
+  }
+
+  .recent-applicant {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .recent-applicant > div {
+    margin-bottom: 0.75rem;
+  }
+}

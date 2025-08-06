@@ -14,7 +14,6 @@ function UserNavbar() {
   const navigate = useNavigate();
   const isAuthenticated = Cookies.get("XSRF-TOKEN") !== undefined;
   const user = useSelector((state) => state.user.user);
-  console.log("user : ", user);
 
   return (
     <>
@@ -51,22 +50,29 @@ function UserNavbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <Link className="nav-link text-white" to={"/Job_listing_page"}>
                   Job
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <Link className="nav-link text-white" to={"/HrCompanyDashboard"}>
                   Featured{" "}
                   <span>
                     <FaStar color="#FFA900" />
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a href="" className="nav-link text-white ">
                   Contact US
                 </a>
+              </li>
+
+              {/* Hr Dashboard is temprorary routing */}
+              <li className="nav-item">
+                <Link to="/hr" className="nav-link text-white">
+                  HR Dashboard
+                </Link>
               </li>
             </ul>
            {isAuthenticated === false && <div className="btn-login d-flex justify-content-center flex-md-row align-items-center flex-column ">
@@ -82,10 +88,10 @@ function UserNavbar() {
                   Company Login
                 </button>
               </Link>
-              <Link to={"/CandidateLogin"}>
+              <Link to={"/login"}>
                 <button
                   className="hover-underline  mx-1"
-                  onClick={() => navigate("/CandidateLogin")}
+                  onClick={() => navigate("/login")}
                 >
                   <span className="m-1">
                     <PiUserCircleThin color="black" fontSize="1.5em" />
@@ -153,5 +159,4 @@ function UserNavbar() {
     </>
   );
 }
-
 export default UserNavbar;

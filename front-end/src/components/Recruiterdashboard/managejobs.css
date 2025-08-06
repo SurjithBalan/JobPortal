@@ -1,0 +1,51 @@
+
+
+/* Base utility for small text */
+.fs-8 {
+  font-size: 0.78rem !important;
+}
+
+@media (max-width: 576px) {
+  .joblisting_card {
+    padding: 1rem !important;
+  }
+
+  .fs-6 {
+    font-size: 1rem !important; /* h6 */
+  }
+
+  .fs-7 {
+    font-size: 0.85rem !important; /* subtext like @company */
+  }
+
+  .fs-8 {
+    font-size: 0.75rem !important; /* tiny text like meta info, tags */
+  }
+
+  .ribbon-container img {
+    width: 55px !important;
+    height: 55px !important;
+    padding: 5px !important;
+  }
+
+  .edit-switch-container {
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .joblisting_card .btn {
+    font-size: 0.75rem !important;
+    padding: 4px 12px !important;
+  }
+
+  .joblisting_card .meta-item {
+    padding: 0.2rem 0.5rem !important;
+  }
+
+  .joblisting_card span,
+  .joblisting_card p,
+  .joblisting_card h6 {
+    line-height: 1.2;
+  }
+}

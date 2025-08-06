@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.oval-frame {
+    width: 140px;
+    height: 180px;
+    background-color: #f8f9fa;
+    border-radius: 50% / 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.oval-inner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.colortone {
+    color: #424242;
+}
+
+.upload-btn-profile-page:hover {
+    background-color: white !important;
+    color: green !important;
+    border-color: #1b7bcf !important;
+    box-shadow: none !important;
+}

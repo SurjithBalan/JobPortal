@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.fontColor424242 {
+    color: #424242 !important;
+}
+
+.recruiter_sidebar{
+    overflow-y: hidden;
+    height: 100%;
+    background-color: #87C6F4;
+}
+.recruiter_right{
+    height: 100vh;
+    overflow-y: auto;
+}
+.sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.active-item {
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+.active-item {
+    background-color: white!important;
+    border-radius: 12px;
+    color: #1a73e8 !important;
+    font-weight: bold;
+}
+
+.RightsideFontcolor {
+    font-family: 'Poppins', sans-serif !important;
+    color: #424242 !important;
+}
+
+.inputGroupbg {
+    background-color: #f2f2f2 !important;
+}
+
+@media (max-width: 768px) {
+
+    .container,
+    .row,
+    .col {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* Toggle Header Bar */
+.toggle-header {
+  background-color: #87C6F4;
+}
+
+/* Sidebar Items */
+.sidebar-item {
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #424242;
+}
+
+.sidebar-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Active Item - Black Text */
+.active-item {
+  background-color: #87C6F4;
+  color: black !important;
+}
+
+.active-item span {
+  color: black !important;
+}

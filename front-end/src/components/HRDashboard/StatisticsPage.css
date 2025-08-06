@@ -1,0 +1,76 @@
+.table-statistics thead th {
+    border-top: none !important;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+    color: #333;
+}
+
+.table-statistics tbody td {
+    vertical-align: middle;
+    font-weight: 500;
+    color: #424242;
+}
+
+.location-table thead {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.location-table td,
+.location-table th {
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px;
+}
+
+.composable-map-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.location-table thead {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.location-table th,
+.location-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.map-container {
+    position: relative;
+    width: 800px;
+    height: auto;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.outer-circle {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.inner-circle {
+    width: 16px;
+    height: 16px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

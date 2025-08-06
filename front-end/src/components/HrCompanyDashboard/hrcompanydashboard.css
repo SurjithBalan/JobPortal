@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.fontColor424242 {
+    color: #424242 !important;
+}
+
+.recruiter_sidebar{
+    overflow-y: hidden;
+    height: 150%;
+    background-color: #87C6F4;
+}
+.recruiter_right{
+    height: 100vh;
+    overflow-y: auto;
+}
+.sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.active-item {
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+.active-item {
+    background-color: white!important;
+    border-radius: 12px;
+    color: #1a73e8 !important;
+    font-weight: bold;
+}
+
+.RightsideFontcolor {
+    font-family: 'Poppins', sans-serif !important;
+    color: #424242 !important;
+}
+
+.inputGroupbg {
+    background-color: #f2f2f2 !important;
+}
+/* Toggle Header Background */
+.toggle-header {
+  background-color: #87C6F4;
+}
+
+/* Sidebar Item */
+.sidebar-item {
+  cursor: pointer;
+  color: #424242;
+  transition: background 0.2s ease;
+}
+
+/* On Hover */
+.sidebar-item:hover {
+  background-color: #e0f3ff;
+}
+
+/* Active State */
+.active-item {
+  background-color: #ffffff;
+  color: black !important;
+}
+
+.active-item span {
+  color: black !important;
+}
+
+/* Fix layout spacing on small screens */
+.sidebar-col {
+  background-color: #87C6F4;
+}
+
+
+@media (max-width: 768px) {
+
+    .container,
+    .row,
+    .col {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}

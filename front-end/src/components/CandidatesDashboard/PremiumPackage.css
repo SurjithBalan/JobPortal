@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+.custom-toggle-pp {
+    background-color: #f0f6fe !important;
+    color: #1e88e5;
+    /* border: 1px solid #1e88e5; */
+}
+
+.custom-toggle-pp.active {
+    /* background-color: #1e88e5 !important; */
+    color: white;
+}
