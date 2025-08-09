@@ -12,7 +12,7 @@ const CandidatequickProfilePage = () => {
     };
     return (<>
         <Container>
-            <div className="bg-white text-white p-3 mb-4">
+            <div className="bg-light text-white p-3 mb-4">
                 <h6 className="ms-2 fs-2 text-dark" style={{color:'#424242'}}>Quick Profile</h6>
                 <Nav className="profile-steps d-flex justify-content-between align-items-center flex-wrap mt-2 g-3">
                     <Nav.Item>
