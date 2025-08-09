@@ -1,0 +1,13 @@
+
+.sub-menu-item  {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+.sub-menu-item:hover {
+    background-color: lightgrey;
+}

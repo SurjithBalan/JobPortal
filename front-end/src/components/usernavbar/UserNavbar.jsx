@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../../assets/image/skylarklogo.png";
 import "../usernavbar/usernavbar.css";
 import { FaStar } from "react-icons/fa";
@@ -8,12 +9,14 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
+import UserPopover from "../user-popover/UserPopover";
 
 
 function UserNavbar() {
   const navigate = useNavigate();
   const isAuthenticated = Cookies.get("XSRF-TOKEN") !== undefined;
   const user = useSelector((state) => state.user.user);
+  const [showPopover, setShowPopover] = useState(false);
 
   return (
     <>
@@ -103,7 +106,7 @@ function UserNavbar() {
             <div>
               {isAuthenticated && (
                 <div className=" d-flex justify-content-center flex-md-row align-items-center flex-column ">
-                      <span className="m-2">
+                      <span className="m-2" onClick={() => setShowPopover(!showPopover)}>
                         <img
                           src={user && user.imageUrl ? user.imageUrl : "default-avatar.png"}
                           alt="User Avatar"
@@ -112,19 +115,20 @@ function UserNavbar() {
                             height: "32px",
                             borderRadius: "50%",
                             objectFit: "cover",
+                            cursor: "pointer",
                           }}
                         />
                       </span>
-                      <span className="ms-2">
+                      <span className="ms-2 text-light">
                          {user && user.name ? user.name : "User"}
                       </span>
                 </div>
               )}
+               {showPopover && <UserPopover/>}
             </div>
           </div>
         </div>
       </nav>
-
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <div

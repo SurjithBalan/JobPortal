@@ -1,8 +1,6 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import routes from './routes.json';
 import PrivateRoute from './PrivateRoute';
-
 import CompanyLogin from '../components/companylogin/CompanyLogin';
 import Companypassword from '../components/companylogin/Companypassword';
 import Companysentmail from '../components/companylogin/Companysentmail';
@@ -42,8 +40,8 @@ const componentMap = {
   Recommended_jobs_Dashboard: RecomendedJobsDashborad,
   CandidatequickProfilePage: CandidatequickProfilePage,
   Job_listing_page: Joblisiting,
-  profile: UserScreen, // Example
-  dashboard: UserScreen, // Example
+  profile: UserScreen, 
+  dashboard: UserScreen,
   // notFound: NotFound, // Optional fallback
 };
 
@@ -56,6 +54,7 @@ const authRequiredRoutes = [
 ];
 
 function Routers() {
+
   return (
     <Router>
       <Routes>
